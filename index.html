@@ -414,12 +414,42 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		});
 		</script>
 
+		<script>
+		const words = ["Engineer", "Designer", "Robotics Enthusiast", "Student"];
+		const typingSpeed = 150; // ms per character
+		const erasingSpeed = 100;
+		const delayBetween = 1500; // ms before erasing
+		
+		let wordIndex = 0;
+		let charIndex = 0;
+		let isDeleting = false;
+		
+		const animatedText = document.getElementById("animated-text");
+		
+		function type() {
+		    const currentWord = words[wordIndex];
+		    if (!isDeleting) {
+		        animatedText.textContent = currentWord.substring(0, charIndex + 1);
+		        charIndex++;
+		        if (charIndex === currentWord.length) {
+		            setTimeout(() => isDeleting = true, delayBetween);
+		        }
+		    } else {
+		        animatedText.textContent = currentWord.substring(0, charIndex - 1);
+		        charIndex--;
+		        if (charIndex === 0) {
+		            isDeleting = false;
+		            wordIndex = (wordIndex + 1) % words.length;
+		        }
+		    }
+		    setTimeout(type, isDeleting ? erasingSpeed : typingSpeed);
+		}
+		
+		document.addEventListener("DOMContentLoaded", type);
+		</script>
+
+
 	</body>
 </html>
-
-
-
-
-
 
 
