@@ -1665,12 +1665,12 @@ input, select, textarea {
   font-size: 1rem;
   letter-spacing: 0.15rem;
   text-transform: uppercase;
-  color: #a020f0; /* ACCENT COLOR */
+  color: #00b8d1; /* ACCENT COLOR */
 }
 
 #animated-text {
   font-weight: 800;            /* ← THIS makes it bold */
-  border-right: 2px solid #a020f0;
+  border-right: 2px solid #00b8d1;
   padding-right: 6px;
   white-space: nowrap;
   animation: blink 0.7s infinite;
@@ -1678,7 +1678,7 @@ input, select, textarea {
 
 @keyframes blink {
   0%, 100% { border-color: transparent; }
-  50% { border-color: #a020f0; }
+  50% { border-color: #00b8d1; }
 }
 
 nav ul li a i {
@@ -1686,6 +1686,7 @@ nav ul li a i {
   font-size: 0.9rem;
   opacity: 0.85;
 }
+
 
 
 
