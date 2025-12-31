@@ -17,9 +17,11 @@
 					<header id="header">
 						<div class="content">
 							<div class="inner">
-    							<h1>Shrey Mehta</h1>
-								<h2>I am a <span id="animated-text"></span></h2>
-							    <p>Hi! I'm Shrey — welcome! Explore my work and feel free to reach out.</p>
+							  <h1>Shrey Mehta</h1>
+							  <p class="typed-line">
+							    <span id="animated-text"></span>
+							  </p>
+							  <p>Hi! I'm Shrey — welcome! Explore my work and feel free to reach out.</p>
 							</div>
 						</div>
 						<nav>
@@ -416,10 +418,17 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		</script>
 
 		<script>
-		const words = ["Engineer", "Designer", "Robotics Enthusiast", "Student"];
-		const typingSpeed = 150; // ms per character
-		const erasingSpeed = 100;
-		const delayBetween = 1500; // ms before erasing
+		const words = [
+		  "Everything Earned. Nothing Given.",
+		  "AI + Robotics Enthusiast",
+		  "Engineering 1 @ McMaster University",
+		  "Biomechanics Research Fellow",
+		  "McMaster Mars Rover Team"
+		];
+		
+		const typingSpeed = 80;
+		const erasingSpeed = 50;
+		const delayBetween = 1600;
 		
 		let wordIndex = 0;
 		let charIndex = 0;
@@ -428,30 +437,36 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		const animatedText = document.getElementById("animated-text");
 		
 		function type() {
-		    const currentWord = words[wordIndex];
-		    if (!isDeleting) {
-		        animatedText.textContent = currentWord.substring(0, charIndex + 1);
-		        charIndex++;
-		        if (charIndex === currentWord.length) {
-		            setTimeout(() => isDeleting = true, delayBetween);
-		        }
-		    } else {
-		        animatedText.textContent = currentWord.substring(0, charIndex - 1);
-		        charIndex--;
-		        if (charIndex === 0) {
-		            isDeleting = false;
-		            wordIndex = (wordIndex + 1) % words.length;
-		        }
+		  if (!animatedText) return;
+		
+		  const currentWord = words[wordIndex];
+		
+		  if (!isDeleting) {
+		    animatedText.textContent = currentWord.slice(0, charIndex + 1);
+		    charIndex++;
+		    if (charIndex === currentWord.length) {
+		      setTimeout(() => (isDeleting = true), delayBetween);
 		    }
-		    setTimeout(type, isDeleting ? erasingSpeed : typingSpeed);
+		  } else {
+		    animatedText.textContent = currentWord.slice(0, charIndex - 1);
+		    charIndex--;
+		    if (charIndex === 0) {
+		      isDeleting = false;
+		      wordIndex = (wordIndex + 1) % words.length;
+		    }
+		  }
+		
+		  setTimeout(type, isDeleting ? erasingSpeed : typingSpeed);
 		}
 		
 		document.addEventListener("DOMContentLoaded", type);
 		</script>
 
 
+
 	</body>
 </html>
+
 
 
 
