@@ -1660,17 +1660,25 @@ input, select, textarea {
 			opacity: 0;
 		}
 
+.typed-line {
+  margin-top: 1rem;
+  font-size: 1rem;
+  letter-spacing: 0.15rem;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+}
+
 #animated-text {
-    border-right: 2px solid #fff; /* cursor effect */
-    white-space: nowrap;
-    overflow: hidden;
-    display: inline-block;
-    animation: blink 0.7s infinite;
+  border-right: 2px solid #fff;
+  padding-right: 6px;
+  white-space: nowrap;
+  animation: blink 0.7s infinite;
 }
 
 @keyframes blink {
-    0%, 100% { border-color: transparent; }
-    50% { border-color: #fff; }
+  0%, 100% { border-color: transparent; }
+  50% { border-color: #fff; }
 }
+
 
 
