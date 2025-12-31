@@ -1669,6 +1669,7 @@ input, select, textarea {
 }
 
 #animated-text {
+  font-weight: 800;            /* ← THIS makes it bold */
   border-right: 2px solid #4fd1c5;
   padding-right: 6px;
   white-space: nowrap;
@@ -1685,6 +1686,7 @@ nav ul li a i {
   font-size: 0.9rem;
   opacity: 0.85;
 }
+
 
 
 
