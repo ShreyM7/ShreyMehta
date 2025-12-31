@@ -1687,6 +1687,23 @@ nav ul li a i {
   opacity: 0.85;
 }
 
+/* === VANTA BACKGROUND FIX === */
+#bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -3;
+  pointer-events: none;
+}
+
+/* Remove Dimension overlay layers */
+#bg:before,
+#bg:after {
+  display: none !important;
+}
+
 
 
 
