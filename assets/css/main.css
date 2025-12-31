@@ -1660,37 +1660,3 @@ input, select, textarea {
 			opacity: 0;
 		}
 
-#header nav ul {
-	border: none !important;
-	display: flex !important;
-	flex-wrap: wrap;
-	gap: 1rem;
-}
-
-#header nav ul li {
-	border: none !important;
-}
-
-#header nav ul li:before {
-	display: none !important;
-}
-
-#header nav ul li a {
-	display: inline-block;
-	padding: 0.9rem 1.7rem;
-	border: 1px solid rgba(255, 255, 255, 0.45);
-	border-radius: 14px;
-	background: transparent;
-	color: #ffffff;
-	font-weight: 600;
-	letter-spacing: 0.1rem;
-	text-decoration: none;
-
-	transition:
-		background 0.25s ease,
-		transform 0.2s ease,
-		box-shadow 0.2s ease;
-}
-
-
-
