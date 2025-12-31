@@ -1660,3 +1660,17 @@ input, select, textarea {
 			opacity: 0;
 		}
 
+#animated-text {
+    border-right: 2px solid #fff; /* cursor effect */
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { border-color: transparent; }
+    50% { border-color: #fff; }
+}
+
+
