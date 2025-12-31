@@ -1692,10 +1692,5 @@ input, select, textarea {
 		box-shadow 0.2s ease;
 }
 
-#header nav ul li a:hover {
-	background: rgba(255, 255, 255, 0.15);
-	transform: translateY(-4px);
-	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
-}
 
 
