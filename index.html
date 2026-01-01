@@ -105,7 +105,7 @@
 								<span class="image main"><img src="images/Shrey Mehta.JPG" alt="" /></span>
 							    <p class="tagline2">Always curious, usually prototyping, rarely without a notebook of ideas.</p>
 								<ul class="actions">
-									<a href="javascript:void(0)" class="home-button">Home</a>
+									<button type="button" class="home-button">Home</button>
 								</ul>
 							</article>
 						
@@ -145,7 +145,7 @@
 					
 					        <!-- Home Button -->
 					          <div class="overview-home">
-					            <a href="#" class="home-button">Home</a>
+								<button type="button" class="home-button">Home</button>
 					          </div>
 					        </article>
 					
@@ -155,8 +155,7 @@
 					          <img src="images/tesla.jpg" alt="Tesla Internship">
 					          <p class="long-desc">Explain your Tesla internship in depth: responsibilities, technical skills, projects, outcomes, etc.</p>
 					          <div class="detail-buttons">
-					            <a href="#" class="back-button">Back</a>
-					            <a href="#" class="home-button">Home</a>
+								<button type="button" class="back-button">Back</button>
 					          </div>
 					        </section>
 					
@@ -166,8 +165,7 @@
 					          <img src="images/mars-rover.jpg" alt="Mars Rover Team">
 					          <p class="long-desc">Explain the Mars Rover experience in depth: design process, collaboration, prototyping, testing, etc.</p>
 					          <div class="detail-buttons">
-					            <a href="#" class="back-button">Back</a>
-					            <a href="#" class="home-button">Home</a>
+								<button type="button" class="back-button">Back</button>
 					          </div>
 					        </section>
 					
@@ -177,8 +175,7 @@
 					          <img src="images/biomech.jpg" alt="Biomechanics Research">
 					          <p class="long-desc">Explain biomechanics research in depth: experimental setup, automation, and analysis.</p>
 					          <div class="detail-buttons">
-					            <a href="#" class="back-button">Back</a>
-					            <a href="#" class="home-button">Home</a>
+								<button type="button" class="back-button">Back</button>
 					          </div>
 					        </section>
 
@@ -616,46 +613,45 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		const details = document.querySelectorAll('.experience-detail');
 		const overview = document.getElementById('experience-overview');
 		
-		// Hide all details and overview helper
-		function hideAllSections() {
+		// Hide everything except main home
+		function hideAll() {
 		  details.forEach(d => d.style.display = 'none');
 		  overview.style.display = 'none';
 		}
 		
-		// Card click -> show detail
+		// Card click → show detail
 		cards.forEach(card => {
 		  card.addEventListener('click', () => {
-		    const targetId = card.dataset.detail;
-		    hideAllSections();
-		    const detailSection = document.getElementById(targetId);
-		    detailSection.style.display = 'block';
-		    detailSection.scrollIntoView({behavior:'smooth'});
+		    hideAll();
+		    const target = document.getElementById(card.dataset.detail);
+		    target.style.display = 'block';
+		    target.scrollIntoView({ behavior: 'smooth' });
 		  });
 		});
 		
-		// Back button -> show overview
+		// Back → overview ONLY
 		document.querySelectorAll('.back-button').forEach(btn => {
-		  btn.addEventListener('click', e => {
-		    e.preventDefault();
-		    hideAllSections();
+		  btn.addEventListener('click', () => {
+		    hideAll();
 		    overview.style.display = 'flex';
-		    overview.scrollIntoView({behavior:'smooth'});
+		    overview.scrollIntoView({ behavior: 'smooth' });
 		  });
 		});
 		
-		// Home button -> scroll to top
+		// Home → true home (top)
 		document.querySelectorAll('.home-button').forEach(btn => {
-		  btn.addEventListener('click', e => {
-		    e.preventDefault();
-		    hideAllSections();
-		    window.scrollTo({top: 0, behavior: 'smooth'});
+		  btn.addEventListener('click', () => {
+		    hideAll();
+		    window.scrollTo({ top: 0, behavior: 'smooth' });
 		  });
 		});
 		</script>
 
 
+
 	</body>
 </html>
+
 
 
 
