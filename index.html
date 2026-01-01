@@ -579,10 +579,46 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		document.addEventListener("DOMContentLoaded", type);
 		</script>
 
+		<script>
+		  // Get all experience cards and detailed sections
+		  const cards = document.querySelectorAll('.experience-card');
+		  const details = document.querySelectorAll('.experience-detail');
+		
+		  // Click on card → show its detail
+		  cards.forEach(card => {
+		    card.addEventListener('click', () => {
+		      const targetId = card.dataset.detail;
+		      details.forEach(detail => detail.style.display = 'none'); // hide all
+		      document.getElementById(targetId).style.display = 'block';  // show target
+		      document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
+		    });
+		  });
+		
+		  // Click “Back to Overview” → hide details and scroll to overview
+		  const closeBtns = document.querySelectorAll('.close-detail');
+		  closeBtns.forEach(btn => {
+		    btn.addEventListener('click', (e) => {
+		      e.preventDefault();
+		      details.forEach(detail => detail.style.display = 'none'); // hide all
+		      document.getElementById('experience-overview').scrollIntoView({ behavior: 'smooth' });
+		    });
+		  });
+		
+		  // Work Experience nav button → scroll to overview
+		  const workNavBtn = document.querySelector('nav a[href="#experience-overview"]');
+		  workNavBtn.addEventListener('click', (e) => {
+		    e.preventDefault();
+		    details.forEach(detail => detail.style.display = 'none'); // hide any open detail
+		    document.getElementById('experience-overview').scrollIntoView({ behavior: 'smooth' });
+		  });
+		</script>
+
+
 
 
 	</body>
 </html>
+
 
 
 
