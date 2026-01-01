@@ -1791,17 +1791,19 @@ nav ul li a i {
 }
 
 .home-button {
-  color: #ffffff;
-  padding: 0 1.5rem;              /* horizontal padding only */
-  height: 50px;                    /* fixed height for vertical centering */
-  border-radius: 12px;
-  text-decoration: none;
-  font-weight: 600;
-  display: inline-flex;
-  align-items: center;             /* vertical center */
-  justify-content: center;         /* horizontal center */
-  line-height: normal;             /* reset any inherited line-height */
+  display: flex !important;          /* force flex, overrides template */
+  align-items: center !important;    /* vertical center */
+  justify-content: center !important;/* horizontal center */
+
+  height: 50px;                      /* fixed height to control centering */
+  padding: 0 1.5rem !important;      /* horizontal padding only */
+  line-height: normal !important;    /* remove template line-height issues */
   
+  color: #ffffff !important;         
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  border-radius: 12px !important;
+
   box-shadow: 0 0 15px rgba(0, 184, 209, 0.4), 0 0 25px rgba(0, 184, 209, 0.2);
   transition: all 0.3s ease;
   animation: glowPulse 3s infinite ease-in-out;
@@ -1813,16 +1815,12 @@ nav ul li a i {
 }
 
 @keyframes glowPulse {
-  0% {
-    box-shadow: 0 0 15px rgba(0, 184, 209, 0.4), 0 0 25px rgba(0, 184, 209, 0.2);
-  }
-  50% {
-    box-shadow: 0 0 20px rgba(0, 184, 209, 0.7), 0 0 35px rgba(0, 184, 209, 0.4);
-  }
-  100% {
-    box-shadow: 0 0 15px rgba(0, 184, 209, 0.4), 0 0 25px rgba(0, 184, 209, 0.2);
-  }
+  0% { box-shadow: 0 0 15px rgba(0,184,209,0.4), 0 0 25px rgba(0,184,209,0.2); }
+  50% { box-shadow: 0 0 20px rgba(0,184,209,0.7), 0 0 35px rgba(0,184,209,0.4); }
+  100% { box-shadow: 0 0 15px rgba(0,184,209,0.4), 0 0 25px rgba(0,184,209,0.2); }
 }
+
+
 
 
 
