@@ -26,7 +26,6 @@
 			<div id="wrapper">
 
 				<!-- Header -->
-				<section id="home-page">
 					<header id="header">
 						<div class="content">
 							<div class="inner">
@@ -109,8 +108,6 @@
 									<a href="javascript:void(0)" class="home-button">Home</a>
 								</ul>
 							</article>
-				</section>
-
 						
 						<!-- About -->
 					        <article id="experience-overview">
@@ -615,42 +612,44 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		</script>
 
 		<script>
-		const overview = document.getElementById('experience-overview');
-		const details = document.querySelectorAll('.experience-detail');
 		const cards = document.querySelectorAll('.experience-card');
+		const details = document.querySelectorAll('.experience-detail');
+		const overview = document.getElementById('experience-overview');
+		const wrapper = document.getElementById('wrapper'); // your main wrapper
 		
-		// Hide only the sections that should be hidden
-		function hideAllSections() {
-		  overview.style.display = 'none';
-		  details.forEach(d => d.style.display = 'none');
-		}
-		
-		// Show detail section
+		// Show detail when a card is clicked
 		cards.forEach(card => {
 		  card.addEventListener('click', () => {
 		    const targetId = card.dataset.detail;
-		    hideAllSections();
-		    document.getElementById(targetId).style.display = 'block';
-		    document.getElementById(targetId).scrollIntoView({behavior:'smooth'});
+		    // Hide everything else
+		    overview.style.display = 'none';
+		    details.forEach(d => d.style.display = 'none');
+		    // Show selected detail
+		    const detailSection = document.getElementById(targetId);
+		    detailSection.style.display = 'block';
+		    detailSection.scrollIntoView({behavior:'smooth'});
 		  });
 		});
 		
-		// Back buttons -> show overview
+		// Back button -> overview only
 		document.querySelectorAll('.back-button').forEach(btn => {
 		  btn.addEventListener('click', e => {
 		    e.preventDefault();
-		    hideAllSections();
-		    overview.style.display = 'flex';
+		    details.forEach(d => d.style.display = 'none'); // hide all details
+		    overview.style.display = 'flex';               // show overview
 		    overview.scrollIntoView({behavior:'smooth'});
 		  });
 		});
 		
-		// Home buttons -> scroll to top of main page
+		// Home button -> main home section (all top buttons)
 		document.querySelectorAll('.home-button').forEach(btn => {
 		  btn.addEventListener('click', e => {
 		    e.preventDefault();
-		    hideAllSections();
-		    window.scrollTo({ top: 0, behavior: 'smooth' });
+		    // Hide all details and overview
+		    details.forEach(d => d.style.display = 'none');
+		    overview.style.display = 'none';
+		    // Scroll to very top of page (main home)
+		    window.scrollTo({top: 0, behavior: 'smooth'});
 		  });
 		});
 
@@ -658,6 +657,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 	</body>
 </html>
+
 
 
 
