@@ -1822,6 +1822,7 @@ nav ul li a i {
   100% { box-shadow: 0 0 15px rgba(0,184,209,0.4), 0 0 25px rgba(0,184,209,0.2); }
 }
 
+/* Overview Cards */
 #experience-overview {
   display: flex;
   flex-direction: column;
@@ -1830,23 +1831,24 @@ nav ul li a i {
 
 /* Cards */
 .experience-card {
-  display: flex;             /* stack image + text vertically */
+  display: flex;             
   flex-direction: column;
-  align-items: flex-start;   /* left-align content */
-  gap: 0.5rem;               /* space between image and text */
+  align-items: flex-start;   
+  gap: 0.5rem;               
   background-color: rgba(0,184,209,0.05);
   border: 2px solid rgba(0,184,209,0.5);
   border-radius: 12px;
   padding: 1.5rem;
   cursor: pointer;
   text-decoration: none;
-  width: 100%;               /* make full width */
+  width: 100%;              
   box-sizing: border-box;
-  margin-bottom: 2rem;       /* space between cards */
+  margin-bottom: 2rem;      
+  transition: transform 0.2s, box-shadow 0.3s;
 }
 
 .experience-card:last-child {
-  margin-bottom: 0;          /* no extra space after last card */
+  margin-bottom: 0;         
 }
 
 /* Image inside card */
@@ -1854,8 +1856,15 @@ nav ul li a i {
   width: 150px;
   border-radius: 12px;
   display: block;
-  margin-bottom: 1rem;
-  align-self: center;        /* center image horizontally */
+  margin-bottom: 0.75rem;      /* reduce space below image */
+  align-self: center;          
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
 }
 
 /* Card text */
@@ -1864,18 +1873,30 @@ nav ul li a i {
   width: 100%;
 }
 
-.card-text .company-name { color: #00b8d1; font-size: 0.9rem; }
-.card-text .role { font-weight: 700; font-size: 1.2rem; margin: 0.2rem 0; }
-.card-text .short-desc { font-size: 0.85rem; text-align: left; margin: 0; }
+.card-text .company-name { 
+  color: #00b8d1; 
+  font-size: 0.9rem; 
+}
 
-/* Hover effect */
+.card-text .role { 
+  font-weight: 700; 
+  font-size: 1.15rem;       /* slightly smaller */
+  margin: 0.1rem 0 0 0;    /* reduced spacing above role */
+}
+
+.card-text .short-desc { 
+  font-size: 0.85rem; 
+  text-align: left; 
+  margin: 0; 
+}
+
+/* Hover effect for cards */
 .experience-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 20px rgba(0,184,209,0.3);
 }
 
-
-/* Detailed Sections */
+/* Detailed sections */
 .experience-detail {
   display: none;
   margin: 3rem 0;
@@ -1885,21 +1906,23 @@ nav ul li a i {
   border-radius: 12px;
   box-shadow: 0 0 15px rgba(0,184,209,0.3);
   color: #ffffff;
-  text-align: left;
+  text-align: left; 
 }
 
 .experience-detail h2.detail-title { 
   color: #00b8d1; 
   margin-bottom: 1rem; 
-  text-align: left; 
+  font-size: 1.6rem;       /* smaller title */
+  text-decoration: underline;
 }
 
 .experience-detail img { 
   width: 100%; 
   max-width: 400px; 
-  margin: 1rem auto;  /* keeps image centered */
+  margin: 1rem auto; 
   display: block; 
   border-radius: 12px; 
+  animation: float 3s ease-in-out infinite; /* optional hover effect on images too */
 }
 
 .experience-detail .long-desc { 
@@ -1908,7 +1931,6 @@ nav ul li a i {
   text-align: left; 
 }
 
-/* Buttons */
 .detail-buttons {
   display: flex;
   justify-content: center;
@@ -1943,6 +1965,7 @@ nav ul li a i {
   justify-content: center; 
   margin-top: 2rem; 
 }
+
 
 
 
