@@ -1825,33 +1825,34 @@ nav ul li a i {
 #experience-overview {
   display: flex;
   flex-direction: column;
-  gap: 3rem; /* more space between cards */
+  gap: 3rem; /* this works if child elements are block-level */
   margin: 2rem 0;
 }
 
+/* Make sure the cards are block-level so gap works properly */
 .experience-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
+  display: block; /* changed from flex to block for spacing */
+  text-decoration: none; /* remove underline for links */
   background-color: rgba(0,184,209,0.05);
   border: 2px solid rgba(0,184,209,0.5);
   border-radius: 12px;
-  padding: 1.5rem; /* larger clickable area */
+  padding: 1.5rem;
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.3s;
+  width: 100%; /* make full width to feel clickable */
 }
 
 .experience-card img {
   width: 150px;
   border-radius: 12px;
-  animation: float 4s ease-in-out infinite;
+  display: block;
+  margin-bottom: 1rem; /* space between image and text */
 }
 
-/* Make text in cards left-aligned */
+/* Keep content inside card aligned nicely */
 .card-text {
-  width: 100%;      /* span full card width */
-  text-align: left; /* left-align all text inside */
+  text-align: left;
+  width: 100%;
 }
 
 .card-text .company-name { 
@@ -1904,6 +1905,11 @@ nav ul li a i {
   text-align: left; 
 }
 
+.experience-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,184,209,0.3);
+}
+
 .detail-buttons {
   display: flex;
   justify-content: center;
@@ -1938,6 +1944,7 @@ nav ul li a i {
   justify-content: center; 
   margin-top: 2rem; 
 }
+
 
 
 
