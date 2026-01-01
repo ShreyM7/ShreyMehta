@@ -626,10 +626,10 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		cards.forEach(card => {
 		  card.addEventListener('click', () => {
 		    const targetId = card.dataset.detail;
-		    overview.style.display = 'none';            // hide overview
+		    overview.style.display = 'none';             // hide overview
 		    details.forEach(d => d.style.display = 'none'); // hide all details
 		    const detailSection = document.getElementById(targetId);
-		    detailSection.style.display = 'block';      // show selected detail
+		    detailSection.style.display = 'block';       // show selected detail
 		    detailSection.scrollIntoView({behavior:'smooth'});
 		  });
 		});
@@ -637,10 +637,10 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		// Back button → show overview ONLY
 		document.querySelectorAll('.back-button').forEach(btn => {
 		  btn.addEventListener('click', e => {
-		    e.preventDefault();                   // prevent default link behavior
+		    e.preventDefault();                    // prevent default link behavior
 		    details.forEach(d => d.style.display = 'none'); // hide all detail sections
-		    overview.style.display = 'flex';      // show overview section
-		    overview.scrollIntoView({behavior:'smooth'}); // scroll smoothly
+		    overview.style.display = 'flex';       // show overview section
+		    overview.scrollIntoView({behavior:'smooth'});
 		  });
 		});
 		
@@ -651,12 +651,21 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		    window.scrollTo({top:0, behavior:'smooth'});
 		  });
 		});
+		
+		// PREVENT clicking on the detail section itself from triggering Home
+		details.forEach(section => {
+		  section.addEventListener('click', e => {
+		    e.stopPropagation(); // stops clicks inside section from bubbling up
+		  });
+		});
 		</script>
+
 
 
 
 	</body>
 </html>
+
 
 
 
