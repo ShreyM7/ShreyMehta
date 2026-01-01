@@ -620,17 +620,17 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		<script>
 		document.addEventListener('DOMContentLoaded', () => {
 		
-		  const landing = document.getElementById('header'); // main home section
+		  const header = document.getElementById('header'); // main home
 		  const overview = document.getElementById('experience-overview');
 		  const cards = document.querySelectorAll('.experience-card');
 		  const details = document.querySelectorAll('.experience-detail');
 		  const backButtons = document.querySelectorAll('.back-button');
 		  const homeButtons = document.querySelectorAll('.home-button');
 		
-		  // --- Show detailed section when clicking a card ---
+		  // Show detail section when clicking a card
 		  cards.forEach(card => {
 		    card.addEventListener('click', e => {
-		      e.stopPropagation(); // prevent bubbling to wrapper
+		      e.stopPropagation();
 		      const targetId = card.dataset.detail;
 		      overview.style.display = 'none';
 		      details.forEach(d => d.style.display = 'none');
@@ -640,30 +640,30 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		    });
 		  });
 		
-		  // --- Back buttons: show overview ONLY ---
+		  // Back button → show overview only
 		  backButtons.forEach(btn => {
 		    btn.addEventListener('click', e => {
 		      e.preventDefault();
-		      e.stopPropagation(); // prevent bubbling
+		      e.stopPropagation();
 		      details.forEach(d => d.style.display = 'none');
 		      overview.style.display = 'flex';
 		      overview.scrollIntoView({ behavior: 'smooth' });
 		    });
 		  });
 		
-		  // --- Home buttons: go back to landing/home section ---
+		  // Home button → scroll to the main home section
 		  homeButtons.forEach(btn => {
 		    btn.addEventListener('click', e => {
 		      e.preventDefault();
-		      e.stopPropagation(); // prevent bubbling
+		      e.stopPropagation();
+		      // hide all details and overview will stay visible
 		      details.forEach(d => d.style.display = 'none');
-		      overview.style.display = 'none';
-		      landing.style.display = 'block'; // make sure landing is visible
-		      landing.scrollIntoView({ behavior: 'smooth' });
+		      overview.style.display = 'flex';
+		      header.scrollIntoView({ behavior: 'smooth' });
 		    });
 		  });
 		
-		  // --- Prevent clicks inside detail sections from doing anything ---
+		  // Prevent accidental clicks inside detail sections
 		  details.forEach(section => {
 		    section.addEventListener('click', e => {
 		      if (!e.target.classList.contains('back-button') && !e.target.classList.contains('home-button')) {
@@ -675,13 +675,9 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		});
 		</script>
 
-
-
-
-
-
 	</body>
 </html>
+
 
 
 
