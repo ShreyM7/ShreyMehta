@@ -151,32 +151,42 @@
 
 							<section id="tesla-detail" class="experience-detail">
 							  <h2 class="detail-title">Tesla – Software/Mechanical Intern</h2>
-							  <a href="#" class="back-button">Back to Overview</a>
 							  <img src="images/tesla.jpg" alt="Tesla Internship">
 							  <p class="long-desc">
-							    Here you can explain your Tesla internship in depth: responsibilities, technical skills, projects, outcomes, etc.
+							    Explain your Tesla internship in depth: responsibilities, technical skills, projects, outcomes, etc.
 							  </p>
-							  <a href="#" class="home-button">Home</a>
+							
+							  <!-- Buttons at bottom, centered -->
+							  <div class="detail-buttons">
+							    <a href="#" class="back-button">Back to Overview</a>
+							    <a href="#" class="home-button">Home</a>
+							  </div>
 							</section>
 							
 							<section id="mars-rover-detail" class="experience-detail">
 							  <h2 class="detail-title">McMaster Mars Rover Team – Mechanical Team Member</h2>
-							  <a href="#" class="back-button">Back to Overview</a>
 							  <img src="images/mars-rover.jpg" alt="Mars Rover Team">
 							  <p class="long-desc">
-							    Here you can explain the Mars Rover experience in depth: design process, collaboration, prototyping, testing, etc.
+							    Explain the Mars Rover experience in depth: design process, collaboration, prototyping, testing, etc.
 							  </p>
-							  <a href="#" class="home-button">Home</a>
+							
+							  <div class="detail-buttons">
+							    <a href="#" class="back-button">Back to Overview</a>
+							    <a href="#" class="home-button">Home</a>
+							  </div>
 							</section>
 							
 							<section id="biomech-detail" class="experience-detail">
 							  <h2 class="detail-title">Biomechanics Research – McMaster University</h2>
-							  <a href="#" class="back-button">Back to Overview</a>
 							  <img src="images/biomech.jpg" alt="Biomechanics Research">
 							  <p class="long-desc">
-							    Here you can explain biomechanics research in depth: experimental setup, automation, and analysis.
+							    Explain biomechanics research in depth: experimental setup, automation, and analysis.
 							  </p>
-							  <a href="#" class="home-button">Home</a>
+							
+							  <div class="detail-buttons">
+							    <a href="#" class="back-button">Back to Overview</a>
+							    <a href="#" class="home-button">Home</a>
+							  </div>
 							</section>
 
 
@@ -616,6 +626,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		cards.forEach(card => {
 		  card.addEventListener('click', () => {
 		    const targetId = card.dataset.detail;
+		    overview.style.display = 'flex';          // keep flex for overview layout
 		    overview.style.display = 'none';          // hide overview
 		    details.forEach(d => d.style.display = 'none'); // hide all details
 		    const detailSection = document.getElementById(targetId);
@@ -629,7 +640,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		  btn.addEventListener('click', e => {
 		    e.preventDefault();
 		    details.forEach(d => d.style.display = 'none'); // hide all details
-		    overview.style.display = 'flex';               // show overview
+		    overview.style.display = 'flex';               // show overview section
 		    overview.scrollIntoView({behavior:'smooth'});  // scroll to overview
 		  });
 		});
@@ -642,11 +653,13 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		  });
 		});
 
+
 		</script>
 
 
 	</body>
 </html>
+
 
 
 
