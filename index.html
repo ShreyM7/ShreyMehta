@@ -616,23 +616,20 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		const cards = document.querySelectorAll('.experience-card');
 		const details = document.querySelectorAll('.experience-detail');
 		const overview = document.getElementById('experience-overview');
-		const wrapper = document.getElementById('wrapper'); // your main wrapper
 		
 		// Show detail when a card is clicked
 		cards.forEach(card => {
 		  card.addEventListener('click', () => {
 		    const targetId = card.dataset.detail;
-		    // Hide everything else
-		    overview.style.display = 'none';
-		    details.forEach(d => d.style.display = 'none');
-		    // Show selected detail
+		    overview.style.display = 'none';           // hide overview
+		    details.forEach(d => d.style.display = 'none'); // hide all details
 		    const detailSection = document.getElementById(targetId);
-		    detailSection.style.display = 'block';
+		    detailSection.style.display = 'block';     // show selected detail
 		    detailSection.scrollIntoView({behavior:'smooth'});
 		  });
 		});
 		
-		// Back button -> overview only
+		// Back button -> show overview only
 		document.querySelectorAll('.back-button').forEach(btn => {
 		  btn.addEventListener('click', e => {
 		    e.preventDefault();
@@ -642,22 +639,21 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		  });
 		});
 		
-		// Home button -> main home section (all top buttons)
+		// Home button -> show main home page
 		document.querySelectorAll('.home-button').forEach(btn => {
 		  btn.addEventListener('click', e => {
 		    e.preventDefault();
-		    // Hide all details and overview
+		    // hide all details AND overview
 		    details.forEach(d => d.style.display = 'none');
 		    overview.style.display = 'none';
-		    // Scroll to very top of page (main home)
+		    // scroll to the top of the page
 		    window.scrollTo({top: 0, behavior: 'smooth'});
 		  });
 		});
 
-
-
 	</body>
 </html>
+
 
 
 
