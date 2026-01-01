@@ -1897,17 +1897,34 @@ nav ul li a i {
   line-height: 1.6;
 }
 
-/* Back button top-right */
-.back-button {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background-color: #00b8d1;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  text-decoration: none;
+.detail-buttons {
+  display: flex;
+  justify-content: center;   /* center horizontally */
+  gap: 1rem;                 /* space between buttons */
+  margin-top: 2rem;          /* some spacing from content */
 }
+
+/* Style Back button similar to Home button */
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #00b8d1;
+  box-shadow: 0 0 15px rgba(0,184,209,0.4), 0 0 25px rgba(0,184,209,0.2);
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  box-shadow: 0 0 25px rgba(0,184,209,0.9), 0 0 40px rgba(0,184,209,0.6);
+  transform: translateY(-2px);
+}
+
+
 
 
 
