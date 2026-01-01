@@ -634,13 +634,12 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		  });
 		});
 		
-		// Back button → show overview ONLY
 		document.querySelectorAll('.back-button').forEach(btn => {
 		  btn.addEventListener('click', e => {
 		    e.preventDefault();
 		    details.forEach(d => d.style.display = 'none'); // hide all details
-		    overview.style.display = 'flex';               // show overview
-		    overview.scrollIntoView({behavior:'smooth'});  // scroll to overview
+		    overview.style.display = 'block';              // show overview (not flex)
+		    overview.scrollIntoView({behavior:'smooth'});
 		  });
 		});
 		
@@ -659,6 +658,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 	</body>
 </html>
+
 
 
 
