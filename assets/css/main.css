@@ -1786,6 +1786,34 @@ nav ul li a i {
   color: #00b8d1;
 }
 
+.home-button {
+  background-color: #00b8d1;       /* base blue */
+  color: #ffffff;                  /* text white */
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  box-shadow: 0 0 10px rgba(0, 184, 209, 0.5); /* subtle glow */
+  transition: all 0.3s ease;
+}
+
+.home-button:hover {
+  box-shadow: 0 0 20px rgba(0, 184, 209, 0.9), 0 0 30px rgba(0, 184, 209, 0.6);
+  transform: translateY(-2px);  /* slight lift effect */
+}
+
+@keyframes glowPulse {
+  0% { box-shadow: 0 0 10px rgba(0, 184, 209, 0.5); }
+  50% { box-shadow: 0 0 20px rgba(0, 184, 209, 0.9); }
+  100% { box-shadow: 0 0 10px rgba(0, 184, 209, 0.5); }
+}
+
+.home-button {
+  animation: glowPulse 2s infinite ease-in-out;
+}
+
+
 
 
 
