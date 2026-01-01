@@ -1791,19 +1791,21 @@ nav ul li a i {
 }
 
 .home-button {
-  display: flex !important;          /* force flex, overrides template */
-  align-items: center !important;    /* vertical center */
-  justify-content: center !important;/* horizontal center */
-
-  height: 50px;                      /* fixed height to control centering */
-  padding: 0 1.5rem !important;      /* horizontal padding only */
-  line-height: normal !important;    /* remove template line-height issues */
+  display: inline-flex;            /* flex container */
+  align-items: center;             /* vertical center */
+  justify-content: center;         /* horizontal center */
   
-  color: #ffffff !important;         
-  text-decoration: none !important;
-  font-weight: 600 !important;
-  border-radius: 12px !important;
-
+  padding: 0.75rem 1.5rem;         /* vertical + horizontal padding */
+  height: auto;                    /* let height be defined by padding */
+  min-height: 50px;                /* optional: ensures nice button size */
+  line-height: normal;             /* remove inherited line-height issues */
+  
+  color: #ffffff;                  /* text color */
+  font-weight: 600;                
+  text-decoration: none;
+  border-radius: 12px;
+  
+  background: inherit;             /* keep original template background */
   box-shadow: 0 0 15px rgba(0, 184, 209, 0.4), 0 0 25px rgba(0, 184, 209, 0.2);
   transition: all 0.3s ease;
   animation: glowPulse 3s infinite ease-in-out;
@@ -1819,6 +1821,8 @@ nav ul li a i {
   50% { box-shadow: 0 0 20px rgba(0,184,209,0.7), 0 0 35px rgba(0,184,209,0.4); }
   100% { box-shadow: 0 0 15px rgba(0,184,209,0.4), 0 0 25px rgba(0,184,209,0.2); }
 }
+
+
 
 
 
