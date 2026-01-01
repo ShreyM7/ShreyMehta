@@ -615,15 +615,15 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		</script>
 
 		<script>
-		const homePage = document.getElementById('home-page'); // now exists
+		const homePage = document.getElementById('home-page');
 		const overview = document.getElementById('experience-overview');
 		const details = document.querySelectorAll('.experience-detail');
 		const cards = document.querySelectorAll('.experience-card');
 		
-		// Hide all sections
+		// Hide all sections safely
 		function hideAllSections() {
-		  homePage.style.display = 'none';
-		  overview.style.display = 'none';
+		  if (homePage) homePage.style.display = 'none';
+		  if (overview) overview.style.display = 'none';
 		  details.forEach(d => d.style.display = 'none');
 		}
 		
@@ -632,8 +632,11 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		  card.addEventListener('click', () => {
 		    const targetId = card.dataset.detail;
 		    hideAllSections();
-		    document.getElementById(targetId).style.display = 'block';
-		    document.getElementById(targetId).scrollIntoView({behavior:'smooth'});
+		    const detail = document.getElementById(targetId);
+		    if (detail) {
+		      detail.style.display = 'block';
+		      detail.scrollIntoView({behavior:'smooth'});
+		    }
 		  });
 		});
 		
@@ -642,8 +645,10 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		  btn.addEventListener('click', e => {
 		    e.preventDefault();
 		    hideAllSections();
-		    overview.style.display = 'flex';
-		    overview.scrollIntoView({behavior:'smooth'});
+		    if (overview) {
+		      overview.style.display = 'flex';
+		      overview.scrollIntoView({behavior:'smooth'});
+		    }
 		  });
 		});
 		
@@ -652,14 +657,18 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		  btn.addEventListener('click', e => {
 		    e.preventDefault();
 		    hideAllSections();
-		    homePage.style.display = 'block';
-		    homePage.scrollIntoView({behavior:'smooth'});
+		    if (homePage) {
+		      homePage.style.display = 'block';
+		      homePage.scrollIntoView({behavior:'smooth'});
+		    }
 		  });
 		});
+
 		<script>
 
 	</body>
 </html>
+
 
 
 
