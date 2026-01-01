@@ -53,7 +53,7 @@
 						    </li>
 						
 							<li>
-							  <a href="#experience-overview">
+							  <a href="#experience">
 							    <i class="fa-solid fa-briefcase"></i>
 							    <strong>Work Experience</strong>
 							  </a>
@@ -84,7 +84,7 @@
 							<article id="about">
 								<h2 class="major">About Me</h2>
 								<p class="tagline">ENGINEER AND BUILDER</p>
-								<p>I’m Shrey, an Engineering 1 student at McMaster University who thrives on building systems where mechanical design, electronics, and intelligent software come together. I gravitate toward problems that intersect robotics, automation, and data, where thoughtful engineering decisions can turn theory into systems that actually move, sense, and adapt in the real world.</a>.</p>
+								<p>I’m Shrey, an Engineering 1 student at McMaster University who thrives on building systems where mechanical design, electronics, and intelligent software come together. I gravitate toward problems that intersect robotics, automation, and data, where thoughtful engineering decisions can turn theory into systems that actually move, sense, and adapt in the real world.</p>
 								<p>Through my work with robotics teams and research labs, I’ve designed and tested mechanical components, supported experimental automation, and contributed to projects involving computer vision, control, and hardware–software integration. Most recently, I am conducting biomechanics research with a distinguished professor and McMaster University and am a Mechanical Team Member with the McMaster Mars Rover Team, where I am excited to continue developing robust mechanical systems and collaborating across disciplines to solve complex, real-world engineering challenges.</p>
 								<p>Outside of formal projects, I’m often experimenting with mechanical systems and electromechanical assemblies, tuning control logic, and analyzing sensor data to better understand how physical designs respond in real-world conditions. If it involves robotics, mechanisms, or closing the loop between the digital and physical worlds, I’m in.</p>							
 								<section class="snapshot">
@@ -105,79 +105,79 @@
 								<span class="image main"><img src="images/Shrey Mehta.JPG" alt="" /></span>
 							    <p class="tagline2">Always curious, usually prototyping, rarely without a notebook of ideas.</p>
 								<ul class="actions">
-									<button type="button" class="home-button">Home</button>
+									<a href="#" class="home-button">Home</a>
 								</ul>
 							</article>
 						
 						<!-- About -->
-					        <article id="experience-overview">
+					        <article id="experience">
 					          <h2>Work Experience</h2>
 					
 					        <!-- Tesla -->
-					          <div class="experience-card" data-detail="tesla-detail">
+							  <a href="#tesla-detail" class="experience-card">
 					            <img src="images/tesla.jpg" alt="Tesla Internship">
 					            <div class="card-text">
 					              <p class="company-name">Tesla</p>
 					              <p class="role">Software/Mechanical Intern</p>
 					              <p class="short-desc">Built MVVM-based Android features connecting APIs to handheld scanners.</p>
 					            </div>
-					          </div>
+							  </a>
 					 
 					        <!-- Mars Rover -->
-					          <div class="experience-card" data-detail="mars-rover-detail">
+							  <a href="#mars-rover-detail" class="experience-card">
 					            <img src="images/mars-rover.jpg" alt="Mars Rover Team">
 					            <div class="card-text">
 					              <p class="company-name">McMaster Mars Rover Team</p>
 					              <p class="role">Mechanical Team Member</p>
 					              <p class="short-desc">Designed and tested mechanical components for a competitive Mars Rover.</p>
 					            </div>
-					          </div>
+							  </a>
 					
 					        <!-- Biomechanics -->
-					          <div class="experience-card" data-detail="biomech-detail">
+							  <a href="#biomech-detail" class="experience-card">
 					            <img src="images/biomech.jpg" alt="Biomechanics Research">
 					            <div class="card-text">
 					              <p class="company-name">McMaster University</p>
 					              <p class="role">Biomechanics Researcher</p>
 					              <p class="short-desc">Experimental automation and data-driven analysis in biomechanics research.</p>
 					            </div>
-					          </div>
+							  </a>
 					
 					        <!-- Home Button -->
 					          <div class="overview-home">
-								<button type="button" class="home-button">Home</button>
+								<a href="#" class="home-button">Home</a>
 					          </div>
 					        </article>
 					
 					      <!-- Tesla Detail -->
-					        <section id="tesla-detail" class="experience-detail">
+							<article id="tesla-detail" class="experience-detail">
 					          <h2 class="detail-title">Tesla – Software/Mechanical Intern</h2>
 					          <img src="images/tesla.jpg" alt="Tesla Internship">
 					          <p class="long-desc">Explain your Tesla internship in depth: responsibilities, technical skills, projects, outcomes, etc.</p>
 					          <div class="detail-buttons">
-								<button type="button" class="back-button">Back</button>
+								<a href="#experience" class="back-button">Back</a>
 					          </div>
-					        </section>
+							</article>
 					
 					      <!-- Mars Rover Detail -->
-					        <section id="mars-rover-detail" class="experience-detail">
+							<article id="mars-rover-detail" class="experience-detail">
 					          <h2 class="detail-title">McMaster Mars Rover Team – Mechanical Team Member</h2>
 					          <img src="images/mars-rover.jpg" alt="Mars Rover Team">
 					          <p class="long-desc">Explain the Mars Rover experience in depth: design process, collaboration, prototyping, testing, etc.</p>
 					          <div class="detail-buttons">
-								<button type="button" class="back-button">Back</button>
+								<a href="#experience" class="back-button">Back</a>
 					          </div>
-					        </section>
+							</article>
 					
 					      <!-- Biomech Detail -->
-					        <section id="biomech-detail" class="experience-detail">
+							<article id="biomech-detail" class="experience-detail">
 					          <h2 class="detail-title">Biomechanics Research – McMaster University</h2>
 					          <img src="images/biomech.jpg" alt="Biomechanics Research">
 					          <p class="long-desc">Explain biomechanics research in depth: experimental setup, automation, and analysis.</p>
 					          <div class="detail-buttons">
-								<button type="button" class="back-button">Back</button>
+								<a href="#experience" class="back-button">Back</a>
 					          </div>
-					        </section>
+							</article>
 
 
 
@@ -608,49 +608,12 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		document.addEventListener("DOMContentLoaded", type);
 		</script>
 
-		<script>
-		const cards = document.querySelectorAll('.experience-card');
-		const details = document.querySelectorAll('.experience-detail');
-		const overview = document.getElementById('experience-overview');
-		
-		// Hide everything except main home
-		function hideAll() {
-		  details.forEach(d => d.style.display = 'none');
-		  overview.style.display = 'none';
-		}
-		
-		// Card click → show detail
-		cards.forEach(card => {
-		  card.addEventListener('click', () => {
-		    hideAll();
-		    const target = document.getElementById(card.dataset.detail);
-		    target.style.display = 'block';
-		    target.scrollIntoView({ behavior: 'smooth' });
-		  });
-		});
-		
-		// Back → overview ONLY
-		document.querySelectorAll('.back-button').forEach(btn => {
-		  btn.addEventListener('click', () => {
-		    hideAll();
-		    overview.style.display = 'flex';
-		    overview.scrollIntoView({ behavior: 'smooth' });
-		  });
-		});
-		
-		// Home → true home (top)
-		document.querySelectorAll('.home-button').forEach(btn => {
-		  btn.addEventListener('click', () => {
-		    hideAll();
-		    window.scrollTo({ top: 0, behavior: 'smooth' });
-		  });
-		});
-		</script>
 
 
 
 	</body>
 </html>
+
 
 
 
