@@ -1712,15 +1712,13 @@ nav ul li a i {
 }
 
 @keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-12px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
+
+.image.main {
+  overflow: visible; /* ensure animation is not clipped */
 }
 
 .image.main img {
@@ -1728,11 +1726,12 @@ nav ul li a i {
   max-width: 400px;
   display: block;
   margin: 0 auto;
-  border-radius: 12px; /* rounded corners */
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  
+  transform: translateY(0);
   animation: float 4s ease-in-out infinite;
-
+  -webkit-animation: float 4s ease-in-out infinite;
 }
 
 .tagline2 {
@@ -1746,6 +1745,7 @@ nav ul li a i {
 .actions {
   justify-content: center;
 }
+
 
 
 
