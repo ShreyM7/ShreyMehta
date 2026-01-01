@@ -114,50 +114,70 @@
 							<article id="experience-overview">
 							  <h2>Work Experience</h2>
 							
+							  <!-- Tesla Internship Card -->
 							  <div class="experience-card" data-detail="tesla-detail">
 							    <img src="images/tesla.jpg" alt="Tesla Internship">
-							    <h3>Tesla – Software/Mechanical Intern</h3>
-							    <p>Built MVVM-based Android features connecting APIs to handheld scanners.</p>
+							    <div class="card-text">
+							      <p class="company-name">Tesla</p>
+							      <p class="role">Software/Mechanical Intern</p>
+							      <p class="short-desc">Built MVVM-based Android features connecting APIs to handheld scanners.</p>
+							    </div>
 							  </div>
 							
+							  <!-- Mars Rover Team Card -->
 							  <div class="experience-card" data-detail="mars-rover-detail">
-							    <img src="images/mars-rover.jpg" alt="Mars Rover">
-							    <h3>McMaster Mars Rover Team</h3>
-							    <p>Designed and tested mechanical components for a competitive Mars Rover.</p>
+							    <img src="images/mars-rover.jpg" alt="Mars Rover Team">
+							    <div class="card-text">
+							      <p class="company-name">McMaster Mars Rover Team</p>
+							      <p class="role">Mechanical Team Member</p>
+							      <p class="short-desc">Designed and tested mechanical components for a competitive Mars Rover.</p>
+							    </div>
 							  </div>
 							
+							  <!-- Biomechanics Research Card -->
 							  <div class="experience-card" data-detail="biomech-detail">
-							    <img src="images/biomech.jpg" alt="Biomechanics">
-							    <h3>Biomechanics Research – McMaster</h3>
-							    <p>Conducted experimental automation and data-driven analysis in biomechanics research.</p>
+							    <img src="images/biomech.jpg" alt="Biomechanics Research">
+							    <div class="card-text">
+							      <p class="company-name">McMaster University</p>
+							      <p class="role">Biomechanics Researcher</p>
+							      <p class="short-desc">Conducted experimental automation and data-driven analysis in biomechanics research.</p>
+							    </div>
 							  </div>
-							  <ul class="actions">
-							    <li><a href="#" class="home-button">Home</a></li>
-							  </ul>							
-
+							
+							  <!-- Home Button -->
+							  <a href="#" class="home-button">Home</a>
 							</article>
 
-						<!-- Detailed sections go **right after** the overview -->
-						    <section id="tesla-detail" class="experience-detail">
-						      <h2>Tesla Internship – In Depth</h2>
-						      <p>Explain your Tesla internship in depth here: responsibilities, technical skills, projects, outcomes...</p>
-						      <a href="#" class="back-button">Back to Overview</a>
-						      <a href="#" class="home-button">Home</a>
-						    </section>
-						
-						    <section id="mars-rover-detail" class="experience-detail">
-						      <h2>McMaster Mars Rover Team – In Depth</h2>
-						      <p>Explain the Mars Rover experience: design process, collaboration, prototyping, testing...</p>
-						      <a href="#" class="back-button">Back to Overview</a>
-						      <a href="#" class="home-button">Home</a>
-						    </section>
-						
-						    <section id="biomech-detail" class="experience-detail">
-						      <h2>Biomechanics Research – In Depth</h2>
-						      <p>Explain biomechanics research in detail: experimental setup, automation, analysis...</p>
-						      <a href="#" class="back-button">Back to Overview</a>
-						      <a href="#" class="home-button">Home</a>
-						    </section>
+
+							<section id="tesla-detail" class="experience-detail">
+							  <h2 class="detail-title">Tesla – Software/Mechanical Intern</h2>
+							  <a href="#" class="back-button">Back to Overview</a>
+							  <img src="images/tesla.jpg" alt="Tesla Internship">
+							  <p class="long-desc">
+							    Here you can explain your Tesla internship in depth: responsibilities, technical skills, projects, outcomes, etc.
+							  </p>
+							  <a href="#" class="home-button">Home</a>
+							</section>
+							
+							<section id="mars-rover-detail" class="experience-detail">
+							  <h2 class="detail-title">McMaster Mars Rover Team – Mechanical Team Member</h2>
+							  <a href="#" class="back-button">Back to Overview</a>
+							  <img src="images/mars-rover.jpg" alt="Mars Rover Team">
+							  <p class="long-desc">
+							    Here you can explain the Mars Rover experience in depth: design process, collaboration, prototyping, testing, etc.
+							  </p>
+							  <a href="#" class="home-button">Home</a>
+							</section>
+							
+							<section id="biomech-detail" class="experience-detail">
+							  <h2 class="detail-title">Biomechanics Research – McMaster University</h2>
+							  <a href="#" class="back-button">Back to Overview</a>
+							  <img src="images/biomech.jpg" alt="Biomechanics Research">
+							  <p class="long-desc">
+							    Here you can explain biomechanics research in depth: experimental setup, automation, and analysis.
+							  </p>
+							  <a href="#" class="home-button">Home</a>
+							</section>
 
 
 						<!-- Work -->
@@ -592,47 +612,42 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		const details = document.querySelectorAll('.experience-detail');
 		const overview = document.getElementById('experience-overview');
 		
-		// Click on a card → show detail
+		// Show detail section when clicking a card
 		cards.forEach(card => {
 		  card.addEventListener('click', () => {
 		    const targetId = card.dataset.detail;
-		    overview.style.display = 'none';        // hide overview
-		    details.forEach(d => d.style.display='none'); // hide all details
-		    document.getElementById(targetId).style.display = 'block'; // show selected
-		    document.getElementById(targetId).scrollIntoView({behavior:'smooth'});
+		    overview.style.display = 'none';          // hide overview
+		    details.forEach(d => d.style.display = 'none'); // hide all details
+		    const detailSection = document.getElementById(targetId);
+		    detailSection.style.display = 'block';    // show selected
+		    detailSection.scrollIntoView({behavior:'smooth'});
 		  });
 		});
 		
 		// Back button → show overview
-		document.querySelectorAll('.back-button').forEach(btn=>{
-		  btn.addEventListener('click', e=>{
+		document.querySelectorAll('.back-button').forEach(btn => {
+		  btn.addEventListener('click', e => {
 		    e.preventDefault();
-		    details.forEach(d=>d.style.display='none'); // hide all details
-		    overview.style.display = 'flex';           // show overview
-		    overview.scrollIntoView({behavior:'smooth'});
+		    details.forEach(d => d.style.display = 'none'); // hide all details
+		    overview.style.display = 'flex';               // show overview
+		    overview.scrollIntoView({behavior:'smooth'});  // scroll to overview
 		  });
 		});
 		
 		// Home buttons → scroll to top
-		document.querySelectorAll('.home-button').forEach(btn=>{
-		  btn.addEventListener('click', e=>{
+		document.querySelectorAll('.home-button').forEach(btn => {
+		  btn.addEventListener('click', e => {
 		    e.preventDefault();
 		    window.scrollTo({top:0, behavior:'smooth'});
 		  });
 		});
-		
-		// Nav Work Experience → show overview only
-		document.getElementById('work-nav').addEventListener('click', e=>{
-		  e.preventDefault();
-		  details.forEach(d=>d.style.display='none'); // hide any open detail
-		  overview.style.display='flex';
-		  overview.scrollIntoView({behavior:'smooth'});
-		});
+
 		</script>
 
 
 	</body>
 </html>
+
 
 
 
