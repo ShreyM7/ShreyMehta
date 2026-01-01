@@ -613,49 +613,54 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		</script>
 
 		<script>
-		const cards = document.querySelectorAll('.experience-card');
-		const details = document.querySelectorAll('.experience-detail');
+		// Sections
+		const homePage = document.getElementById('home-page');
 		const overview = document.getElementById('experience-overview');
-		const homePage = document.getElementById('home-page'); // Wrap all top content in #home-page
+		const details = document.querySelectorAll('.experience-detail');
+		const cards = document.querySelectorAll('.experience-card');
 		
-		// Show detail when a card is clicked
+		// Function to hide all sections
+		function hideAllSections() {
+		  homePage.style.display = 'none';
+		  overview.style.display = 'none';
+		  details.forEach(d => d.style.display = 'none');
+		}
+		
+		// Show detail section
 		cards.forEach(card => {
 		  card.addEventListener('click', () => {
 		    const targetId = card.dataset.detail;
-		    homePage.style.display = 'none';               // hide main home
-		    overview.style.display = 'none';               // hide overview
-		    details.forEach(d => d.style.display = 'none'); // hide all details
-		    const detailSection = document.getElementById(targetId);
-		    detailSection.style.display = 'block';         // show selected detail
-		    detailSection.scrollIntoView({behavior:'smooth'});
+		    hideAllSections(); // hide everything else
+		    document.getElementById(targetId).style.display = 'block';
+		    document.getElementById(targetId).scrollIntoView({behavior:'smooth'});
 		  });
 		});
 		
-		// Back button -> show overview only
+		// Back buttons -> show overview
 		document.querySelectorAll('.back-button').forEach(btn => {
 		  btn.addEventListener('click', e => {
 		    e.preventDefault();
-		    details.forEach(d => d.style.display = 'none'); // hide all details
-		    overview.style.display = 'flex';               // show overview
-		    homePage.style.display = 'none';               // keep home hidden
+		    hideAllSections();      // hide everything else
+		    overview.style.display = 'flex';
 		    overview.scrollIntoView({behavior:'smooth'});
 		  });
 		});
 		
-		// Home button -> show main home page
+		// Home buttons -> show main home
 		document.querySelectorAll('.home-button').forEach(btn => {
 		  btn.addEventListener('click', e => {
 		    e.preventDefault();
-		    details.forEach(d => d.style.display = 'none'); // hide all details
-		    overview.style.display = 'none';               // hide overview
-		    homePage.style.display = 'block';              // show main home
-		    homePage.scrollIntoView({behavior:'smooth'});  // scroll to top
+		    hideAllSections();     // hide everything else
+		    homePage.style.display = 'block';
+		    homePage.scrollIntoView({behavior:'smooth'});
 		  });
 		});
 
 
+
 	</body>
 </html>
+
 
 
 
