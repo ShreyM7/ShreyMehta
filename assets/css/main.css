@@ -1822,23 +1822,22 @@ nav ul li a i {
   100% { box-shadow: 0 0 15px rgba(0,184,209,0.4), 0 0 25px rgba(0,184,209,0.2); }
 }
 
-/* Overview Cards */
 #experience-overview {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 3rem; /* more space between cards */
   margin: 2rem 0;
 }
 
 .experience-card {
   display: flex;
   flex-direction: column;
-  align-items: center; /* keeps the image centered */
+  align-items: center;
   gap: 0.5rem;
   background-color: rgba(0,184,209,0.05);
   border: 2px solid rgba(0,184,209,0.5);
   border-radius: 12px;
-  padding: 1rem;
+  padding: 1.5rem; /* larger clickable area */
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.3s;
 }
@@ -1939,6 +1938,7 @@ nav ul li a i {
   justify-content: center; 
   margin-top: 2rem; 
 }
+
 
 
 
