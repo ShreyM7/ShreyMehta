@@ -1791,29 +1791,26 @@ nav ul li a i {
 }
 
 .home-button {
-  /* Keep template background intact */
-  color: #ffffff;            
-  padding: 0.75rem 1.5rem;
+  color: #ffffff;
+  padding: 0 1.5rem;              /* horizontal padding only */
+  height: 50px;                    /* fixed height for vertical centering */
   border-radius: 12px;
   text-decoration: none;
   font-weight: 600;
-  display: inline-flex;          /* change from inline-block */
-  align-items: center;           /* vertically center text */
-  justify-content: center;       /* horizontally center text */
+  display: inline-flex;
+  align-items: center;             /* vertical center */
+  justify-content: center;         /* horizontal center */
+  line-height: normal;             /* reset any inherited line-height */
   
-  /* Glowing outline around the button */
   box-shadow: 0 0 15px rgba(0, 184, 209, 0.4), 0 0 25px rgba(0, 184, 209, 0.2);
   transition: all 0.3s ease;
-  
-  /* subtle pulse */
   animation: glowPulse 3s infinite ease-in-out;
 }
 
 .home-button:hover {
   box-shadow: 0 0 25px rgba(0, 184, 209, 0.9), 0 0 40px rgba(0, 184, 209, 0.6);
-  transform: translateY(-2px);  /* slight lift effect */
+  transform: translateY(-2px);
 }
-
 
 @keyframes glowPulse {
   0% {
@@ -1826,6 +1823,8 @@ nav ul li a i {
     box-shadow: 0 0 15px rgba(0, 184, 209, 0.4), 0 0 25px rgba(0, 184, 209, 0.2);
   }
 }
+
+
 
 
 
