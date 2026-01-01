@@ -1705,9 +1705,10 @@ nav ul li a i {
 }
 
 .tagline {
-  color: #00b8d1; /* change this to any color you want */
+  color: #00b8d1;
   font-weight: 400;
   letter-spacing: 0.2em;
+  font-size: 0.9rem; /* smaller */
 }
 
 .image.main img {
@@ -1718,10 +1719,13 @@ nav ul li a i {
 }
 
 .tagline2 {
-  color: #A9A9A9; /* change this to any color you want */
+  color: #808080;
   font-weight: 300;
   letter-spacing: 0.2em;
+  font-size: 0.75rem; /* even smaller */
+  text-align: center;
 }
+
 
 
 
