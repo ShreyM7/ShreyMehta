@@ -1889,6 +1889,10 @@ section[id*="-detail"] {
   color: #ffffff;
 }
 
+.experience-detail {
+  display: none; /* hide all detail sections initially */
+}
+
 /* Back to overview button uses your existing glow button style */
 .home-button {
   display: inline-flex;
@@ -1908,6 +1912,7 @@ section[id*="-detail"] {
   box-shadow: 0 0 25px rgba(0,184,209,0.9), 0 0 40px rgba(0,184,209,0.6);
   transform: translateY(-2px);
 }
+
 
 
 
