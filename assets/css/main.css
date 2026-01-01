@@ -1753,7 +1753,11 @@ nav ul li a i {
   border-radius: 12px;
   padding: 1.5rem 2rem;
   margin: 2rem 0;
-  color: #ffffff; /* MAKE ALL TEXT WHITE */
+  color: #ffffff; /* text white */
+  
+  display: block;       /* ensure it behaves as a block */
+  position: relative;   /* for box-shadow to render properly */
+  z-index: 1;           /* make sure it’s above background elements */
 }
 
 .snapshot h3,
@@ -1812,6 +1816,7 @@ nav ul li a i {
 .home-button {
   animation: glowPulse 2s infinite ease-in-out;
 }
+
 
 
 
