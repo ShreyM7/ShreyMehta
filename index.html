@@ -620,7 +620,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		<script>
 		document.addEventListener('DOMContentLoaded', () => {
 		
-		  const header = document.getElementById('header'); // main home
+		  const header = document.getElementById('header'); // main home section
 		  const overview = document.getElementById('experience-overview');
 		  const cards = document.querySelectorAll('.experience-card');
 		  const details = document.querySelectorAll('.experience-detail');
@@ -632,10 +632,10 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		    card.addEventListener('click', e => {
 		      e.stopPropagation();
 		      const targetId = card.dataset.detail;
-		      overview.style.display = 'none';
-		      details.forEach(d => d.style.display = 'none');
+		      overview.style.display = 'none';       // hide overview
+		      details.forEach(d => d.style.display = 'none'); // hide all details
 		      const detailSection = document.getElementById(targetId);
-		      detailSection.style.display = 'block';
+		      detailSection.style.display = 'block';  // show selected detail
 		      detailSection.scrollIntoView({ behavior: 'smooth' });
 		    });
 		  });
@@ -645,25 +645,22 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		    btn.addEventListener('click', e => {
 		      e.preventDefault();
 		      e.stopPropagation();
-		      details.forEach(d => d.style.display = 'none');
-		      overview.style.display = 'flex';
+		      details.forEach(d => d.style.display = 'none'); // hide all details
+		      overview.style.display = 'flex';               // show overview
 		      overview.scrollIntoView({ behavior: 'smooth' });
 		    });
 		  });
 		
-		  // Home button → scroll to the main home section
+		  // Home button → scroll to main header/home section only
 		  homeButtons.forEach(btn => {
 		    btn.addEventListener('click', e => {
 		      e.preventDefault();
 		      e.stopPropagation();
-		      // hide all details and overview will stay visible
-		      details.forEach(d => d.style.display = 'none');
-		      overview.style.display = 'flex';
 		      header.scrollIntoView({ behavior: 'smooth' });
 		    });
 		  });
 		
-		  // Prevent accidental clicks inside detail sections
+		  // Prevent accidental clicks inside detail sections from triggering anything
 		  details.forEach(section => {
 		    section.addEventListener('click', e => {
 		      if (!e.target.classList.contains('back-button') && !e.target.classList.contains('home-button')) {
@@ -675,8 +672,10 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		});
 		</script>
 
+
 	</body>
 </html>
+
 
 
 
