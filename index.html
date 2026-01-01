@@ -613,53 +613,52 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		</script>
 
 		<script>
-		// Detailed & Overview logic
 		const cards = document.querySelectorAll('.experience-card');
 		const details = document.querySelectorAll('.experience-detail');
 		const overview = document.getElementById('experience-overview');
-		const header = document.getElementById('header'); // main home section
+		const wrapper = document.getElementById('wrapper'); // your main wrapper
 		
-		// Show detail when card clicked
+		// Show detail when a card is clicked
 		cards.forEach(card => {
 		  card.addEventListener('click', () => {
 		    const targetId = card.dataset.detail;
+		    // Hide everything else
 		    overview.style.display = 'none';
 		    details.forEach(d => d.style.display = 'none');
-		    document.getElementById(targetId).style.display = 'block';
-		    document.getElementById(targetId).scrollIntoView({behavior:'smooth'});
+		    // Show selected detail
+		    const detailSection = document.getElementById(targetId);
+		    detailSection.style.display = 'block';
+		    detailSection.scrollIntoView({behavior:'smooth'});
 		  });
 		});
 		
-		// Back button -> overview
+		// Back button -> overview only
 		document.querySelectorAll('.back-button').forEach(btn => {
 		  btn.addEventListener('click', e => {
 		    e.preventDefault();
-		    e.stopPropagation();
-		    details.forEach(d => d.style.display = 'none');
-		    overview.style.display = 'flex';
+		    details.forEach(d => d.style.display = 'none'); // hide all details
+		    overview.style.display = 'flex';               // show overview
 		    overview.scrollIntoView({behavior:'smooth'});
 		  });
 		});
 		
-		// Home button -> header (main home page)
+		// Home button -> main home section (all top buttons)
 		document.querySelectorAll('.home-button').forEach(btn => {
 		  btn.addEventListener('click', e => {
 		    e.preventDefault();
-		    e.stopPropagation();
-		    // Hide everything
+		    // Hide all details and overview
 		    details.forEach(d => d.style.display = 'none');
 		    overview.style.display = 'none';
-		    // Show header section
-		    header.style.display = 'block';
-		    header.scrollIntoView({behavior:'smooth'});
+		    // Scroll to very top of page (main home)
+		    window.scrollTo({top: 0, behavior: 'smooth'});
 		  });
 		});
 
-		</script>
 
 
 	</body>
 </html>
+
 
 
 
