@@ -1897,14 +1897,15 @@ nav ul li a i {
   line-height: 1.6;
 }
 
+/* Container for bottom buttons */
 .detail-buttons {
   display: flex;
   justify-content: center;   /* center horizontally */
   gap: 1rem;                 /* space between buttons */
-  margin-top: 2rem;          /* some spacing from content */
+  margin-top: 2rem;          /* spacing from content */
 }
 
-/* Style Back button similar to Home button */
+/* Back button — transparent with glowing outline like Home */
 .back-button {
   display: inline-flex;
   align-items: center;
@@ -1914,15 +1915,19 @@ nav ul li a i {
   font-weight: 600;
   text-decoration: none;
   color: #ffffff;
-  background-color: #00b8d1;
+  background-color: transparent; /* transparent background */
+  border: 2px solid #00b8d1;    /* outline */
   box-shadow: 0 0 15px rgba(0,184,209,0.4), 0 0 25px rgba(0,184,209,0.2);
   transition: all 0.3s ease;
+  animation: glowPulse 3s infinite ease-in-out;
 }
 
 .back-button:hover {
   box-shadow: 0 0 25px rgba(0,184,209,0.9), 0 0 40px rgba(0,184,209,0.6);
   transform: translateY(-2px);
 }
+
+
 
 
 
