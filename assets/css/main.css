@@ -1822,7 +1822,51 @@ nav ul li a i {
   100% { box-shadow: 0 0 15px rgba(0,184,209,0.4), 0 0 25px rgba(0,184,209,0.2); }
 }
 
-/* Hide all detailed sections initially */
+/* Overview Cards */
+#experience-overview {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.experience-card {
+  display: flex;
+  flex-direction: column; /* image on top */
+  align-items: center;
+  gap: 0.5rem;
+  background-color: rgba(0,184,209,0.05);
+  border: 2px solid rgba(0,184,209,0.5);
+  border-radius: 12px;
+  padding: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.experience-card img {
+  width: 150px;
+  border-radius: 12px;
+  animation: float 4s ease-in-out infinite;
+}
+
+.card-text .company-name {
+  color: #00b8d1;
+  font-size: 0.9rem;
+}
+
+.card-text .role {
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin: 0.2rem 0;
+}
+
+.card-text .short-desc {
+  font-size: 0.85rem;
+  text-align: center;
+  margin: 0;
+}
+
+/* Detailed sections */
 .experience-detail {
   display: none;
   margin: 3rem 0;
@@ -1831,49 +1875,39 @@ nav ul li a i {
   border: 2px solid rgba(0,184,209,0.5);
   border-radius: 12px;
   box-shadow: 0 0 15px rgba(0,184,209,0.3);
+  color: #ffffff;
+}
+
+.experience-detail h2.detail-title {
+  color: #00b8d1;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.experience-detail img {
+  width: 100%;
+  max-width: 400px;
+  margin: 1rem auto;
+  display: block;
+  border-radius: 12px;
+}
+
+.experience-detail .long-desc {
+  margin: 1rem 0;
+  line-height: 1.6;
+}
+
+/* Back button top-right */
+.back-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: #00b8d1;
   color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
 }
-
-/* Overview cards layout */
-#experience-overview {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  margin: 2rem 0;
-}
-
-/* Experience card styles */
-.experience-card {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  background-color: rgba(0,184,209,0.05);
-  border: 2px solid rgba(0,184,209,0.5);
-  border-radius: 12px;
-  padding: 1rem;
-  cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.3s;
-}
-.experience-card img {
-  width: 150px;
-  border-radius: 12px;
-  animation: float 4s ease-in-out infinite;
-}
-.experience-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 25px rgba(0,184,209,0.6);
-}
-
-
-
-
-
-
-
-
-
-
-
 
 
 
