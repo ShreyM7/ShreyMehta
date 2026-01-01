@@ -1822,36 +1822,46 @@ nav ul li a i {
   100% { box-shadow: 0 0 15px rgba(0,184,209,0.4), 0 0 25px rgba(0,184,209,0.2); }
 }
 
+/* Overview Cards Container */
 #experience-overview {
   display: flex;
   flex-direction: column;
-  gap: 3rem; /* this works if child elements are block-level */
   margin: 2rem 0;
 }
 
-/* Make sure the cards are block-level so gap works properly */
+/* Individual Cards */
 .experience-card {
-  display: block; /* changed from flex to block for spacing */
-  text-decoration: none; /* remove underline for links */
+  display: flex;
+  flex-direction: column;
+  align-items: center;        /* centers images inside the card */
+  gap: 0.5rem;               /* spacing between elements inside the card */
   background-color: rgba(0,184,209,0.05);
   border: 2px solid rgba(0,184,209,0.5);
   border-radius: 12px;
-  padding: 1.5rem;
+  padding: 1.5rem;           /* larger clickable area */
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.3s;
-  width: 100%; /* make full width to feel clickable */
+  text-decoration: none;
+  width: 100%;               /* full width for easier clicking */
+  margin-bottom: 2rem;       /* space between cards */
 }
 
+.experience-card:last-child {
+  margin-bottom: 0;          /* remove extra space after last card */
+}
+
+/* Images inside cards */
 .experience-card img {
   width: 150px;
   border-radius: 12px;
   display: block;
-  margin-bottom: 1rem; /* space between image and text */
+  margin-bottom: 1rem;       /* space between image and text */
+  animation: float 4s ease-in-out infinite;
 }
 
-/* Keep content inside card aligned nicely */
+/* Card Text */
 .card-text {
-  text-align: left;
+  text-align: left;           /* left-align all text */
   width: 100%;
 }
 
@@ -1872,7 +1882,13 @@ nav ul li a i {
   margin: 0; 
 }
 
-/* Detailed sections */
+/* Hover effect for cards */
+.experience-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,184,209,0.3);
+}
+
+/* Detailed Sections */
 .experience-detail {
   display: none;
   margin: 3rem 0;
@@ -1882,7 +1898,7 @@ nav ul li a i {
   border-radius: 12px;
   box-shadow: 0 0 15px rgba(0,184,209,0.3);
   color: #ffffff;
-  text-align: left; /* left-align text */
+  text-align: left;
 }
 
 .experience-detail h2.detail-title { 
@@ -1894,7 +1910,7 @@ nav ul li a i {
 .experience-detail img { 
   width: 100%; 
   max-width: 400px; 
-  margin: 1rem auto; /* keep image centered */
+  margin: 1rem auto;  /* keeps image centered */
   display: block; 
   border-radius: 12px; 
 }
@@ -1905,11 +1921,7 @@ nav ul li a i {
   text-align: left; 
 }
 
-.experience-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0,184,209,0.3);
-}
-
+/* Buttons */
 .detail-buttons {
   display: flex;
   justify-content: center;
