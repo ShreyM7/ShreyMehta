@@ -1764,11 +1764,12 @@ nav ul li a i {
   margin-bottom: 1rem;
 }
 
-.snapshot .fuel {
+.snapshot .fuel h4 {
   color: #00b8d1;       /* blue heading */
   font-size: 1.2rem;
   margin-top: 1rem;      /* space between bullets and Fuel */
 }
+
 
 
 
