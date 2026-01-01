@@ -156,9 +156,9 @@
 							    Explain your Tesla internship in depth: responsibilities, technical skills, projects, outcomes, etc.
 							  </p>
 							
-							  <!-- Buttons at bottom, centered -->
+							  <!-- Bottom buttons -->
 							  <div class="detail-buttons">
-							    <a href="#" class="back-button">Back to Overview</a>
+							    <a href="#" class="back-button">Back</a>
 							    <a href="#" class="home-button">Home</a>
 							  </div>
 							</section>
@@ -171,7 +171,7 @@
 							  </p>
 							
 							  <div class="detail-buttons">
-							    <a href="#" class="back-button">Back to Overview</a>
+							    <a href="#" class="back-button">Back</a>
 							    <a href="#" class="home-button">Home</a>
 							  </div>
 							</section>
@@ -184,7 +184,7 @@
 							  </p>
 							
 							  <div class="detail-buttons">
-							    <a href="#" class="back-button">Back to Overview</a>
+							    <a href="#" class="back-button">Back</a>
 							    <a href="#" class="home-button">Home</a>
 							  </div>
 							</section>
@@ -626,26 +626,25 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		cards.forEach(card => {
 		  card.addEventListener('click', () => {
 		    const targetId = card.dataset.detail;
-		    overview.style.display = 'flex';          // keep flex for overview layout
-		    overview.style.display = 'none';          // hide overview
+		    overview.style.display = 'none';            // hide overview
 		    details.forEach(d => d.style.display = 'none'); // hide all details
 		    const detailSection = document.getElementById(targetId);
-		    detailSection.style.display = 'block';    // show selected
+		    detailSection.style.display = 'block';      // show selected detail
 		    detailSection.scrollIntoView({behavior:'smooth'});
 		  });
 		});
 		
-		// Back button → show overview
+		// Back button → show overview ONLY
 		document.querySelectorAll('.back-button').forEach(btn => {
 		  btn.addEventListener('click', e => {
 		    e.preventDefault();
 		    details.forEach(d => d.style.display = 'none'); // hide all details
-		    overview.style.display = 'flex';               // show overview section
+		    overview.style.display = 'flex';               // show overview
 		    overview.scrollIntoView({behavior:'smooth'});  // scroll to overview
 		  });
 		});
 		
-		// Home buttons → scroll to top
+		// Home buttons → scroll to top ONLY
 		document.querySelectorAll('.home-button').forEach(btn => {
 		  btn.addEventListener('click', e => {
 		    e.preventDefault();
@@ -654,41 +653,12 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		});
 
 
+
 		</script>
 
 
 	</body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
