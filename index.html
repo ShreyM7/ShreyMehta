@@ -52,12 +52,12 @@
 						      </a>
 						    </li>
 						
-						    <li>
-						      <a href="#intro">
-						        <i class="fa-solid fa-briefcase"></i>
-						        <strong>Work Experience</strong>
-						      </a>
-						    </li>
+							<li>
+							  <a href="#experience-overview">
+							    <i class="fa-solid fa-briefcase"></i>
+							    <strong>Work Experience</strong>
+							  </a>
+							</li>
 						
 						    <li>
 						      <a href="#work">
@@ -111,54 +111,46 @@
 
 						
 						<!-- About -->
-							<!-- Experience Overview Section -->
-							<section id="intro">
+							<section id="experience-overview">
 							  <h2 class="major">Work Experience</h2>
 							  
-							  <div class="experience-card">
-							    <a href="#tesla-detail">
-							      <img src="images/tesla.jpg" alt="Tesla Internship">
-							      <h3>Tesla – Software/Mechanical Intern</h3>
-							      <p>Built MVVM-based Android features connecting APIs to handheld scanners.</p>
-							    </a>
+							  <div class="experience-card" data-detail="tesla-detail">
+							    <img src="images/tesla.jpg" alt="Tesla Internship">
+							    <h3>Tesla – Software/Mechanical Intern</h3>
+							    <p>Built MVVM-based Android features connecting APIs to handheld scanners.</p>
 							  </div>
 							
-							  <div class="experience-card">
-							    <a href="#mars-rover-detail">
-							      <img src="images/mars-rover.jpg" alt="McMaster Mars Rover Team">
-							      <h3>McMaster Mars Rover Team</h3>
-							      <p>Designed and tested mechanical components for a competitive Mars Rover.</p>
-							    </a>
+							  <div class="experience-card" data-detail="mars-rover-detail">
+							    <img src="images/mars-rover.jpg" alt="McMaster Mars Rover Team">
+							    <h3>McMaster Mars Rover Team</h3>
+							    <p>Designed and tested mechanical components for a competitive Mars Rover.</p>
 							  </div>
 							
-							  <div class="experience-card">
-							    <a href="#biomech-detail">
-							      <img src="images/biomech.jpg" alt="Biomechanics Research">
-							      <h3>Biomechanics Research – McMaster</h3>
-							      <p>Conducted experimental automation and data-driven analysis in biomechanics research.</p>
-							    </a>
+							  <div class="experience-card" data-detail="biomech-detail">
+							    <img src="images/biomech.jpg" alt="Biomechanics Research">
+							    <h3>Biomechanics Research – McMaster</h3>
+							    <p>Conducted experimental automation and data-driven analysis in biomechanics research.</p>
 							  </div>
 							</section>
 							
-							<!-- Detailed Sections -->
-							<section id="tesla-detail">
+							<!-- Hidden Detailed Sections -->
+							<section id="tesla-detail" class="experience-detail">
 							  <h2>Tesla Internship – In Depth</h2>
-							  <p>Here you can explain your Tesla internship in detail: responsibilities, technical skills, projects, outcomes, etc.</p>
-							  <a href="#experience-overview" class="home-button">Back to Overview</a>
+							  <p>Detailed description here...</p>
+							  <a href="#" class="home-button close-detail">Back to Overview</a>
 							</section>
 							
-							<section id="mars-rover-detail">
+							<section id="mars-rover-detail" class="experience-detail">
 							  <h2>McMaster Mars Rover Team – In Depth</h2>
-							  <p>Here you can explain your Mars Rover experience: design process, collaboration, prototyping, testing, etc.</p>
-							  <a href="#experience-overview" class="home-button">Back to Overview</a>
+							  <p>Detailed description here...</p>
+							  <a href="#" class="home-button close-detail">Back to Overview</a>
 							</section>
 							
-							<section id="biomech-detail">
+							<section id="biomech-detail" class="experience-detail">
 							  <h2>Biomechanics Research – In Depth</h2>
-							  <p>Here you can explain your biomechanics research in detail: experimental setup, automation, and analysis.</p>
-							  <a href="#experience-overview" class="home-button">Back to Overview</a>
+							  <p>Detailed description here...</p>
+							  <a href="#" class="home-button close-detail">Back to Overview</a>
 							</section>
-
 
 						<!-- Work -->
 							<article id="work">
@@ -591,6 +583,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 	</body>
 </html>
+
 
 
 
