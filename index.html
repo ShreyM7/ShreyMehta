@@ -618,50 +618,63 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		</script>
 
 		<script>
-		const cards = document.querySelectorAll('.experience-card');
-		const details = document.querySelectorAll('.experience-detail');
-		const overview = document.getElementById('experience-overview');
+		document.addEventListener('DOMContentLoaded', () => {
 		
-		// Show detail section when clicking a card
-		cards.forEach(card => {
-		  card.addEventListener('click', () => {
-		    const targetId = card.dataset.detail;
-		    overview.style.display = 'none';             // hide overview
-		    details.forEach(d => d.style.display = 'none'); // hide all details
-		    const detailSection = document.getElementById(targetId);
-		    detailSection.style.display = 'block';       // show selected detail
-		    detailSection.scrollIntoView({behavior:'smooth'});
-		  });
-		});
+		  const landing = document.getElementById('wrapper'); // the main wrapper / home section
+		  const overview = document.getElementById('experience-overview');
+		  const cards = document.querySelectorAll('.experience-card');
+		  const details = document.querySelectorAll('.experience-detail');
+		  const backButtons = document.querySelectorAll('.back-button');
+		  const homeButtons = document.querySelectorAll('.home-button');
 		
-		// Back button → show overview ONLY
-		document.querySelectorAll('.back-button').forEach(btn => {
-		  btn.addEventListener('click', e => {
-		    e.preventDefault();                    // prevent default link behavior
-		    details.forEach(d => d.style.display = 'none'); // hide all detail sections
-		    overview.style.display = 'flex';       // show overview section
-		    overview.scrollIntoView({behavior:'smooth'});
+		  // --- Show detailed section when clicking a card ---
+		  cards.forEach(card => {
+		    card.addEventListener('click', () => {
+		      const targetId = card.dataset.detail;
+		      // Hide overview and all details
+		      overview.style.display = 'none';
+		      details.forEach(d => d.style.display = 'none');
+		      // Show selected detail
+		      const detailSection = document.getElementById(targetId);
+		      detailSection.style.display = 'block';
+		      detailSection.scrollIntoView({behavior: 'smooth'});
+		    });
 		  });
-		});
 		
-		// Home buttons → scroll to top ONLY
-		document.querySelectorAll('.home-button').forEach(btn => {
-		  btn.addEventListener('click', e => {
-		    e.preventDefault(); // prevent default link
-		    const topSection = document.getElementById('about'); // scroll to About / Home section
-		    if(topSection){
-		      topSection.scrollIntoView({behavior: 'smooth'});
-		    } else {
-		      window.scrollTo({top: 0, behavior: 'smooth'}); // fallback
-		    }
+		  // --- Back buttons: show overview ONLY ---
+		  backButtons.forEach(btn => {
+		    btn.addEventListener('click', e => {
+		      e.preventDefault(); // prevent default link behavior
+		      // Hide all detail sections
+		      details.forEach(d => d.style.display = 'none');
+		      // Show overview
+		      overview.style.display = 'flex';
+		      overview.scrollIntoView({behavior:'smooth'});
+		    });
 		  });
-		});
 		
-		// PREVENT clicking on the detail section itself from triggering Home
-		details.forEach(section => {
-		  section.addEventListener('click', e => {
-		    e.stopPropagation(); // stops clicks inside section from bubbling up
+		  // --- Home buttons: go back to landing/home section ---
+		  homeButtons.forEach(btn => {
+		    btn.addEventListener('click', e => {
+		      e.preventDefault(); // prevent default link behavior
+		      // Hide all detail sections and overview
+		      details.forEach(d => d.style.display = 'none');
+		      overview.style.display = 'none';
+		      // Scroll to top of landing / show first page
+		      window.scrollTo({ top: 0, behavior: 'smooth' });
+		    });
 		  });
+		
+		  // --- Prevent clicks on detail sections themselves from triggering any navigation ---
+		  details.forEach(section => {
+		    section.addEventListener('click', e => {
+		      // Only let buttons work
+		      if (!e.target.classList.contains('back-button') && !e.target.classList.contains('home-button')) {
+		        e.stopPropagation();
+		      }
+		    });
+		  });
+		
 		});
 		</script>
 
@@ -670,6 +683,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 	</body>
 </html>
+
 
 
 
