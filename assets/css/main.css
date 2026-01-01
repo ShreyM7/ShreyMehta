@@ -1716,6 +1716,8 @@ nav ul li a i {
   max-width: 400px;
   display: block;
   margin: 0 auto;
+  border-radius: 12px; /* rounded corners */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 .tagline2 {
@@ -1724,6 +1726,10 @@ nav ul li a i {
   letter-spacing: 0.2em;
   font-size: 0.75rem; /* even smaller */
   text-align: center;
+}
+
+.actions {
+  justify-content: center;
 }
 
 
