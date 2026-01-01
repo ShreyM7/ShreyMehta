@@ -1833,7 +1833,7 @@ nav ul li a i {
 .experience-card {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; /* keeps the image centered */
   gap: 0.5rem;
   background-color: rgba(0,184,209,0.05);
   border: 2px solid rgba(0,184,209,0.5);
@@ -1849,9 +1849,28 @@ nav ul li a i {
   animation: float 4s ease-in-out infinite;
 }
 
-.card-text .company-name { color:#00b8d1; font-size:0.9rem; }
-.card-text .role { font-weight:700; font-size:1.2rem; margin:0.2rem 0; }
-.card-text .short-desc { font-size:0.85rem; text-align:left; margin:0; }
+/* Make text in cards left-aligned */
+.card-text {
+  width: 100%;      /* span full card width */
+  text-align: left; /* left-align all text inside */
+}
+
+.card-text .company-name { 
+  color: #00b8d1; 
+  font-size: 0.9rem; 
+}
+
+.card-text .role { 
+  font-weight: 700; 
+  font-size: 1.2rem; 
+  margin: 0.2rem 0; 
+}
+
+.card-text .short-desc { 
+  font-size: 0.85rem; 
+  text-align: left; 
+  margin: 0; 
+}
 
 /* Detailed sections */
 .experience-detail {
@@ -1863,12 +1882,28 @@ nav ul li a i {
   border-radius: 12px;
   box-shadow: 0 0 15px rgba(0,184,209,0.3);
   color: #ffffff;
-  text-align: left;
+  text-align: left; /* left-align text */
 }
 
-.experience-detail h2.detail-title { color:#00b8d1; margin-bottom:1rem; text-align:left; }
-.experience-detail img { width:100%; max-width:400px; margin:1rem auto; display:block; border-radius:12px; }
-.experience-detail .long-desc { margin:1rem 0; line-height:1.6; text-align: left; }
+.experience-detail h2.detail-title { 
+  color: #00b8d1; 
+  margin-bottom: 1rem; 
+  text-align: left; 
+}
+
+.experience-detail img { 
+  width: 100%; 
+  max-width: 400px; 
+  margin: 1rem auto; /* keep image centered */
+  display: block; 
+  border-radius: 12px; 
+}
+
+.experience-detail .long-desc { 
+  margin: 1rem 0; 
+  line-height: 1.6; 
+  text-align: left; 
+}
 
 .detail-buttons {
   display: flex;
@@ -1899,7 +1934,12 @@ nav ul li a i {
 }
 
 /* Center Home button on overview page */
-.overview-home { display:flex; justify-content:center; margin-top:2rem; }
+.overview-home { 
+  display: flex; 
+  justify-content: center; 
+  margin-top: 2rem; 
+}
+
 
 
 
