@@ -615,11 +615,13 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		const cards = document.querySelectorAll('.experience-card');
 		const details = document.querySelectorAll('.experience-detail');
 		const overview = document.getElementById('experience-overview');
+		const mainHome = document.getElementById('about'); // main home section
 		
-		// Hide all details and overview helper
+		// Hide all sections helper
 		function hideAllSections() {
-		  details.forEach(d => d.style.display = 'none');
+		  mainHome.style.display = 'none';
 		  overview.style.display = 'none';
+		  details.forEach(d => d.style.display = 'none');
 		}
 		
 		// Card click -> show detail
@@ -633,7 +635,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		  });
 		});
 		
-		// Back button -> show overview
+		// Back button -> show overview only
 		document.querySelectorAll('.back-button').forEach(btn => {
 		  btn.addEventListener('click', e => {
 		    e.preventDefault();
@@ -643,12 +645,13 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		  });
 		});
 		
-		// Home button -> scroll to top
+		// Home button -> show main home section
 		document.querySelectorAll('.home-button').forEach(btn => {
 		  btn.addEventListener('click', e => {
 		    e.preventDefault();
 		    hideAllSections();
-		    window.scrollTo({top: 0, behavior: 'smooth'});
+		    mainHome.style.display = 'block';
+		    mainHome.scrollIntoView({behavior:'smooth'});
 		  });
 		});
 		</script>
@@ -656,6 +659,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 	</body>
 </html>
+
 
 
 
