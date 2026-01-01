@@ -647,8 +647,13 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		// Home buttons → scroll to top ONLY
 		document.querySelectorAll('.home-button').forEach(btn => {
 		  btn.addEventListener('click', e => {
-		    e.preventDefault();
-		    window.scrollTo({top:0, behavior:'smooth'});
+		    e.preventDefault(); // prevent default link
+		    const topSection = document.getElementById('about'); // scroll to About / Home section
+		    if(topSection){
+		      topSection.scrollIntoView({behavior: 'smooth'});
+		    } else {
+		      window.scrollTo({top: 0, behavior: 'smooth'}); // fallback
+		    }
 		  });
 		});
 		
@@ -665,6 +670,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 	</body>
 </html>
+
 
 
 
