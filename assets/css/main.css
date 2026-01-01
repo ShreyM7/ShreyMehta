@@ -1828,20 +1828,9 @@ nav ul li a i {
   flex-direction: column;
   gap: 2rem;
   margin: 2rem 0;
+  align-items: center; /* center cards */
 }
 
-/* Center bottom Home button on overview */
-#experience-overview .actions {
-  display: flex;
-  justify-content: center;
-  margin-top: 2rem;
-}
-
-#experience-overview .actions li {
-  list-style: none; /* remove bullet points */
-}
-
-/* Each experience card */
 .experience-card {
   display: flex;
   flex-direction: column; /* image on top */
@@ -1880,7 +1869,7 @@ nav ul li a i {
 
 /* Detailed sections */
 .experience-detail {
-  display: none; /* hidden by default */
+  display: none;
   margin: 3rem 0;
   padding: 1.5rem;
   background-color: rgba(0,184,209,0.05);
@@ -1917,7 +1906,8 @@ nav ul li a i {
   margin-top: 2rem;          /* spacing from content */
 }
 
-/* Home button styling */
+/* Back & Home buttons — transparent with glowing outline */
+.back-button,
 .home-button {
   display: inline-flex;
   align-items: center;
@@ -1927,46 +1917,26 @@ nav ul li a i {
   font-weight: 600;
   text-decoration: none;
   color: #ffffff;
-  background-color: transparent; /* transparent background */
+  background-color: transparent;
   border: 2px solid #00b8d1;
   box-shadow: 0 0 15px rgba(0,184,209,0.4), 0 0 25px rgba(0,184,209,0.2);
   transition: all 0.3s ease;
   animation: glowPulse 3s infinite ease-in-out;
 }
 
+.back-button:hover,
 .home-button:hover {
   box-shadow: 0 0 25px rgba(0,184,209,0.9), 0 0 40px rgba(0,184,209,0.6);
   transform: translateY(-2px);
 }
 
-/* Back button — same as Home, transparent glow only */
-.back-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.75rem 1.5rem;
-  border-radius: 12px;
-  font-weight: 600;
-  text-decoration: none;
-  color: #ffffff;
-  background-color: transparent; /* transparent background */
-  border: 2px solid #00b8d1;    /* outline only */
-  box-shadow: 0 0 15px rgba(0,184,209,0.4), 0 0 25px rgba(0,184,209,0.2);
-  transition: all 0.3s ease;
-  animation: glowPulse 3s infinite ease-in-out;
+/* Center bottom buttons on overview page */
+#experience-overview .home-button {
+  margin-top: 2rem;
+  align-self: center;
 }
 
-.back-button:hover {
-  box-shadow: 0 0 25px rgba(0,184,209,0.9), 0 0 40px rgba(0,184,209,0.6);
-  transform: translateY(-2px);
-}
 
-/* Optional floating animation for images */
-@keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
-}
 
 
 
