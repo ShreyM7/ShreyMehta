@@ -111,45 +111,50 @@
 
 						
 						<!-- About -->
-							<section id="experience-overview">
-							  <h2 class="major">Work Experience</h2>
-							  
+							<article id="experience-overview">
+							  <h2>Work Experience</h2>
+							
 							  <div class="experience-card" data-detail="tesla-detail">
-							    <img src="images/tesla.jpg" alt="Tesla Internship">
+							    <img src="images/tesla.jpg" alt="Tesla">
 							    <h3>Tesla – Software/Mechanical Intern</h3>
 							    <p>Built MVVM-based Android features connecting APIs to handheld scanners.</p>
 							  </div>
 							
 							  <div class="experience-card" data-detail="mars-rover-detail">
-							    <img src="images/mars-rover.jpg" alt="McMaster Mars Rover Team">
+							    <img src="images/mars-rover.jpg" alt="Mars Rover">
 							    <h3>McMaster Mars Rover Team</h3>
 							    <p>Designed and tested mechanical components for a competitive Mars Rover.</p>
 							  </div>
 							
 							  <div class="experience-card" data-detail="biomech-detail">
-							    <img src="images/biomech.jpg" alt="Biomechanics Research">
+							    <img src="images/biomech.jpg" alt="Biomechanics">
 							    <h3>Biomechanics Research – McMaster</h3>
 							    <p>Conducted experimental automation and data-driven analysis in biomechanics research.</p>
 							  </div>
+							
+							  <a href="#" class="home-button">Home</a>
 							</section>
 							
-							<!-- Hidden Detailed Sections -->
+							<!-- Detailed Experience Sections -->
 							<section id="tesla-detail" class="experience-detail">
 							  <h2>Tesla Internship – In Depth</h2>
-							  <p>Detailed description here...</p>
-							  <a href="#" class="home-button close-detail">Back to Overview</a>
+							  <p>Detailed description of Tesla internship here...</p>
+							  <a href="#" class="back-button">Back to Overview</a>
+							  <a href="#" class="home-button">Home</a>
 							</section>
 							
 							<section id="mars-rover-detail" class="experience-detail">
 							  <h2>McMaster Mars Rover Team – In Depth</h2>
 							  <p>Detailed description here...</p>
-							  <a href="#" class="home-button close-detail">Back to Overview</a>
+							  <a href="#" class="back-button">Back to Overview</a>
+							  <a href="#" class="home-button">Home</a>
 							</section>
 							
 							<section id="biomech-detail" class="experience-detail">
 							  <h2>Biomechanics Research – In Depth</h2>
 							  <p>Detailed description here...</p>
-							  <a href="#" class="home-button close-detail">Back to Overview</a>
+							  <a href="#" class="back-button">Back to Overview</a>
+							  <a href="#" class="home-button">Home</a>
 							</section>
 
 						<!-- Work -->
@@ -580,36 +585,48 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		</script>
 
 		<script>
-		  // Get all experience cards and detailed sections
 		  const cards = document.querySelectorAll('.experience-card');
 		  const details = document.querySelectorAll('.experience-detail');
+		  const overview = document.getElementById('experience-overview');
 		
-		  // Click on card → show its detail
+		  // Click on a card → show detail
 		  cards.forEach(card => {
 		    card.addEventListener('click', () => {
 		      const targetId = card.dataset.detail;
-		      details.forEach(detail => detail.style.display = 'none'); // hide all
-		      document.getElementById(targetId).style.display = 'block';  // show target
+		      overview.style.display = 'none'; // hide overview
+		      details.forEach(d => d.style.display = 'none'); // hide all details
+		      document.getElementById(targetId).style.display = 'block';
 		      document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
 		    });
 		  });
 		
-		  // Click “Back to Overview” → hide details and scroll to overview
-		  const closeBtns = document.querySelectorAll('.close-detail');
-		  closeBtns.forEach(btn => {
-		    btn.addEventListener('click', (e) => {
+		  // Back button → show overview
+		  const backBtns = document.querySelectorAll('.back-button');
+		  backBtns.forEach(btn => {
+		    btn.addEventListener('click', e => {
 		      e.preventDefault();
-		      details.forEach(detail => detail.style.display = 'none'); // hide all
-		      document.getElementById('experience-overview').scrollIntoView({ behavior: 'smooth' });
+		      details.forEach(d => d.style.display = 'none');
+		      overview.style.display = 'flex';
+		      overview.scrollIntoView({ behavior: 'smooth' });
 		    });
 		  });
 		
-		  // Work Experience nav button → scroll to overview
-		  const workNavBtn = document.querySelector('nav a[href="#experience-overview"]');
-		  workNavBtn.addEventListener('click', (e) => {
+		  // Home button → scroll to top
+		  const homeBtns = document.querySelectorAll('.home-button');
+		  homeBtns.forEach(btn => {
+		    btn.addEventListener('click', e => {
+		      e.preventDefault();
+		      window.scrollTo({ top: 0, behavior: 'smooth' });
+		    });
+		  });
+		
+		  // Nav Work Experience button → scroll to overview
+		  const workNav = document.getElementById('work-nav');
+		  workNav.addEventListener('click', e => {
 		    e.preventDefault();
-		    details.forEach(detail => detail.style.display = 'none'); // hide any open detail
-		    document.getElementById('experience-overview').scrollIntoView({ behavior: 'smooth' });
+		    details.forEach(d => d.style.display = 'none'); // hide details
+		    overview.style.display = 'flex';
+		    overview.scrollIntoView({ behavior: 'smooth' });
 		  });
 		</script>
 
@@ -618,6 +635,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 	</body>
 </html>
+
 
 
 
