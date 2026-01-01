@@ -1746,13 +1746,33 @@ nav ul li a i {
   justify-content: center;
 }
 
+.snapshot {
+  background-color: rgba(0, 184, 209, 0.05); /* very light blue / semi-transparent */
+  border: 2px solid rgba(0, 184, 209, 0.5); /* blue border */
+  box-shadow: 0 0 20px rgba(0, 184, 209, 0.6); /* glowing effect */
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  margin: 2rem 0;
+  color: #000; /* text color */
+}
 
+.snapshot h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #00b8d1; /* bright blue for the heading */
+}
 
+.snapshot ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1rem;
+}
 
+.snapshot ul li {
+  margin-bottom: 0.5rem;
+}
 
-
-
-
-
-
-
+.snapshot p {
+  margin: 0;
+  line-height: 1.5;
+}
