@@ -620,7 +620,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		<script>
 		document.addEventListener('DOMContentLoaded', () => {
 		
-		  const landing = document.getElementById('header'); // top home section
+		  const landing = document.getElementById('header'); // main home section
 		  const overview = document.getElementById('experience-overview');
 		  const cards = document.querySelectorAll('.experience-card');
 		  const details = document.querySelectorAll('.experience-detail');
@@ -644,7 +644,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		  backButtons.forEach(btn => {
 		    btn.addEventListener('click', e => {
 		      e.preventDefault();
-		      e.stopPropagation(); // prevent triggering other click events
+		      e.stopPropagation(); // prevent bubbling
 		      details.forEach(d => d.style.display = 'none');
 		      overview.style.display = 'flex';
 		      overview.scrollIntoView({ behavior: 'smooth' });
@@ -658,14 +658,14 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		      e.stopPropagation(); // prevent bubbling
 		      details.forEach(d => d.style.display = 'none');
 		      overview.style.display = 'none';
+		      landing.style.display = 'block'; // make sure landing is visible
 		      landing.scrollIntoView({ behavior: 'smooth' });
 		    });
 		  });
 		
-		  // --- Prevent clicks on detail sections themselves from triggering navigation ---
+		  // --- Prevent clicks inside detail sections from doing anything ---
 		  details.forEach(section => {
 		    section.addEventListener('click', e => {
-		      // Only let back/home buttons work
 		      if (!e.target.classList.contains('back-button') && !e.target.classList.contains('home-button')) {
 		        e.stopPropagation();
 		      }
@@ -679,8 +679,10 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 
 
+
 	</body>
 </html>
+
 
 
 
