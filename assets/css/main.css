@@ -1706,7 +1706,7 @@ nav ul li a i {
 
 .tagline {
   color: #00b8d1; /* change this to any color you want */
-  font-weight: 600;
+  font-weight: 400;
   letter-spacing: 0.2em;
 }
 
@@ -1716,6 +1716,13 @@ nav ul li a i {
   display: block;
   margin: 0 auto;
 }
+
+.tagline2 {
+  color: #A9A9A9; /* change this to any color you want */
+  font-weight: 300;
+  letter-spacing: 0.2em;
+}
+
 
 
 
