@@ -1791,41 +1791,38 @@ nav ul li a i {
 }
 
 .home-button {
-  /* Remove background-color so template styling stays */
-  color: #ffffff;                  /* text stays white */
+  /* Keep template background intact, don't overwrite it */
+  color: #ffffff;            /* text stays white */
   padding: 0.75rem 1.5rem;
   border-radius: 12px;
   text-decoration: none;
   font-weight: 600;
   display: inline-block;
   
-  /* glow */
-  box-shadow: 0 0 10px rgba(0, 184, 209, 0.5);
+  /* Glowing outline around the button */
+  box-shadow: 0 0 15px rgba(0, 184, 209, 0.4), 0 0 25px rgba(0, 184, 209, 0.2);
   transition: all 0.3s ease;
   
-  animation: glowPulse 2s infinite ease-in-out;
+  /* subtle pulse */
+  animation: glowPulse 3s infinite ease-in-out;
 }
 
 .home-button:hover {
-  box-shadow: 0 0 20px rgba(0, 184, 209, 0.9), 0 0 30px rgba(0, 184, 209, 0.6);
-  transform: translateY(-2px);  
+  box-shadow: 0 0 25px rgba(0, 184, 209, 0.9), 0 0 40px rgba(0, 184, 209, 0.6);
+  transform: translateY(-2px);  /* slight lift effect */
 }
 
 @keyframes glowPulse {
-  0% { box-shadow: 0 0 10px rgba(0, 184, 209, 0.5); }
-  50% { box-shadow: 0 0 20px rgba(0, 184, 209, 0.9); }
-  100% { box-shadow: 0 0 10px rgba(0, 184, 209, 0.5); }
+  0% {
+    box-shadow: 0 0 15px rgba(0, 184, 209, 0.4), 0 0 25px rgba(0, 184, 209, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 184, 209, 0.7), 0 0 35px rgba(0, 184, 209, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(0, 184, 209, 0.4), 0 0 25px rgba(0, 184, 209, 0.2);
+  }
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
