@@ -615,15 +615,13 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		</script>
 
 		<script>
-		const homePage = document.getElementById('home-page');
 		const overview = document.getElementById('experience-overview');
 		const details = document.querySelectorAll('.experience-detail');
 		const cards = document.querySelectorAll('.experience-card');
 		
-		// Hide all sections safely
+		// Hide only the sections that should be hidden
 		function hideAllSections() {
-		  if (homePage) homePage.style.display = 'none';
-		  if (overview) overview.style.display = 'none';
+		  overview.style.display = 'none';
 		  details.forEach(d => d.style.display = 'none');
 		}
 		
@@ -632,11 +630,8 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		  card.addEventListener('click', () => {
 		    const targetId = card.dataset.detail;
 		    hideAllSections();
-		    const detail = document.getElementById(targetId);
-		    if (detail) {
-		      detail.style.display = 'block';
-		      detail.scrollIntoView({behavior:'smooth'});
-		    }
+		    document.getElementById(targetId).style.display = 'block';
+		    document.getElementById(targetId).scrollIntoView({behavior:'smooth'});
 		  });
 		});
 		
@@ -645,22 +640,17 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		  btn.addEventListener('click', e => {
 		    e.preventDefault();
 		    hideAllSections();
-		    if (overview) {
-		      overview.style.display = 'flex';
-		      overview.scrollIntoView({behavior:'smooth'});
-		    }
+		    overview.style.display = 'flex';
+		    overview.scrollIntoView({behavior:'smooth'});
 		  });
 		});
 		
-		// Home buttons -> show main home
+		// Home buttons -> scroll to top of main page
 		document.querySelectorAll('.home-button').forEach(btn => {
 		  btn.addEventListener('click', e => {
 		    e.preventDefault();
 		    hideAllSections();
-		    if (homePage) {
-		      homePage.style.display = 'block';
-		      homePage.scrollIntoView({behavior:'smooth'});
-		    }
+		    window.scrollTo({ top: 0, behavior: 'smooth' });
 		  });
 		});
 
@@ -668,6 +658,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 	</body>
 </html>
+
 
 
 
