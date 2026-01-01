@@ -637,10 +637,10 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		// Back button → show overview ONLY
 		document.querySelectorAll('.back-button').forEach(btn => {
 		  btn.addEventListener('click', e => {
-		    e.preventDefault();
-		    details.forEach(d => d.style.display = 'none'); // hide all details
-		    overview.style.display = 'flex';               // show overview
-		    overview.scrollIntoView({behavior:'smooth'});  // scroll to overview
+		    e.preventDefault();                   // prevent default link behavior
+		    details.forEach(d => d.style.display = 'none'); // hide all detail sections
+		    overview.style.display = 'flex';      // show overview section
+		    overview.scrollIntoView({behavior:'smooth'}); // scroll smoothly
 		  });
 		});
 		
@@ -651,15 +651,13 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		    window.scrollTo({top:0, behavior:'smooth'});
 		  });
 		});
-
-
-
-
 		</script>
+
 
 
 	</body>
 </html>
+
 
 
 
