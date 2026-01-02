@@ -1873,16 +1873,19 @@ nav ul li a i {
   width: 100%;
 }
 
+/* Card text spacing fixes */
 .card-text .company-name { 
   color: #00b8d1; 
   font-size: 0.9rem; 
+  margin-bottom: 0.2rem; /* small space below company name */
 }
 
 .card-text .role { 
   font-weight: 700; 
-  font-size: 1.15rem;       /* slightly smaller */
-  margin: 0.1rem 0 0 0;    /* reduced spacing above role */
+  font-size: 1.1rem;       /* slightly smaller */
+  margin: 0;               /* remove extra spacing */
 }
+
 
 .card-text .short-desc { 
   font-size: 0.85rem; 
@@ -1909,10 +1912,11 @@ nav ul li a i {
   text-align: left; 
 }
 
+/* Detailed section header fixes */
 .experience-detail h2.detail-title { 
   color: #00b8d1; 
-  margin-bottom: 1rem; 
-  font-size: 1.6rem;       /* smaller title */
+  margin-bottom: 0.8rem;   /* reduce space below title */
+  font-size: 1.4rem;       /* smaller header size */
   text-decoration: underline;
 }
 
@@ -1965,6 +1969,7 @@ nav ul li a i {
   justify-content: center; 
   margin-top: 2rem; 
 }
+
 
 
 
