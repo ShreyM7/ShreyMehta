@@ -1856,9 +1856,15 @@ nav ul li a i {
   width: 150px;
   border-radius: 12px;
   display: block;
-  margin-bottom: 0.75rem;      /* reduce space below image */
+  margin-bottom: 0.5rem;      /* reduced space below image */
   align-self: center;          
   animation: float 3s ease-in-out infinite;
+}
+
+/* Make Autonomous Surgery Research Fellow image bigger only */
+.experience-card[href="#biomech-detail"] img {
+  width: 180px; /* bigger than other cards */
+  margin-bottom: 0.5rem;
 }
 
 /* Floating animation */
@@ -1877,15 +1883,14 @@ nav ul li a i {
 .card-text .company-name { 
   color: #00b8d1; 
   font-size: 0.9rem; 
-  margin-bottom: 0.2rem; /* small space below company name */
+  margin-bottom: 0.1rem; /* reduced spacing */
 }
 
 .card-text .role { 
   font-weight: 700; 
-  font-size: 1.1rem;       /* slightly smaller */
-  margin: 0;               /* remove extra spacing */
+  font-size: 1.15rem;       /* slightly smaller than before */
+  margin: 0;               
 }
-
 
 .card-text .short-desc { 
   font-size: 0.85rem; 
@@ -1915,8 +1920,8 @@ nav ul li a i {
 /* Detailed section header fixes */
 .experience-detail h2.detail-title { 
   color: #00b8d1; 
-  margin-bottom: 0.8rem;   /* reduce space below title */
-  font-size: 1.4rem;       /* smaller header size */
+  margin-bottom: 0.6rem;   /* reduced space below title */
+  font-size: 1.3rem;       /* smaller header size */
   text-decoration: underline;
 }
 
@@ -1926,7 +1931,7 @@ nav ul li a i {
   margin: 1rem auto; 
   display: block; 
   border-radius: 12px; 
-  animation: float 3s ease-in-out infinite; /* optional hover effect on images too */
+  animation: float 3s ease-in-out infinite; 
 }
 
 .experience-detail .long-desc { 
@@ -1969,6 +1974,8 @@ nav ul li a i {
   justify-content: center; 
   margin-top: 2rem; 
 }
+
+
 
 
 
