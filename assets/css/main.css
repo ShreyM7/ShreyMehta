@@ -2052,11 +2052,10 @@ nav ul li a i {
   margin-bottom: 2rem;
 }
 
-/* Project Overview Images - only in the overview section */
-#projects .project-card img {
-    width: 220px;       /* adjust bigger as you like */
-    height: auto;       /* maintain aspect ratio */
-    max-width: 100%;    /* keep responsive */
+/* Project Overview Images - only in overview cards */
+.project-card img {
+    width: 220px !important;   /* make bigger */
+    height: auto !important;   /* maintain aspect ratio */
     display: block;
     margin: 0 auto 0.75rem auto;  /* center + spacing */
     border-radius: 12px;
@@ -2067,6 +2066,7 @@ nav ul li a i {
 .project-card:hover img {
     transform: translateY(-10px); /* floats image up slightly on hover */
 }
+
 
 
 
