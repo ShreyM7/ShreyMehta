@@ -2037,6 +2037,21 @@ nav ul li a i {
   animation: float 3s ease-in-out infinite;
 }
 
+.project-video {
+  display: block;
+  max-width: 500px;
+  width: 100%;
+  margin: 2rem auto 0.5rem auto; /* center video */
+  border-radius: 12px;
+}
+
+.video-caption {
+  text-align: center;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 2rem;
+}
+
 
 
 
