@@ -2052,22 +2052,21 @@ nav ul li a i {
   margin-bottom: 2rem;
 }
 
+/* Project Overview Cards */
+.project-card img {
+    width: 200px;        /* bigger size for overview images */
+    max-width: 100%;     /* ensures it doesn't overflow on smaller screens */
+    border-radius: 12px;
+    display: block;
+    margin-bottom: 0.75rem;
+    align-self: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* smooth hover effect */
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* Floating animation on hover */
+.project-card:hover img {
+    transform: translateY(-10px); /* floats image up slightly on hover */
+}
 
 
 
