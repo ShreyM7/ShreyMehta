@@ -2081,33 +2081,6 @@ nav ul li a i {
 	}
 }
 
-#intro-overlay {
-  position: fixed;
-  inset: 0;
-  background: #000;
-  z-index: 99999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-#warp-canvas {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-}
-
-#intro-overlay.fade-out {
-  animation: overlayFade 0.9s ease forwards;
-}
-
-@keyframes overlayFade {
-  0% { opacity: 1; }
-  100% { opacity: 0; pointer-events: none; }
-}
-
 
 
 
