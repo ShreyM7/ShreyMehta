@@ -1296,11 +1296,8 @@ input, select, textarea {
 			}
 
 		#header .content {
-			border-style: solid;
-			border-color: #ffffff;
-			border-top-width: 1px;
-			border-bottom-width: 1px;
-			max-width: 100%;
+		    border: none;
+		    max-width: 100%;
 		}
 
 			#header .content .inner {
@@ -1312,7 +1309,7 @@ input, select, textarea {
 				-webkit-transition-delay: 0.25s;
 				-ms-transition-delay: 0.25s;
 				transition-delay: 0.25s;
-				padding: 3rem 2rem;
+				padding: 3rem 2rem 2rem 2rem;
 				max-height: 40rem;
 				overflow: hidden;
 			}
@@ -2080,7 +2077,7 @@ nav ul li a i {
     }
 
 	#header nav {
-	    margin-top: 5rem;
+	    margin-top: 3.5rem;
 	}
 }
 
