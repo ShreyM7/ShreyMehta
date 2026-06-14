@@ -854,7 +854,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		    return actx;
 		  }
 		
-		  let audioEnabled = true;
+		  let audioEnabled = false;
 		
 		  // --- HOVER SOUND ---
 		  function playHover() {
@@ -906,36 +906,46 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		  // --- BACKGROUND DRONE MUSIC ---
 		  let droneNodes = [];
 		
-		  function startDrone() {
-		    const ctx = getCtx();
-		    const notes = [55, 82.5, 110, 138.6];
-		
-		    notes.forEach((freq, i) => {
-		      const osc = ctx.createOscillator();
-		      const gain = ctx.createGain();
-		      const pan = ctx.createStereoPanner();
-		
-		      osc.connect(gain);
-		      gain.connect(pan);
-		      pan.connect(ctx.destination);
-		
-		      osc.type = i % 2 === 0 ? 'sine' : 'triangle';
-		      osc.frequency.setValueAtTime(freq, ctx.currentTime);
-		
-		      // Slow detune drift for movement
-		      osc.detune.setValueAtTime(0, ctx.currentTime);
-		      osc.detune.linearRampToValueAtTime(8, ctx.currentTime + 4 + i);
-		      osc.detune.linearRampToValueAtTime(-8, ctx.currentTime + 8 + i);
-		
-		      gain.gain.setValueAtTime(0, ctx.currentTime);
-		      gain.gain.linearRampToValueAtTime(i === 0 ? 0.06 : 0.03, ctx.currentTime + 2);
-		
-		      pan.pan.setValueAtTime(i % 2 === 0 ? -0.3 : 0.3, ctx.currentTime);
-		
-		      osc.start(ctx.currentTime);
-		      droneNodes.push({ osc, gain });
-		    });
-		  }
+			function startDrone() {
+			  const ctx = getCtx();
+			  if (ctx.state === 'suspended') ctx.resume();
+			
+			  const notes = [55, 82.5, 110, 138.6];
+			
+			  notes.forEach((freq, i) => {
+			    const osc = ctx.createOscillator();
+			    const gainNode = ctx.createGain();
+			    const pan = ctx.createStereoPanner();
+			
+			    osc.connect(gainNode);
+			    gainNode.connect(pan);
+			    pan.connect(ctx.destination);
+			
+			    osc.type = i % 2 === 0 ? 'sine' : 'triangle';
+			    osc.frequency.setValueAtTime(freq, ctx.currentTime);
+			
+			    // Continuous slow detune wobble
+			    function wobble(startTime) {
+			      osc.detune.cancelScheduledValues(startTime);
+			      osc.detune.setValueAtTime(0, startTime);
+			      osc.detune.linearRampToValueAtTime(10, startTime + 5 + i);
+			      osc.detune.linearRampToValueAtTime(-10, startTime + 10 + i);
+			      osc.detune.linearRampToValueAtTime(0, startTime + 15 + i);
+			    }
+			    wobble(ctx.currentTime);
+			    setInterval(() => wobble(ctx.currentTime), (15 + i) * 1000);
+			
+			    // Fade in then hold steady
+			    const vol = i === 0 ? 0.07 : 0.035;
+			    gainNode.gain.setValueAtTime(0, ctx.currentTime);
+			    gainNode.gain.linearRampToValueAtTime(vol, ctx.currentTime + 3);
+			
+			    pan.pan.setValueAtTime(i % 2 === 0 ? -0.3 : 0.3, ctx.currentTime);
+			
+			    osc.start(ctx.currentTime);
+			    droneNodes.push({ osc, gain: gainNode });
+			  });
+			}
 		
 		  function stopDrone() {
 		    const ctx = getCtx();
@@ -949,48 +959,55 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		  // --- MUTE BUTTON ---
 		  const muteBtn = document.createElement('button');
 		  muteBtn.id = 'audio-toggle';
-		  muteBtn.innerHTML = '♪ AUDIO ON';
+		  muteBtn.innerHTML = '♪ AUDIO OFF';
 		  Object.assign(muteBtn.style, {
 		    position: 'fixed',
 		    top: '1.2rem',
-		    right: '1.4rem',
+		    left: '50%',
+		    transform: 'translateX(-50%)',
 		    zIndex: '99999',
-		    padding: '0.5rem 1rem',
-		    fontSize: '0.65rem',
-		    letterSpacing: '0.14em',
+		    padding: '0.5rem 1.4rem',
+		    fontSize: '0.7rem',
+		    letterSpacing: '0.16em',
 		    textTransform: 'uppercase',
 		    fontFamily: 'monospace',
-		    color: '#00dcff',
-		    background: 'rgba(0,0,0,0.45)',
-		    border: '1px solid rgba(0,220,255,0.3)',
-		    borderRadius: '8px',
-		    backdropFilter: 'blur(10px)',
-		    webkitBackdropFilter: 'blur(10px)',
-		    boxShadow: '0 0 18px rgba(0,220,255,0.12)',
+		    fontWeight: '600',
+		    color: 'rgba(255,255,255,0.5)',
+		    background: 'rgba(0,0,0,0.55)',
+		    border: '1px solid rgba(255,255,255,0.25)',
+		    borderRadius: '999px',
+		    backdropFilter: 'blur(12px)',
+		    webkitBackdropFilter: 'blur(12px)',
+		    boxShadow: '0 0 0px transparent',
 		    cursor: 'pointer',
-		    outline: 'none'
-		  });
-		
+		    outline: 'none',
+		    transition: 'all 0.3s ease'
+	      });
+		  
 		  document.body.appendChild(muteBtn);
 		
 		  let droneStarted = false;
 		
-		  muteBtn.addEventListener('click', () => {
+	  	  muteBtn.addEventListener('click', () => {
 		    audioEnabled = !audioEnabled;
 		
 		    if (audioEnabled) {
 		      muteBtn.innerHTML = '♪ AUDIO ON';
 		      muteBtn.style.color = '#00dcff';
-		      muteBtn.style.borderColor = 'rgba(0,220,255,0.3)';
+		      muteBtn.style.borderColor = 'rgba(0,220,255,0.6)';
+		      muteBtn.style.boxShadow = '0 0 16px rgba(0,220,255,0.2)';
 		      startDrone();
+		      droneStarted = true;
 		    } else {
 		      muteBtn.innerHTML = '✕ AUDIO OFF';
-		      muteBtn.style.color = 'rgba(255,255,255,0.35)';
-		      muteBtn.style.borderColor = 'rgba(255,255,255,0.1)';
+		      muteBtn.style.color = 'rgba(255,255,255,0.5)';
+		      muteBtn.style.borderColor = 'rgba(255,255,255,0.25)';
+		      muteBtn.style.boxShadow = '0 0 0px transparent';
 		      stopDrone();
+		      droneStarted = false;
 		    }
 		  });
-		
+				
 		  // --- ATTACH SOUNDS TO BUTTONS ---
 		  function attachSounds() {
 		    const targets = document.querySelectorAll(
