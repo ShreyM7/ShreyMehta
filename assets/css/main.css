@@ -910,36 +910,36 @@ input, select, textarea {
 				padding-right: 0;
 			}
 
-ul.icons li a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: auto;
-    height: auto;
-    padding: 0.45rem 1.1rem;
-    border-radius: 999px;
-    font-size: 1rem;
-    line-height: normal;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    box-shadow: none;
-    transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
-}
-
-ul.icons li a:hover {
-    background: rgba(0, 184, 209, 0.12);
-    border-color: rgba(0, 184, 209, 0.55);
-    color: #00e5ff;
-    transform: translateY(-2px);
-    box-shadow: 0 0 14px rgba(0, 184, 209, 0.25);
-}
-
-ul.icons li a:active {
-    transform: translateY(0px);
-    box-shadow: none;
-}
+	ul.icons li a {
+	    display: inline-flex;
+	    align-items: center;
+	    justify-content: center;
+	    width: auto;
+	    height: auto;
+	    padding: 0.45rem 1.1rem;
+	    border-radius: 999px;
+	    font-size: 1rem;
+	    line-height: normal;
+	    background: rgba(255, 255, 255, 0.05);
+	    border: 1px solid rgba(255, 255, 255, 0.12);
+	    backdrop-filter: blur(8px);
+	    -webkit-backdrop-filter: blur(8px);
+	    box-shadow: none;
+	    transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+	}
+	
+	ul.icons li a:hover {
+	    background: rgba(0, 184, 209, 0.12);
+	    border-color: rgba(0, 184, 209, 0.55);
+	    color: #00e5ff;
+	    transform: translateY(-2px);
+	    box-shadow: 0 0 14px rgba(0, 184, 209, 0.25);
+	}
+	
+	ul.icons li a:active {
+	    transform: translateY(0px);
+	    box-shadow: none;
+	}
 
 /* Table */
 
@@ -1381,21 +1381,6 @@ ul.icons li a:active {
 		    transform: translateY(0px);
 		    box-shadow: none;
 		    background-color: unset;
-		}
-
-		#header nav.use-middle:after {
-			content: '';
-			display: block;
-			position: absolute;
-			top: 0;
-			left: calc(50% - 1px);
-			width: 1px;
-			height: 100%;
-			background: #ffffff;
-		}
-
-		#header nav.use-middle ul li.is-middle {
-			border-left: 0;
 		}
 
 		body.is-article-visible #header {
