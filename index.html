@@ -814,9 +814,8 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		  dots.forEach(d => {
 		    if (d.collected) {
 		      d.collected = false;
-		      collectedCount--;
 		      const angle = Math.random() * Math.PI * 2;
-		      const force = 15 + Math.random() * 20;
+		      const force = 18 + Math.random() * 22;
 		      d.ox = Math.random() * W;
 		      d.oy = Math.random() * H;
 		      d.x = mouse.x;
@@ -825,6 +824,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		      d.vy = Math.sin(angle) * force;
 		    }
 		  });
+		  collectedCount = 0;
 		  updateCounter();
 		  steadyTriggered = true;
 		}
@@ -920,7 +920,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		    const dist = Math.sqrt(dx * dx + dy * dy);
 		    const proximity = (!d.collected && dist < REACH) ? 1 - dist / REACH : 0;
 		    const glow = d.collected ? 1 : d.alpha + proximity * 0.6;
-		    const radius = d.collected ? d.r * 2.2 : d.r + proximity * 1.5;
+		    const radius = d.collected ? d.r * 0.9 : d.r + proximity * 1.5;
 		
 		    cx.beginPath();
 		    cx.arc(d.x, d.y, radius, 0, Math.PI * 2);
