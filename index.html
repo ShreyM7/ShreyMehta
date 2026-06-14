@@ -765,7 +765,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		  vx: (Math.random() - 0.5) * 0.4,
 		  vy: (Math.random() - 0.5) * 0.4,
 		  r: Math.random() * 1.8 + 0.8,
-		  alpha: Math.random() * 0.4 + 0.2
+		  alpha: Math.random() * 0.5 + 0.4
 		}));
 		
 		dots.forEach(d => { d.ox = d.x; d.oy = d.y; });
@@ -799,7 +799,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		      const dy = a.y - b.y;
 		      const dist = Math.sqrt(dx * dx + dy * dy);
 		      if (dist < LINE_DIST) {
-		        const opacity = (1 - dist / LINE_DIST) * 0.18;
+		        const opacity = (1 - dist / LINE_DIST) * 0.35;
 		        cx.beginPath();
 		        cx.moveTo(a.x, a.y);
 		        cx.lineTo(b.x, b.y);
@@ -819,7 +819,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		
 		    cx.beginPath();
 		    cx.arc(d.x, d.y, d.r + proximity * 1.5, 0, Math.PI * 2);
-		    cx.fillStyle = `rgba(0, 184, 209, ${glow})`;
+		    cx.fillStyle = `rgba(0, 220, 255, ${glow})`;
 		    cx.fill();
 		
 		    if (proximity > 0.3) {
