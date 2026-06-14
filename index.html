@@ -910,41 +910,102 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			  const ctx = getCtx();
 			  if (ctx.state === 'suspended') ctx.resume();
 			
-			  const notes = [55, 82.5, 110, 138.6];
+			  // Reverb impulse for ethereal space
+			  function makeReverb(duration, decay) {
+			    const rate = ctx.sampleRate;
+			    const length = rate * duration;
+			    const impulse = ctx.createBuffer(2, length, rate);
+			    for (let c = 0; c < 2; c++) {
+			      const channel = impulse.getChannelData(c);
+			      for (let i = 0; i < length; i++) {
+			        channel[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / length, decay);
+			      }
+			    }
+			    const conv = ctx.createConvolver();
+			    conv.buffer = impulse;
+			    return conv;
+			  }
 			
-			  notes.forEach((freq, i) => {
+			  const reverb = makeReverb(4, 2.5);
+			  reverb.connect(ctx.destination);
+			
+			  const masterGain = ctx.createGain();
+			  masterGain.connect(reverb);
+			  masterGain.connect(ctx.destination);
+			  masterGain.gain.setValueAtTime(0, ctx.currentTime);
+			  masterGain.gain.linearRampToValueAtTime(0.5, ctx.currentTime + 4);
+			
+			  // Ethereal chord — A minor pentatonic with high harmonics
+			  const layers = [
+			    { freq: 110,   type: 'sine',     vol: 0.18, pan: 0    },   // bass root A2
+			    { freq: 220,   type: 'sine',     vol: 0.12, pan: -0.3 },   // A3
+			    { freq: 330,   type: 'sine',     vol: 0.09, pan: 0.3  },   // E4
+			    { freq: 440,   type: 'sine',     vol: 0.07, pan: -0.4 },   // A4
+			    { freq: 550,   type: 'sine',     vol: 0.05, pan: 0.4  },   // C#5 shimmer
+			    { freq: 660,   type: 'sine',     vol: 0.04, pan: 0    },   // E5 shimmer
+			    { freq: 880,   type: 'sine',     vol: 0.025,pan: -0.2 },   // A5 air
+			    { freq: 1320,  type: 'sine',     vol: 0.015,pan: 0.2  },   // E6 breathe
+			  ];
+			
+			  layers.forEach((layer, i) => {
 			    const osc = ctx.createOscillator();
 			    const gainNode = ctx.createGain();
 			    const pan = ctx.createStereoPanner();
 			
 			    osc.connect(gainNode);
 			    gainNode.connect(pan);
-			    pan.connect(ctx.destination);
+			    pan.connect(masterGain);
 			
-			    osc.type = i % 2 === 0 ? 'sine' : 'triangle';
-			    osc.frequency.setValueAtTime(freq, ctx.currentTime);
+			    osc.type = layer.type;
+			    osc.frequency.setValueAtTime(layer.freq, ctx.currentTime);
 			
-			    // Continuous slow detune wobble
-			    function wobble(startTime) {
-			      osc.detune.cancelScheduledValues(startTime);
-			      osc.detune.setValueAtTime(0, startTime);
-			      osc.detune.linearRampToValueAtTime(10, startTime + 5 + i);
-			      osc.detune.linearRampToValueAtTime(-10, startTime + 10 + i);
-			      osc.detune.linearRampToValueAtTime(0, startTime + 15 + i);
+			    // Slow organic breath on each layer
+			    const breathPeriod = 8 + i * 1.3;
+			    function breathe(t) {
+			      osc.detune.cancelScheduledValues(t);
+			      osc.detune.setValueAtTime(-4, t);
+			      osc.detune.linearRampToValueAtTime(4, t + breathPeriod / 2);
+			      osc.detune.linearRampToValueAtTime(-4, t + breathPeriod);
 			    }
-			    wobble(ctx.currentTime);
-			    setInterval(() => wobble(ctx.currentTime), (15 + i) * 1000);
+			    breathe(ctx.currentTime);
+			    const breathInterval = setInterval(() => {
+			      if (droneNodes.length === 0) { clearInterval(breathInterval); return; }
+			      breathe(ctx.currentTime);
+			    }, breathPeriod * 1000);
 			
-			    // Fade in then hold steady
-			    const vol = i === 0 ? 0.07 : 0.035;
+			    // Volume swell per layer
 			    gainNode.gain.setValueAtTime(0, ctx.currentTime);
-			    gainNode.gain.linearRampToValueAtTime(vol, ctx.currentTime + 3);
+			    gainNode.gain.linearRampToValueAtTime(layer.vol, ctx.currentTime + 3 + i * 0.4);
 			
-			    pan.pan.setValueAtTime(i % 2 === 0 ? -0.3 : 0.3, ctx.currentTime);
+			    pan.pan.setValueAtTime(layer.pan, ctx.currentTime);
 			
 			    osc.start(ctx.currentTime);
 			    droneNodes.push({ osc, gain: gainNode });
 			  });
+			
+			  // Slow high shimmer that drifts in and out
+			  function addShimmer() {
+			    if (droneNodes.length === 0) return;
+			    const ctx2 = getCtx();
+			    const shimFreqs = [1760, 2200, 2640];
+			    const freq = shimFreqs[Math.floor(Math.random() * shimFreqs.length)];
+			    const osc = ctx2.createOscillator();
+			    const g = ctx2.createGain();
+			    const p = ctx2.createStereoPanner();
+			    osc.connect(g); g.connect(p); p.connect(reverb);
+			    osc.type = 'sine';
+			    osc.frequency.setValueAtTime(freq, ctx2.currentTime);
+			    g.gain.setValueAtTime(0, ctx2.currentTime);
+			    g.gain.linearRampToValueAtTime(0.018, ctx2.currentTime + 2);
+			    g.gain.linearRampToValueAtTime(0, ctx2.currentTime + 5);
+			    p.pan.setValueAtTime((Math.random() - 0.5) * 0.8, ctx2.currentTime);
+			    osc.start(ctx2.currentTime);
+			    osc.stop(ctx2.currentTime + 5);
+			    setTimeout(addShimmer, 4000 + Math.random() * 5000);
+			  }
+			
+			  setTimeout(addShimmer, 3000);
+			  droneNodes.push({ osc: { stop: () => {} }, gain: masterGain });
 			}
 		
 		  function stopDrone() {
@@ -962,9 +1023,10 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		  muteBtn.innerHTML = '♪ AUDIO OFF';
 		  Object.assign(muteBtn.style, {
 		    position: 'fixed',
-		    top: '1.2rem',
-		    left: '50%',
-		    transform: 'translateX(-50%)',
+			top: '1.2rem',
+			right: '1.4rem',
+			left: 'auto',
+			transform: 'none',
 		    zIndex: '99999',
 		    padding: '0.5rem 1.4rem',
 		    fontSize: '0.7rem',
@@ -982,6 +1044,11 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		    cursor: 'pointer',
 		    outline: 'none',
 		    transition: 'all 0.3s ease'
+			display: 'inline-flex',
+			alignItems: 'center',
+			justifyContent: 'center',
+			textAlign: 'center',
+			whiteSpace: 'nowrap',
 	      });
 		  
 		  document.body.appendChild(muteBtn);
