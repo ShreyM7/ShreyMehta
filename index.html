@@ -573,7 +573,8 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			</div>
 
 		<!-- BG -->
-			<div id="bg"></div>
+		    <div id="bg"></div>
+		    <canvas id="particle-canvas"></canvas>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
@@ -719,6 +720,120 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		}
 		
 		document.addEventListener("DOMContentLoaded", type);
+		</script>
+
+		<script>
+		const pc = document.getElementById('particle-canvas');
+		const cx = pc.getContext('2d');
+		
+		pc.style.position = 'fixed';
+		pc.style.top = '0';
+		pc.style.left = '0';
+		pc.style.width = '100%';
+		pc.style.height = '100%';
+		pc.style.pointerEvents = 'none';
+		pc.style.zIndex = '2';
+		
+		let W = pc.width = window.innerWidth;
+		let H = pc.height = window.innerHeight;
+		
+		const mouse = { x: -9999, y: -9999 };
+		const REACH = 140;
+		const DOT_COUNT = 90;
+		const LINE_DIST = 120;
+		
+		window.addEventListener('resize', () => {
+		  W = pc.width = window.innerWidth;
+		  H = pc.height = window.innerHeight;
+		});
+		
+		window.addEventListener('mousemove', e => {
+		  mouse.x = e.clientX;
+		  mouse.y = e.clientY;
+		});
+		
+		window.addEventListener('mouseleave', () => {
+		  mouse.x = -9999;
+		  mouse.y = -9999;
+		});
+		
+		const dots = Array.from({ length: DOT_COUNT }, () => ({
+		  x: Math.random() * window.innerWidth,
+		  y: Math.random() * window.innerHeight,
+		  ox: 0,
+		  oy: 0,
+		  vx: (Math.random() - 0.5) * 0.4,
+		  vy: (Math.random() - 0.5) * 0.4,
+		  r: Math.random() * 1.8 + 0.8,
+		  alpha: Math.random() * 0.4 + 0.2
+		}));
+		
+		dots.forEach(d => { d.ox = d.x; d.oy = d.y; });
+		
+		function draw() {
+		  cx.clearRect(0, 0, W, H);
+		
+		  dots.forEach(d => {
+		    const dx = mouse.x - d.x;
+		    const dy = mouse.y - d.y;
+		    const dist = Math.sqrt(dx * dx + dy * dy);
+		
+		    if (dist < REACH) {
+		      const force = (1 - dist / REACH) * 3.5;
+		      d.vx -= (dx / dist) * force * 0.08;
+		      d.vy -= (dy / dist) * force * 0.08;
+		    }
+		
+		    d.vx += (d.ox - d.x) * 0.012;
+		    d.vy += (d.oy - d.y) * 0.012;
+		    d.vx *= 0.88;
+		    d.vy *= 0.88;
+		    d.x += d.vx;
+		    d.y += d.vy;
+		  });
+		
+		  for (let i = 0; i < dots.length; i++) {
+		    for (let j = i + 1; j < dots.length; j++) {
+		      const a = dots[i], b = dots[j];
+		      const dx = a.x - b.x;
+		      const dy = a.y - b.y;
+		      const dist = Math.sqrt(dx * dx + dy * dy);
+		      if (dist < LINE_DIST) {
+		        const opacity = (1 - dist / LINE_DIST) * 0.18;
+		        cx.beginPath();
+		        cx.moveTo(a.x, a.y);
+		        cx.lineTo(b.x, b.y);
+		        cx.strokeStyle = `rgba(0, 184, 209, ${opacity})`;
+		        cx.lineWidth = 0.6;
+		        cx.stroke();
+		      }
+		    }
+		  }
+		
+		  dots.forEach(d => {
+		    const dx = mouse.x - d.x;
+		    const dy = mouse.y - d.y;
+		    const dist = Math.sqrt(dx * dx + dy * dy);
+		    const proximity = dist < REACH ? 1 - dist / REACH : 0;
+		    const glow = d.alpha + proximity * 0.6;
+		
+		    cx.beginPath();
+		    cx.arc(d.x, d.y, d.r + proximity * 1.5, 0, Math.PI * 2);
+		    cx.fillStyle = `rgba(0, 184, 209, ${glow})`;
+		    cx.fill();
+		
+		    if (proximity > 0.3) {
+		      cx.beginPath();
+		      cx.arc(d.x, d.y, (d.r + proximity * 1.5) * 2.5, 0, Math.PI * 2);
+		      cx.fillStyle = `rgba(0, 184, 209, ${proximity * 0.08})`;
+		      cx.fill();
+		    }
+		  });
+		
+		  requestAnimationFrame(draw);
+		}
+		
+		draw();
 		</script>
 
 
