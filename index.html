@@ -25,10 +25,99 @@
 		<!-- INTRO ANIMATION -->
 		<div id="intro-overlay">
 		  <canvas id="warp-canvas"></canvas>
-		  <div id="terminal-text">
-		    <span id="term-line"></span><span id="term-cursor">|</span>
-		  </div>
 		</div>
+	
+		<script>
+		(function () {
+		  const overlay = document.getElementById('intro-overlay');
+		  const warpCanvas = document.getElementById('warp-canvas');
+		  const wc = warpCanvas.getContext('2d');
+		
+		  let W = warpCanvas.width = window.innerWidth;
+		  let H = warpCanvas.height = window.innerHeight;
+		
+		  window.addEventListener('resize', () => {
+			W = warpCanvas.width = window.innerWidth;
+			H = warpCanvas.height = window.innerHeight;
+		  });
+		
+		  const STAR_COUNT = 320;
+		  const stars = Array.from({ length: STAR_COUNT }, () => ({
+			x: (Math.random() - 0.5) * W,
+			y: (Math.random() - 0.5) * H,
+			z: Math.random() * W,
+			pz: 0
+		  }));
+		
+		  let speed = 4;
+		  let startTime = performance.now();
+		
+		  function drawWarp(now) {
+			const elapsed = now - startTime;
+			const progress = Math.min(elapsed / 1500, 1);
+		
+			if (progress < 0.75) {
+			  speed = 4 + progress * 60;
+			} else {
+			  speed = Math.max(4, speed - 18);
+			}
+		
+			wc.fillStyle = 'rgba(0,0,0,0.25)';
+			wc.fillRect(0, 0, W, H);
+		
+			const cx = W / 2;
+			const cy = H / 2;
+		
+			stars.forEach(s => {
+			  s.pz = s.z;
+			  s.z -= speed;
+		
+			  if (s.z <= 0) {
+				s.x = (Math.random() - 0.5) * W;
+				s.y = (Math.random() - 0.5) * H;
+				s.z = W;
+				s.pz = W;
+			  }
+		
+			  const sx = (s.x / s.z) * W + cx;
+			  const sy = (s.y / s.z) * H + cy;
+			  const px = (s.x / s.pz) * W + cx;
+			  const py = (s.y / s.pz) * H + cy;
+		
+			  const size = Math.max(0.4, (1 - s.z / W) * 2.5);
+			  const brightness = Math.min(1, (1 - s.z / W) * 1.8);
+		
+			  wc.beginPath();
+			  wc.moveTo(px, py);
+			  wc.lineTo(sx, sy);
+			  wc.strokeStyle = `rgba(180, 230, 255, ${brightness})`;
+			  wc.lineWidth = size;
+			  wc.stroke();
+			});
+		
+			if (elapsed < 1500) {
+			  requestAnimationFrame(drawWarp);
+			} else {
+			  flashAndExit();
+			}
+		  }
+		
+		  requestAnimationFrame(drawWarp);
+		
+		  function flashAndExit() {
+			wc.fillStyle = 'rgba(255,255,255,0.92)';
+			wc.fillRect(0, 0, W, H);
+		
+			setTimeout(() => {
+			  overlay.classList.add('fade-out');
+			  setTimeout(() => {
+				overlay.style.display = 'none';
+			  }, 900);
+			}, 150);
+		  }
+		
+		})();
+		</script>
 
 		<!-- Wrapper -->
 			<div id="wrapper">
@@ -590,148 +679,6 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
-			<script>
-			(function () {
-			  const overlay = document.getElementById('intro-overlay');
-			  const warpCanvas = document.getElementById('warp-canvas');
-			  const wc = warpCanvas.getContext('2d');
-			  const termLine = document.getElementById('term-line');
-			  const termText = document.getElementById('terminal-text');
-			
-			  let W = warpCanvas.width = window.innerWidth;
-			  let H = warpCanvas.height = window.innerHeight;
-			
-			  window.addEventListener('resize', () => {
-			    W = warpCanvas.width = window.innerWidth;
-			    H = warpCanvas.height = window.innerHeight;
-			  });
-			
-			  // --- WARP STARS ---
-			  const STAR_COUNT = 320;
-			  const stars = Array.from({ length: STAR_COUNT }, () => ({
-			    x: (Math.random() - 0.5) * W,
-			    y: (Math.random() - 0.5) * H,
-			    z: Math.random() * W,
-			    pz: 0
-			  }));
-			
-			  let speed = 4;
-			  let warpRunning = true;
-			  let startTime = performance.now();
-			
-			  function drawWarp(now) {
-			    if (!warpRunning) return;
-			
-			    const elapsed = now - startTime;
-			    const progress = Math.min(elapsed / 1500, 1);
-			
-			    // Accelerate then slam
-			    if (progress < 0.75) {
-			      speed = 4 + progress * 60;
-			    } else {
-			      speed = Math.max(4, speed - 18);
-			    }
-			
-			    wc.fillStyle = 'rgba(0,0,0,0.25)';
-			    wc.fillRect(0, 0, W, H);
-			
-			    const cx = W / 2;
-			    const cy = H / 2;
-			
-			    stars.forEach(s => {
-			      s.pz = s.z;
-			      s.z -= speed;
-			
-			      if (s.z <= 0) {
-			        s.x = (Math.random() - 0.5) * W;
-			        s.y = (Math.random() - 0.5) * H;
-			        s.z = W;
-			        s.pz = W;
-			      }
-			
-			      const sx = (s.x / s.z) * W + cx;
-			      const sy = (s.y / s.z) * H + cy;
-			      const px = (s.x / s.pz) * W + cx;
-			      const py = (s.y / s.pz) * H + cy;
-			
-			      const size = Math.max(0.4, (1 - s.z / W) * 2.5);
-			      const brightness = Math.min(1, (1 - s.z / W) * 1.8);
-			
-			      wc.beginPath();
-			      wc.moveTo(px, py);
-			      wc.lineTo(sx, sy);
-			      wc.strokeStyle = `rgba(180, 230, 255, ${brightness})`;
-			      wc.lineWidth = size;
-			      wc.stroke();
-			    });
-			
-			    if (elapsed < 1500) {
-			      requestAnimationFrame(drawWarp);
-			    } else {
-			      // Flash white
-			      warpRunning = false;
-			      flashAndTerminal();
-			    }
-			  }
-			
-			  requestAnimationFrame(drawWarp);
-			
-			  // --- FLASH + TERMINAL ---
-			  function flashAndTerminal() {
-			    wc.fillStyle = 'rgba(255,255,255,0.92)';
-			    wc.fillRect(0, 0, W, H);
-			
-			    setTimeout(() => {
-			      wc.clearRect(0, 0, W, H);
-			      wc.fillStyle = '#000';
-			      wc.fillRect(0, 0, W, H);
-			      termText.style.opacity = '1';
-			      runTerminal();
-			    }, 120);
-			  }
-			
-			  const lines = [
-			    '> INITIALIZING SYSTEM...',
-			    '> LOADING PROFILE: SHREY MEHTA',
-			    '> ELECTRICAL ENGINEERING // McMASTER',
-			    '> ACCESS GRANTED ✓'
-			  ];
-			
-			  let lineIndex = 0;
-			  let charIndex = 0;
-			  let currentOutput = [];
-			
-			  function runTerminal() {
-			    if (lineIndex >= lines.length) {
-			      setTimeout(endIntro, 600);
-			      return;
-			    }
-			
-			    const line = lines[lineIndex];
-			
-			    if (charIndex < line.length) {
-			      charIndex++;
-			      const partial = line.slice(0, charIndex);
-			      termLine.innerHTML = currentOutput.join('<br>') + (currentOutput.length ? '<br>' : '') + partial;
-			      setTimeout(runTerminal, 38);
-			    } else {
-			      currentOutput.push(line);
-			      lineIndex++;
-			      charIndex = 0;
-			      termLine.innerHTML = currentOutput.join('<br>');
-			      setTimeout(runTerminal, lineIndex === lines.length ? 400 : 180);
-			    }
-			  }
-			
-			  function endIntro() {
-			    overlay.classList.add('fade-out');
-			    setTimeout(() => {
-			      overlay.style.display = 'none';
-			    }, 900);
-			  }
-			})();
-			</script>
 
 			<script>
 			  VANTA.WAVES({
