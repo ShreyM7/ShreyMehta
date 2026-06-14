@@ -739,8 +739,14 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		
 		const mouse = { x: -9999, y: -9999 };
 		const REACH = 140;
+		const COLLECT_RADIUS = 40;
+		const STEADY_TIME = 2200;
 		const DOT_COUNT = 180;
 		const LINE_DIST = 120;
+		
+		let collectedCount = 0;
+		let lastMoveTime = Date.now();
+		let steadyTriggered = false;
 		
 		window.addEventListener('resize', () => {
 		  W = pc.width = window.innerWidth;
@@ -750,6 +756,8 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		window.addEventListener('mousemove', e => {
 		  mouse.x = e.clientX;
 		  mouse.y = e.clientY;
+		  lastMoveTime = Date.now();
+		  steadyTriggered = false;
 		});
 		
 		window.addEventListener('mouseleave', () => {
@@ -757,26 +765,102 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		  mouse.y = -9999;
 		});
 		
-		const dots = Array.from({ length: DOT_COUNT }, () => ({
-		  x: Math.random() * window.innerWidth,
-		  y: Math.random() * window.innerHeight,
-		  ox: 0,
-		  oy: 0,
-		  vx: (Math.random() - 0.5) * 0.4,
-		  vy: (Math.random() - 0.5) * 0.4,
-		  r: Math.random() * 1.8 + 0.8,
-		  alpha: Math.random() * 0.5 + 0.4
-		}));
+		const dots = Array.from({ length: DOT_COUNT }, () => {
+		  const x = Math.random() * window.innerWidth;
+		  const y = Math.random() * window.innerHeight;
+		  return {
+		    x, y,
+		    ox: x, oy: y,
+		    vx: (Math.random() - 0.5) * 0.4,
+		    vy: (Math.random() - 0.5) * 0.4,
+		    r: Math.random() * 1.8 + 0.8,
+		    alpha: Math.random() * 0.5 + 0.4,
+		    collected: false
+		  };
+		});
 		
-		dots.forEach(d => { d.ox = d.x; d.oy = d.y; });
+		// Counter box
+		const counter = document.createElement('div');
+		counter.id = 'dot-counter';
+		counter.innerHTML = `
+		  <div style="font-size:0.6rem;letter-spacing:0.18em;color:rgba(0,220,255,0.5);text-transform:uppercase;margin-bottom:4px;">Particles Captured</div>
+		  <div id="dot-counter-num" style="font-size:1.1rem;font-weight:600;color:#00dcff;letter-spacing:0.1em;font-family:monospace;">0 / ${DOT_COUNT}</div>
+		`;
+		Object.assign(counter.style, {
+		  position: 'fixed',
+		  top: '1.2rem',
+		  right: '1.4rem',
+		  zIndex: '100',
+		  padding: '0.6rem 1rem',
+		  border: '1px solid rgba(0,220,255,0.3)',
+		  borderRadius: '8px',
+		  background: 'rgba(0,0,0,0.35)',
+		  backdropFilter: 'blur(10px)',
+		  webkitBackdropFilter: 'blur(10px)',
+		  boxShadow: '0 0 18px rgba(0,220,255,0.12), inset 0 0 12px rgba(0,220,255,0.04)',
+		  lineHeight: '1',
+		  textAlign: 'right',
+		  pointerEvents: 'none'
+		});
+		document.body.appendChild(counter);
+		
+		const counterNum = document.getElementById('dot-counter-num');
+		
+		function updateCounter() {
+		  counterNum.textContent = `${collectedCount} / ${DOT_COUNT}`;
+		}
+		
+		function splatter() {
+		  dots.forEach(d => {
+		    if (d.collected) {
+		      d.collected = false;
+		      collectedCount--;
+		      d.ox = Math.random() * W;
+		      d.oy = Math.random() * H;
+		      d.x = mouse.x + (Math.random() - 0.5) * 60;
+		      d.y = mouse.y + (Math.random() - 0.5) * 60;
+		      d.vx = (Math.random() - 0.5) * 12;
+		      d.vy = (Math.random() - 0.5) * 12;
+		    }
+		  });
+		  updateCounter();
+		  steadyTriggered = true;
+		}
 		
 		function draw() {
 		  cx.clearRect(0, 0, W, H);
 		
+		  const now = Date.now();
+		
+		  // Trigger splatter if mouse held steady too long
+		  if (!steadyTriggered && mouse.x > 0 && now - lastMoveTime > STEADY_TIME && collectedCount > 0) {
+		    splatter();
+		  }
+		
 		  dots.forEach(d => {
+		    if (d.collected) {
+		      // Pull collected dots toward cursor tip
+		      const dx = mouse.x - d.x;
+		      const dy = mouse.y - d.y;
+		      d.vx += dx * 0.06;
+		      d.vy += dy * 0.06;
+		      d.vx *= 0.72;
+		      d.vy *= 0.72;
+		      d.x += d.vx;
+		      d.y += d.vy;
+		      return;
+		    }
+		
 		    const dx = mouse.x - d.x;
 		    const dy = mouse.y - d.y;
 		    const dist = Math.sqrt(dx * dx + dy * dy);
+		
+		    if (dist < COLLECT_RADIUS) {
+		      d.collected = true;
+		      collectedCount++;
+		      updateCounter();
+		      return;
+		    }
 		
 		    if (dist < REACH) {
 		      const force = (1 - dist / REACH) * 3.5;
@@ -792,9 +876,11 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		    d.y += d.vy;
 		  });
 		
+		  // Draw lines between nearby uncollected dots
 		  for (let i = 0; i < dots.length; i++) {
 		    for (let j = i + 1; j < dots.length; j++) {
 		      const a = dots[i], b = dots[j];
+		      if (a.collected || b.collected) continue;
 		      const dx = a.x - b.x;
 		      const dy = a.y - b.y;
 		      const dist = Math.sqrt(dx * dx + dy * dy);
@@ -810,22 +896,28 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		    }
 		  }
 		
+		  // Draw dots
 		  dots.forEach(d => {
 		    const dx = mouse.x - d.x;
 		    const dy = mouse.y - d.y;
 		    const dist = Math.sqrt(dx * dx + dy * dy);
-		    const proximity = dist < REACH ? 1 - dist / REACH : 0;
-		    const glow = d.alpha + proximity * 0.6;
+		    const proximity = (!d.collected && dist < REACH) ? 1 - dist / REACH : 0;
+		    const glow = d.collected ? 1 : d.alpha + proximity * 0.6;
+		    const radius = d.collected ? d.r * 2.2 : d.r + proximity * 1.5;
 		
 		    cx.beginPath();
-		    cx.arc(d.x, d.y, d.r + proximity * 1.5, 0, Math.PI * 2);
-		    cx.fillStyle = `rgba(0, 220, 255, ${glow})`;
+		    cx.arc(d.x, d.y, radius, 0, Math.PI * 2);
+		    cx.fillStyle = d.collected
+		      ? `rgba(0, 255, 220, ${glow})`
+		      : `rgba(0, 220, 255, ${glow})`;
 		    cx.fill();
 		
-		    if (proximity > 0.3) {
+		    if (d.collected || proximity > 0.3) {
 		      cx.beginPath();
-		      cx.arc(d.x, d.y, (d.r + proximity * 1.5) * 2.5, 0, Math.PI * 2);
-		      cx.fillStyle = `rgba(0, 184, 209, ${proximity * 0.08})`;
+		      cx.arc(d.x, d.y, radius * 2.5, 0, Math.PI * 2);
+		      cx.fillStyle = d.collected
+		        ? `rgba(0, 255, 180, 0.08)`
+		        : `rgba(0, 184, 209, ${proximity * 0.08})`;
 		      cx.fill();
 		    }
 		  });
