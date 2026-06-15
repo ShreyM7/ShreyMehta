@@ -2076,7 +2076,6 @@ body.day-mode {
 }
 
 body.day-mode #bg {
-  filter: invert(1) brightness(1.8) saturate(0.15) !important;
   opacity: 1 !important;
 }
 
