@@ -2083,11 +2083,37 @@ nav ul li a i {
 
 /* DAY MODE */
 body.day-mode {
-  background: #f0f4f8;
+  background: #ffffff !important;
+}
+
+body.day-mode #bg {
+  opacity: 0.08 !important;
 }
 
 body.day-mode #wrapper {
-  color: #1a1a2e;
+  background: rgba(255, 255, 255, 0.0) !important;
+}
+
+body.day-mode::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: #f0f4f8;
+  z-index: 0;
+  pointer-events: none;
+}
+
+body.day-mode,
+body.day-mode #wrapper,
+body.day-mode p,
+body.day-mode li,
+body.day-mode a,
+body.day-mode strong,
+body.day-mode b,
+body.day-mode .long-desc,
+body.day-mode .short-desc,
+body.day-mode .card-text .role {
+  color: #111111 !important;
 }
 
 body.day-mode h1,
@@ -2096,124 +2122,79 @@ body.day-mode h3,
 body.day-mode h4,
 body.day-mode h5,
 body.day-mode h6 {
-  color: #1a1a2e;
-}
-
-body.day-mode p,
-body.day-mode li,
-body.day-mode .long-desc,
-body.day-mode .short-desc {
-  color: #2a2a3e;
-}
-
-body.day-mode #header nav ul li a {
-  background: rgba(0, 0, 0, 0.06);
-  border-color: rgba(0, 0, 0, 0.15);
-  color: rgba(0, 0, 0, 0.75);
-}
-
-body.day-mode #header nav ul li a:hover {
-  background: rgba(0, 184, 209, 0.12);
-  border-color: rgba(0, 184, 209, 0.6);
-  color: #007a9a;
+  color: #000000 !important;
 }
 
 body.day-mode #main article {
-  background-color: rgba(255, 255, 255, 0.88);
-  color: #1a1a2e;
+  background-color: rgba(255, 255, 255, 0.92) !important;
 }
 
 body.day-mode .snapshot {
-  background-color: rgba(0, 184, 209, 0.06);
-  border-color: rgba(0, 184, 209, 0.4);
-  color: #1a1a2e;
+  background-color: rgba(0, 184, 209, 0.06) !important;
+  color: #111111 !important;
 }
 
 body.day-mode .snapshot p,
-body.day-mode .snapshot li {
-  color: #1a1a2e;
+body.day-mode .snapshot li,
+body.day-mode .snapshot strong {
+  color: #111111 !important;
 }
 
 body.day-mode .experience-card,
 body.day-mode .project-card {
-  background-color: rgba(0, 184, 209, 0.05);
-  border-color: rgba(0, 184, 209, 0.4);
-}
-
-body.day-mode .card-text .role,
-body.day-mode .card-text .short-desc {
-  color: #1a1a2e;
+  background-color: rgba(255, 255, 255, 0.85) !important;
+  border-color: rgba(0, 184, 209, 0.4) !important;
 }
 
 body.day-mode .experience-detail,
 body.day-mode .project-detail {
-  background-color: rgba(255, 255, 255, 0.9);
-  color: #1a1a2e;
+  background-color: rgba(255, 255, 255, 0.92) !important;
+  color: #111111 !important;
+}
+
+body.day-mode #header nav ul li a {
+  background: rgba(0, 0, 0, 0.06) !important;
+  border-color: rgba(0, 0, 0, 0.2) !important;
+  color: rgba(0, 0, 0, 0.75) !important;
+}
+
+body.day-mode #header nav ul li a:hover {
+  background: rgba(0, 184, 209, 0.12) !important;
+  border-color: rgba(0, 184, 209, 0.6) !important;
+  color: #007a9a !important;
 }
 
 body.day-mode ul.icons li a {
-  background: rgba(0, 0, 0, 0.06);
-  border-color: rgba(0, 0, 0, 0.15);
-  color: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.06) !important;
+  border-color: rgba(0, 0, 0, 0.2) !important;
+  color: rgba(0, 0, 0, 0.7) !important;
 }
 
 body.day-mode #footer .copyright {
-  color: #444;
+  color: #444444 !important;
 }
 
-body.day-mode strong,
-body.day-mode b {
-  color: #1a1a2e;
+body.day-mode .typed-line,
+body.day-mode #animated-text {
+  color: #007a9a !important;
+  border-color: #007a9a !important;
 }
 
-body.day-mode #bg {
-  filter: brightness(3.5) saturate(0.2);
+body.day-mode .tagline {
+  color: #007a9a !important;
 }
 
-#theme-toggle {
-  position: fixed;
-  top: 1.2rem;
-  left: 1.4rem;
-  zIndex: 99999;
-  padding: 0.5rem 1.4rem;
-  font-size: 0.7rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  font-family: monospace;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.5);
-  background: rgba(0, 0, 0, 0.55);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: 999px;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  cursor: pointer;
-  outline: none;
-  transition: all 0.3s ease;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  white-space: nowrap;
-  z-index: 99999;
+body.day-mode .tagline2 {
+  color: #555555 !important;
 }
 
-#theme-toggle:hover {
-  border-color: rgba(0, 184, 209, 0.6);
-  color: #00dcff;
-  box-shadow: 0 0 14px rgba(0, 184, 209, 0.2);
+body.day-mode #wrapper {
+  z-index: 4 !important;
 }
 
-body.day-mode #theme-toggle {
-  background: rgba(255, 255, 255, 0.75);
-  border-color: rgba(0, 0, 0, 0.15);
-  color: rgba(0, 0, 0, 0.6);
+body.day-mode #particle-canvas {
+  z-index: 4 !important;
 }
-
-body.day-mode #theme-toggle:hover {
-  border-color: rgba(0, 184, 209, 0.6);
-  color: #007a9a;
-}
-
 
 
 
