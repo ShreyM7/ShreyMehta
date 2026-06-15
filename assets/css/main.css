@@ -2081,6 +2081,139 @@ nav ul li a i {
 	}
 }
 
+/* DAY MODE */
+body.day-mode {
+  background: #f0f4f8;
+}
+
+body.day-mode #wrapper {
+  color: #1a1a2e;
+}
+
+body.day-mode h1,
+body.day-mode h2,
+body.day-mode h3,
+body.day-mode h4,
+body.day-mode h5,
+body.day-mode h6 {
+  color: #1a1a2e;
+}
+
+body.day-mode p,
+body.day-mode li,
+body.day-mode .long-desc,
+body.day-mode .short-desc {
+  color: #2a2a3e;
+}
+
+body.day-mode #header nav ul li a {
+  background: rgba(0, 0, 0, 0.06);
+  border-color: rgba(0, 0, 0, 0.15);
+  color: rgba(0, 0, 0, 0.75);
+}
+
+body.day-mode #header nav ul li a:hover {
+  background: rgba(0, 184, 209, 0.12);
+  border-color: rgba(0, 184, 209, 0.6);
+  color: #007a9a;
+}
+
+body.day-mode #main article {
+  background-color: rgba(255, 255, 255, 0.88);
+  color: #1a1a2e;
+}
+
+body.day-mode .snapshot {
+  background-color: rgba(0, 184, 209, 0.06);
+  border-color: rgba(0, 184, 209, 0.4);
+  color: #1a1a2e;
+}
+
+body.day-mode .snapshot p,
+body.day-mode .snapshot li {
+  color: #1a1a2e;
+}
+
+body.day-mode .experience-card,
+body.day-mode .project-card {
+  background-color: rgba(0, 184, 209, 0.05);
+  border-color: rgba(0, 184, 209, 0.4);
+}
+
+body.day-mode .card-text .role,
+body.day-mode .card-text .short-desc {
+  color: #1a1a2e;
+}
+
+body.day-mode .experience-detail,
+body.day-mode .project-detail {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #1a1a2e;
+}
+
+body.day-mode ul.icons li a {
+  background: rgba(0, 0, 0, 0.06);
+  border-color: rgba(0, 0, 0, 0.15);
+  color: rgba(0, 0, 0, 0.7);
+}
+
+body.day-mode #footer .copyright {
+  color: #444;
+}
+
+body.day-mode strong,
+body.day-mode b {
+  color: #1a1a2e;
+}
+
+body.day-mode #bg {
+  filter: brightness(3.5) saturate(0.2);
+}
+
+#theme-toggle {
+  position: fixed;
+  top: 1.2rem;
+  left: 1.4rem;
+  zIndex: 99999;
+  padding: 0.5rem 1.4rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-family: monospace;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.5);
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  z-index: 99999;
+}
+
+#theme-toggle:hover {
+  border-color: rgba(0, 184, 209, 0.6);
+  color: #00dcff;
+  box-shadow: 0 0 14px rgba(0, 184, 209, 0.2);
+}
+
+body.day-mode #theme-toggle {
+  background: rgba(255, 255, 255, 0.75);
+  border-color: rgba(0, 0, 0, 0.15);
+  color: rgba(0, 0, 0, 0.6);
+}
+
+body.day-mode #theme-toggle:hover {
+  border-color: rgba(0, 184, 209, 0.6);
+  color: #007a9a;
+}
+
 
 
 
