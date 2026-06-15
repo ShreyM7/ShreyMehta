@@ -645,18 +645,7 @@ input, select, textarea {
 	}
 
 		.image:before {
-			pointer-events: none;
-			background-image: url("../../images/overlay.png");
-			background-color: rgba(19, 21, 25, 0.5);
-			border-radius: 4px;
-			content: '';
-			display: block;
-			height: 100%;
-			left: 0;
-			opacity: 0.5;
-			position: absolute;
-			top: 0;
-			width: 100%;
+		    display: none !important;
 		}
 
 		.image img {
@@ -2083,37 +2072,26 @@ nav ul li a i {
 
 /* DAY MODE */
 body.day-mode {
-  background: #ffffff !important;
+  background: #e8edf2 !important;
 }
 
 body.day-mode #bg {
-  opacity: 0.08 !important;
-}
-
-body.day-mode #wrapper {
-  background: rgba(255, 255, 255, 0.0) !important;
-}
-
-body.day-mode::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background: #f0f4f8;
-  z-index: 0;
-  pointer-events: none;
+  filter: invert(1) brightness(1.8) saturate(0.15) !important;
+  opacity: 1 !important;
 }
 
 body.day-mode,
-body.day-mode #wrapper,
 body.day-mode p,
 body.day-mode li,
 body.day-mode a,
-body.day-mode strong,
-body.day-mode b,
 body.day-mode .long-desc,
-body.day-mode .short-desc,
-body.day-mode .card-text .role {
+body.day-mode .short-desc {
   color: #111111 !important;
+}
+
+body.day-mode strong,
+body.day-mode b {
+  color: #000000 !important;
 }
 
 body.day-mode h1,
@@ -2126,7 +2104,8 @@ body.day-mode h6 {
 }
 
 body.day-mode #main article {
-  background-color: rgba(255, 255, 255, 0.92) !important;
+  background-color: rgba(240, 244, 248, 0.97) !important;
+  color: #111111 !important;
 }
 
 body.day-mode .snapshot {
@@ -2142,30 +2121,36 @@ body.day-mode .snapshot strong {
 
 body.day-mode .experience-card,
 body.day-mode .project-card {
-  background-color: rgba(255, 255, 255, 0.85) !important;
-  border-color: rgba(0, 184, 209, 0.4) !important;
+  background-color: rgba(240, 244, 248, 0.97) !important;
+  border-color: rgba(0, 184, 209, 0.5) !important;
+  color: #111111 !important;
+}
+
+body.day-mode .card-text .role,
+body.day-mode .card-text .short-desc {
+  color: #111111 !important;
 }
 
 body.day-mode .experience-detail,
 body.day-mode .project-detail {
-  background-color: rgba(255, 255, 255, 0.92) !important;
+  background-color: rgba(240, 244, 248, 0.97) !important;
   color: #111111 !important;
 }
 
 body.day-mode #header nav ul li a {
-  background: rgba(0, 0, 0, 0.06) !important;
+  background: rgba(0, 0, 0, 0.07) !important;
   border-color: rgba(0, 0, 0, 0.2) !important;
   color: rgba(0, 0, 0, 0.75) !important;
 }
 
 body.day-mode #header nav ul li a:hover {
-  background: rgba(0, 184, 209, 0.12) !important;
+  background: rgba(0, 184, 209, 0.15) !important;
   border-color: rgba(0, 184, 209, 0.6) !important;
-  color: #007a9a !important;
+  color: #006d8a !important;
 }
 
 body.day-mode ul.icons li a {
-  background: rgba(0, 0, 0, 0.06) !important;
+  background: rgba(0, 0, 0, 0.07) !important;
   border-color: rgba(0, 0, 0, 0.2) !important;
   color: rgba(0, 0, 0, 0.7) !important;
 }
@@ -2176,24 +2161,26 @@ body.day-mode #footer .copyright {
 
 body.day-mode .typed-line,
 body.day-mode #animated-text {
-  color: #007a9a !important;
-  border-color: #007a9a !important;
+  color: #006d8a !important;
+  border-color: #006d8a !important;
 }
 
 body.day-mode .tagline {
-  color: #007a9a !important;
+  color: #006d8a !important;
 }
 
 body.day-mode .tagline2 {
   color: #555555 !important;
 }
 
-body.day-mode #wrapper {
-  z-index: 4 !important;
-}
-
-body.day-mode #particle-canvas {
-  z-index: 4 !important;
+body.day-mode .experience-card img,
+body.day-mode .project-card img,
+body.day-mode .experience-detail img,
+body.day-mode .project-detail img,
+body.day-mode .image.main img {
+  opacity: 1 !important;
+  filter: none !important;
+  mix-blend-mode: normal !important;
 }
 
 
