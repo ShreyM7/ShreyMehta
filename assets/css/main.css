@@ -1829,13 +1829,14 @@ nav ul li a i {
   margin-bottom: 0;         
 }
 
-/* Image inside card */
 .experience-card img {
-  width: 150px;
+  width: 100%;
+  max-width: 280px;
+  height: 160px;
+  object-fit: cover;
   border-radius: 12px;
   display: block;
-  margin-bottom: 0.5rem;      /* reduced space below image */
-  align-self: center;          
+  margin: 0 auto 1rem auto;
   animation: float 3s ease-in-out infinite;
 }
 
@@ -1972,12 +1973,14 @@ nav ul li a i {
 }
 
 .project-card img {
-  width: 150px;
-  border-radius: 12px;
-  display: block;
-  margin-bottom: 0.5rem;
-  align-self: center;
-  animation: float 3s ease-in-out infinite;
+    width: 100% !important;
+    max-width: 280px !important;
+    height: 160px !important;
+    object-fit: cover !important;
+    display: block;
+    margin: 0 auto 1rem auto;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Hover */
@@ -2106,6 +2109,83 @@ nav ul li a i {
 }
 
 
+.card-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 0.15rem;
+}
 
+.card-sub-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.card-location {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.04em;
+  text-align: right;
+  margin: 0;
+  flex-shrink: 0;
+  padding-left: 0.5rem;
+}
+
+.card-date {
+  font-size: 0.75rem;
+  color: rgba(0, 184, 209, 0.75);
+  letter-spacing: 0.04em;
+  text-align: right;
+  margin: 0;
+  flex-shrink: 0;
+  padding-left: 0.5rem;
+}
+
+.card-text .role {
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin: 0;
+  flex: 1;
+}
+
+.card-text .company-name {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
+  margin: 0;
+  flex: 1;
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  justify-content: center;
+  margin-top: 0.85rem;
+  width: 100%;
+}
+
+.card-tag {
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 184, 209, 0.35);
+  color: rgba(0, 184, 209, 0.8);
+  background: rgba(0, 184, 209, 0.05);
+  transition: border-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  cursor: default;
+}
+
+.card-tag:hover {
+  border-color: rgba(0, 184, 209, 0.8);
+  color: #00dcff;
+  background: rgba(0, 184, 209, 0.12);
+  box-shadow: 0 0 10px rgba(0, 184, 209, 0.25);
+}
 
 
