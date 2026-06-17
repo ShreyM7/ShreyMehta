@@ -1817,7 +1817,7 @@ nav ul li a i {
   border: 2px solid rgba(0,184,209,0.5);
   border-radius: 12px;
   padding: 1.5rem;
-  cursor: pointer;
+  cursor: default;
   text-decoration: none;
   width: 100%;              
   box-sizing: border-box;
@@ -1833,7 +1833,9 @@ nav ul li a i {
   width: 100%;
   max-width: 280px;
   height: 160px;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
+  background: rgba(255,255,255,0.03);
   border-radius: 12px;
   display: block;
   margin: 0 auto 1rem auto;
