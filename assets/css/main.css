@@ -1835,7 +1835,6 @@ nav ul li a i {
   height: 160px;
   object-fit: contain;
   object-position: center;
-  background: rgba(255,255,255,0.03);
   border-radius: 12px;
   display: block;
   margin: 0 auto 1rem auto;
@@ -1972,16 +1971,18 @@ nav ul li a i {
   box-sizing: border-box;
   margin-bottom: 2rem;
   transition: transform 0.2s, box-shadow 0.3s;
+  position: relative;
 }
 
 .project-card img {
     width: 100% !important;
     max-width: 280px !important;
     height: 160px !important;
-    object-fit: cover !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    border-radius: 12px !important;
     display: block;
     margin: 0 auto 1rem auto;
-    border-radius: 12px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -2190,4 +2191,102 @@ nav ul li a i {
   box-shadow: 0 0 10px rgba(0, 184, 209, 0.25);
 }
 
+/* Academics tags - solid cyan with dark text feel */
+.academic-tag {
+  border-color: rgba(0, 220, 255, 0.6) !important;
+  color: #00dcff !important;
+  background: rgba(0, 220, 255, 0.08) !important;
+  font-size: 0.72rem !important;
+  letter-spacing: 0.06em !important;
+}
 
+.academic-tag:hover {
+  background: rgba(0, 220, 255, 0.18) !important;
+  box-shadow: 0 0 14px rgba(0, 220, 255, 0.35) !important;
+  border-color: #00dcff !important;
+  color: #ffffff !important;
+}
+
+/* Role tags - softer purple/violet tint */
+.role-tag {
+  border-color: rgba(160, 140, 255, 0.5) !important;
+  color: rgba(190, 175, 255, 0.9) !important;
+  background: rgba(140, 120, 255, 0.07) !important;
+  font-size: 0.72rem !important;
+  letter-spacing: 0.05em !important;
+}
+
+.role-tag:hover {
+  background: rgba(140, 120, 255, 0.18) !important;
+  box-shadow: 0 0 14px rgba(140, 120, 255, 0.35) !important;
+  border-color: rgba(190, 175, 255, 0.9) !important;
+  color: #ffffff !important;
+}
+
+.card-explore-hint {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  pointer-events: none;
+}
+
+.hint-text {
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(0, 184, 209, 0.5);
+  transition: color 0.25s ease;
+}
+
+.project-card:hover .hint-text {
+  color: #00dcff;
+}
+
+.cursor-icon {
+  width: 18px;
+  height: 18px;
+  fill: rgba(0, 184, 209, 0.5);
+  transition: fill 0.25s ease;
+  animation: cursorClick 1.4s ease-in-out infinite;
+  transform-origin: top left;
+  filter: drop-shadow(0 0 0px rgba(0, 184, 209, 0));
+  transition: fill 0.25s ease, filter 0.25s ease;
+}
+
+.project-card:hover .cursor-icon {
+  fill: #00dcff;
+  filter: drop-shadow(0 0 6px rgba(0, 220, 255, 0.6));
+}
+
+@keyframes cursorClick {
+  0%   { transform: scale(1) rotate(0deg);   opacity: 1; }
+  30%  { transform: scale(0.82) rotate(-6deg); opacity: 0.85; }
+  50%  { transform: scale(1) rotate(0deg);   opacity: 1; }
+  100% { transform: scale(1) rotate(0deg);   opacity: 1; }
+}
+
+.click-ripple {
+  position: absolute;
+  top: 10px;
+  right: -2px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(0, 184, 209, 0.4);
+  animation: rippleOut 1.4s ease-out infinite;
+  pointer-events: none;
+}
+
+.project-card:hover .click-ripple {
+  border-color: rgba(0, 220, 255, 0.7);
+}
+
+@keyframes rippleOut {
+  0%   { transform: scale(0.3); opacity: 0.8; }
+  30%  { transform: scale(0.3); opacity: 0.8; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
