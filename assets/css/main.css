@@ -2306,10 +2306,12 @@ nav ul li a i {
 .cursor-icon {
   width: 18px;
   height: 18px;
-  fill: rgba(0, 184, 209, 0.5);
+  fill: rgba(0, 184, 209, 0.6);
   animation: cursorClick 1.4s ease-in-out infinite;
-  transform-origin: top left;
+  transform-box: fill-box;
+  transform-origin: 30% 20%;
   transition: fill 0.25s ease, filter 0.25s ease;
+  display: block;
 }
 
 .project-card:hover .cursor-icon {
@@ -2318,10 +2320,11 @@ nav ul li a i {
 }
 
 @keyframes cursorClick {
-  0%   { transform: scale(1) rotate(0deg);   opacity: 1; }
-  30%  { transform: scale(0.82) rotate(-6deg); opacity: 0.85; }
-  50%  { transform: scale(1) rotate(0deg);   opacity: 1; }
-  100% { transform: scale(1) rotate(0deg);   opacity: 1; }
+  0%   { transform: scale(1); }
+  25%  { transform: scale(0.7); }
+  45%  { transform: scale(1.05); }
+  60%  { transform: scale(1); }
+  100% { transform: scale(1); }
 }
 
 @keyframes rippleOut {
