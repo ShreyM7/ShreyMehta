@@ -2290,3 +2290,42 @@ nav ul li a i {
 .project-card:hover .click-ripple {
   border-color: rgba(0, 220, 255, 0.7);
 }
+
+.hint-text {
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(0, 184, 209, 0.5);
+  transition: color 0.25s ease;
+}
+
+.project-card:hover .hint-text {
+  color: #00dcff;
+}
+
+.cursor-icon {
+  width: 18px;
+  height: 18px;
+  fill: rgba(0, 184, 209, 0.5);
+  animation: cursorClick 1.4s ease-in-out infinite;
+  transform-origin: top left;
+  transition: fill 0.25s ease, filter 0.25s ease;
+}
+
+.project-card:hover .cursor-icon {
+  fill: #00dcff;
+  filter: drop-shadow(0 0 6px rgba(0, 220, 255, 0.6));
+}
+
+@keyframes cursorClick {
+  0%   { transform: scale(1) rotate(0deg);   opacity: 1; }
+  30%  { transform: scale(0.82) rotate(-6deg); opacity: 0.85; }
+  50%  { transform: scale(1) rotate(0deg);   opacity: 1; }
+  100% { transform: scale(1) rotate(0deg);   opacity: 1; }
+}
+
+@keyframes rippleOut {
+  0%   { transform: scale(0.3); opacity: 0.8; }
+  30%  { transform: scale(0.3); opacity: 0.8; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
