@@ -2267,68 +2267,60 @@ nav ul li a i {
   align-items: center;
   gap: 0.3rem;
   pointer-events: none;
+  z-index: 5;
 }
 
 .cursor-wrapper {
   position: relative;
-  width: 22px;
-  height: 22px;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .click-ripple {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 20px;
-  height: 20px;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  margin-top: -8px;
+  margin-left: -8px;
   border-radius: 50%;
-  border: 1.5px solid rgba(0, 184, 209, 0.4);
-  animation: rippleOut 1.4s ease-out infinite;
-  pointer-events: none;
+  border: 2px solid rgba(0, 184, 209, 0.6);
+  animation: rippleOut 1.6s ease-out infinite;
 }
 
 .project-card:hover .click-ripple {
-  border-color: rgba(0, 220, 255, 0.7);
-}
-
-.hint-text {
-  font-size: 0.6rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(0, 184, 209, 0.5);
-  transition: color 0.25s ease;
-}
-
-.project-card:hover .hint-text {
-  color: #00dcff;
+  border-color: rgba(0, 220, 255, 0.9);
 }
 
 .cursor-icon {
+  position: relative;
   width: 18px;
   height: 18px;
-  fill: rgba(0, 184, 209, 0.6);
-  animation: cursorClick 1.4s ease-in-out infinite;
-  transform-box: fill-box;
-  transform-origin: 30% 20%;
+  fill: rgba(0, 184, 209, 0.7);
+  animation: cursorPress 1.6s ease-in-out infinite;
   transition: fill 0.25s ease, filter 0.25s ease;
-  display: block;
 }
 
 .project-card:hover .cursor-icon {
   fill: #00dcff;
-  filter: drop-shadow(0 0 6px rgba(0, 220, 255, 0.6));
+  filter: drop-shadow(0 0 6px rgba(0, 220, 255, 0.7));
 }
 
-@keyframes cursorClick {
+@keyframes cursorPress {
   0%   { transform: scale(1); }
-  25%  { transform: scale(0.7); }
-  45%  { transform: scale(1.05); }
-  60%  { transform: scale(1); }
+  20%  { transform: scale(1); }
+  35%  { transform: scale(0.6); }
+  50%  { transform: scale(1); }
   100% { transform: scale(1); }
 }
 
 @keyframes rippleOut {
-  0%   { transform: scale(0.3); opacity: 0.8; }
-  30%  { transform: scale(0.3); opacity: 0.8; }
-  100% { transform: scale(2.2); opacity: 0; }
+  0%   { transform: scale(0.5); opacity: 0; }
+  35%  { transform: scale(0.5); opacity: 0; }
+  50%  { transform: scale(0.5); opacity: 1; }
+  100% { transform: scale(3); opacity: 0; }
 }
