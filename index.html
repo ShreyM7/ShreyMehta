@@ -1022,6 +1022,27 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			});
 		  
 		  document.documentElement.appendChild(muteBtn);
+
+		  muteBtn.addEventListener('mouseenter', () => {
+			muteBtn.style.borderColor = 'rgba(0, 220, 255, 0.6)';
+			muteBtn.style.color = '#00dcff';
+		    muteBtn.style.boxShadow = '0 0 14px rgba(0, 184, 209, 0.2)';
+	  	    muteBtn.style.background = 'rgba(0, 184, 209, 0.12)';
+		  });
+			
+		  muteBtn.addEventListener('mouseleave', () => {
+			  if (audioEnabled) {
+				  muteBtn.style.borderColor = 'rgba(0,220,255,0.6)';
+				  muteBtn.style.color = '#00dcff';
+				  muteBtn.style.boxShadow = '0 0 16px rgba(0,220,255,0.2)';
+				  muteBtn.style.background = 'rgba(0,0,0,0.55)';
+			  } else {
+				  muteBtn.style.borderColor = 'rgba(255,255,255,0.25)';
+				  muteBtn.style.color = 'rgba(255,255,255,0.5)';
+				  muteBtn.style.boxShadow = '0 0 0px transparent';
+				  muteBtn.style.background = 'rgba(0,0,0,0.55)';
+			  }
+			});
 		
 		  let droneStarted = false;
 		
