@@ -442,22 +442,22 @@
 									Completed 12+ design iterations through rapid prototyping and system testing, optimizing mechanical tolerances, joint alignment, wire routing, and component integration. Reduced critical joint clearances from 0.5 mm to 0.2 mm, improving structural stability while maintaining smooth mechanical operation.</p>
 								<div class="iteration-slider">
 								  <div class="slider-track">
-								    <img src="images/Sketch of Prototype.png" alt="Design iteration 1" class="slider-img active">
-								    <img src="images/Sketch 2 of Prototype.png" alt="Design iteration 2" class="slider-img">
-								    <img src="First Physical Prototype Iteration.png" alt="Design iteration 3" class="slider-img">
-								    <img src="Second Physical Prototype Iteration.png" alt="Design iteration 4" class="slider-img">
-									<img src="Third Physical Prototype Iteration (PLA).png" alt="Design iteration 5" class="slider-img">
-								    <img src="First CAD Model Iteration.png" alt="Design iteration 6" class="slider-img">
-								    <img src="Final CAD Model of Poop_Scooper.png" alt="Design iteration 7" class="slider-img">
-									<img src="Final Physical Prototype Iteration.png" alt="Design iteration 8" class="slider-img">
+								    <img src="images/Sketch of Prototype.png" alt="Design iteration 1" class="slider-img active" data-caption="Initial hand sketch of Assistive Device.">
+								    <img src="images/Sketch 2 of Prototype.png" alt="Design iteration 2" class="slider-img" data-caption="Refined sketch developing the linkage and motor mount placement.">
+								    <img src="images/First Physical Prototype Iteration.png" alt="Design iteration 3" class="slider-img" data-caption="First physical prototype used to validate basic claw motion.">
+								    <img src="images/Second Physical Prototype Iteration.png" alt="Design iteration 4" class="slider-img" data-caption="Second iteration improving structural rigidity and joint fit.">
+								    <img src="images/Third Physical Prototype Iteration (PLA).png" alt="Design iteration 5" class="slider-img" data-caption="Third iteration printed in PLA, testing tolerance adjustments.">
+								    <img src="images/First CAD Model Iteration.png" alt="Design iteration 6" class="slider-img" data-caption="Early CAD model formalizing the telescoping structure.">
+								    <img src="images/Final CAD Model of Poop_Scooper.png" alt="Design iteration 7" class="slider-img" data-caption="Final CAD model with all subsystems integrated.">
+								    <img src="images/Final Physical Prototype Iteration.png" alt="Design iteration 8" class="slider-img" data-caption="Final physical prototype.">
 								  </div>
 								  <div class="slider-controls">
 								    <button type="button" class="slider-btn" id="iter-prev">‹ Back</button>
-								    <span class="slider-counter" id="iter-counter">1 / 4</span>
+								    <span class="slider-counter" id="iter-counter">1 / 8</span>
 								    <button type="button" class="slider-btn" id="iter-next">Next ›</button>
 								  </div>
+								  <p class="video-caption" id="iter-caption">Initial hand sketch outlining the claw mechanism and telescoping concept.</p>
 								</div>
-								<p class="video-caption">Selected prototype iterations showing mechanical refinement over 12+ design cycles.</p>
 								<p class="long-desc">
 									This project strengthened my experience in embedded systems, electromechanical design, rapid prototyping, and hardware-software integration, while providing hands-on experience across the full engineering design cycle, from concept development and CAD design to embedded programming, manufacturing, assembly, testing, and iterative validation.</p>
 								<video class="project-video" controls>
@@ -1212,11 +1212,13 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		
 		  const imgs = slider.querySelectorAll('.slider-img');
 		  const counter = document.getElementById('iter-counter');
+		  const caption = document.getElementById('iter-caption');
 		  let idx = 0;
 		
 		  function show(i) {
 		    imgs.forEach((img, n) => img.classList.toggle('active', n === i));
 		    counter.textContent = (i + 1) + ' / ' + imgs.length;
+		    caption.textContent = imgs[i].dataset.caption || '';
 		  }
 		
 		  document.getElementById('iter-next').addEventListener('click', () => {
