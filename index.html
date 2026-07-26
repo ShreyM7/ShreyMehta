@@ -442,10 +442,14 @@
 									Completed 12+ design iterations through rapid prototyping and system testing, optimizing mechanical tolerances, joint alignment, wire routing, and component integration. Reduced critical joint clearances from 0.5 mm to 0.2 mm, improving structural stability while maintaining smooth mechanical operation.</p>
 								<div class="iteration-slider">
 								  <div class="slider-track">
-								    <img src="images/iteration-1.jpg" alt="Design iteration 1" class="slider-img active">
-								    <img src="images/iteration-2.jpg" alt="Design iteration 2" class="slider-img">
-								    <img src="images/iteration-3.jpg" alt="Design iteration 3" class="slider-img">
-								    <img src="images/iteration-4.jpg" alt="Design iteration 4" class="slider-img">
+								    <img src="images/Sketch of Prototype.png" alt="Design iteration 1" class="slider-img active">
+								    <img src="images/Sketch 2 of Prototype.png" alt="Design iteration 2" class="slider-img">
+								    <img src="First Physical Prototype Iteration.png" alt="Design iteration 3" class="slider-img">
+								    <img src="Second Physical Prototype Iteration.png" alt="Design iteration 4" class="slider-img">
+									<img src="Third Physical Prototype Iteration (PLA).png" alt="Design iteration 5" class="slider-img">
+								    <img src="First CAD Model Iteration.png" alt="Design iteration 6" class="slider-img">
+								    <img src="Final CAD Model of Poop_Scooper.png" alt="Design iteration 7" class="slider-img">
+									<img src="Final Physical Prototype Iteration.png" alt="Design iteration 8" class="slider-img">
 								  </div>
 								  <div class="slider-controls">
 								    <button type="button" class="slider-btn" id="iter-prev">‹ Back</button>
@@ -1198,6 +1202,34 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		    attachSounds();
 		  }
 		
+		})();
+		</script>
+
+		<script>
+		(function () {
+		  const slider = document.querySelector('.iteration-slider');
+		  if (!slider) return;
+		
+		  const imgs = slider.querySelectorAll('.slider-img');
+		  const counter = document.getElementById('iter-counter');
+		  let idx = 0;
+		
+		  function show(i) {
+		    imgs.forEach((img, n) => img.classList.toggle('active', n === i));
+		    counter.textContent = (i + 1) + ' / ' + imgs.length;
+		  }
+		
+		  document.getElementById('iter-next').addEventListener('click', () => {
+		    idx = (idx + 1) % imgs.length;
+		    show(idx);
+		  });
+		
+		  document.getElementById('iter-prev').addEventListener('click', () => {
+		    idx = (idx - 1 + imgs.length) % imgs.length;
+		    show(idx);
+		  });
+		
+		  show(0);
 		})();
 		</script>
 
