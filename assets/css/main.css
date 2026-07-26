@@ -2419,3 +2419,62 @@ nav ul li a i {
   font-size: 0.7rem;
   top: 0.15rem;
 }
+
+
+.iteration-slider {
+  position: relative;
+  max-width: 600px;
+  margin: 1.5rem auto;
+}
+.slider-track {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 8px;
+  background: rgba(0,0,0,0.2);
+}
+.slider-img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+.slider-img.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+.slider-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-top: 0.9rem;
+}
+.slider-btn {
+  padding: 0.4rem 1.1rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-family: monospace;
+  color: rgba(255,255,255,0.7);
+  background: rgba(0,0,0,0.4);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.slider-btn:hover {
+  color: #00dcff;
+  border-color: rgba(0,220,255,0.6);
+  box-shadow: 0 0 12px rgba(0,184,209,0.2);
+}
+.slider-counter {
+  font-family: monospace;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.5);
+}
+
