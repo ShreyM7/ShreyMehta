@@ -1,1284 +1,398 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Shrey Mehta — Electrical Engineering</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="theme-color" content="#02070b" />
+	<meta name="description" content="Shrey Mehta — Electrical Engineering student building embedded systems, robotics, and computer vision." />
 
-<html>
-	<head>
-	  <!-- THREE.js (required) -->
-	  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-	
-	  <!-- VANTA WAVES -->
-	  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
-	  <title>Shrey Mehta</title>
-	  <meta charset="utf-8" />
-	  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	
-	  <!-- Font Awesome Icons -->
-	  <link
-	    rel="stylesheet"
-	    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-	  />
-	
-	  <link rel="stylesheet" href="assets/css/main.css" />
-	  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+	<link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+	<div id="grid-bg"></div>
+	<div id="glow-orb"></div>
 
-				<!-- Header -->
-					<header id="header">
-						<div class="content">
-							<div class="inner">
-							  <h1>Shrey Mehta</h1>
-							  <p class="typed-line">
-							    <span id="animated-text"></span>
-							  </p>
-							  <p>Hi! I'm Shrey, welcome! Explore my work and feel free to reach out.</p>
-							</div>
-						</div>
-						<nav>
-						  <ul>
-						    <li>
-						      <a href="https://drive.google.com/file/d/1AC4AdQrNcre_vnZCdAA_orlSluvrzXew/view?usp=sharing" target="_blank">
-						        <i class="fa-solid fa-file-lines"></i>
-						        <strong>View Resume</strong>
-						      </a>
-						    </li>
-						
-						    <li>
-						      <a href="#about">
-						        <i class="fa-solid fa-user"></i>
-						        <strong>About Me</strong>
-						      </a>
-						    </li>
-						
-							<li>
-							  <a href="#experience">
-							    <i class="fa-solid fa-briefcase"></i>
-							    <strong>Work Experience</strong>
-							  </a>
-							</li>
-						
-						    <li>
-						      <a href="#projects">
-						        <i class="fa-solid fa-screwdriver-wrench"></i>
-						        <strong>Projects</strong>
-						      </a>
-						    </li>
-						
-						    <li>
-						      <a href="mailto:mehtas63@mcmaster.ca">
-						        <i class="fa-solid fa-envelope"></i>
-						        <strong>Contact</strong>
-						      </a>
-						    </li>
-						  </ul>
-						</nav>
-
-					</header>
-
-				<!-- Main -->
-					<div id="main">
-
-						<!-- Intro -->
-							<article id="about">
- 							 <div class="experience-header">
-					            <h2 class="major">About Me</h2>
-					            <p class="exp-tagline">Engineer and Builder.</p>
-					            <p>I'm Shrey, an Electrical Engineering student at McMaster University, building systems where hardware and software converge. From cloud-based banking platforms and robotic arm controllers to autonomous surgical workflows and competition rovers, I'm drawn to problems that sit at the intersection of sensing, computation, and physical action.</p>
-					         </div>
-								<section class="snapshot">
-								  <h3>Snapshot</h3>
-									<ul>
-									<li>
-									    <strong>Academics:</strong>
-									    <div class="card-tags academics-tags" style="margin-top:0.6rem;">
-									    <span class="card-tag academic-tag">⚡ Electrical Engineering</span>
-									    <span class="card-tag academic-tag">🎓 McMaster University</span>
-									    </div>
-									</li>
-									
-									<li style="margin-top:1rem;">
-									    <strong>Technical Roles:</strong>
-									    <div class="card-tags roles-tags" style="margin-top:0.6rem;">
-									    <span class="card-tag role-tag">💼 Developer Intern @ TCS</span>
-									    <span class="card-tag role-tag">🔬 Biomechanics Research @ RadioSyn</span>
-									    <span class="card-tag role-tag">🤖 McMaster Mars Rover Team</span>
-									    </div>
-									</li>
-									
-									<li style="margin-top:1rem;">
-									    <strong>Tech Stack:</strong>
-									    <div class="card-tags" style="margin-top:0.6rem;">
-								        <span class="card-tag">Python</span>
-								        <span class="card-tag">Java</span>
-								        <span class="card-tag">C/C++</span>
-								        <span class="card-tag">Arduino</span>
-								        <span class="card-tag">Embedded Systems</span>
-								        <span class="card-tag">Azure</span>
-										<span class="card-tag">Streamlit</span>
-										<span class="card-tag">React</span>
-								        <span class="card-tag">Angular</span>
-									    <span class="card-tag">SolidWorks</span>
-									    <span class="card-tag">Autodesk Inventor</span>
-									    <span class="card-tag">Git</span>
-									    <span class="card-tag">BoofCV</span>
-									    </div>
-									</li>
-								</ul>
-								
-								  <div class="fuel">
-								    <h4>Fuel</h4>
-								    <p>Continuous improvement fuels my curiosity through building data-driven tools and systems, because progress deserves metrics, feedback, and thoughtful optimization.</p>
-								  </div>
-								</section>
-
-								<span class="image main"><img src="images/shrey LinkedIn Profile Pic.jpg" alt="" /></span>
-								<ul class="actions">
-									<a href="#" class="home-button">Home</a>
-								</ul>
-							</article>
-						
-						<!-- About -->
-<!-- Experience -->
-					        <article id="experience">
-					          <div class="experience-header">
-					            <h2 class="major">Work Experience</h2>
-					            <p class="exp-tagline">Built under real constraints.</p>
-					            <p class="exp-subtitle">Enterprise software engineering • Full-stack web development • Robotic automation • Biomedical research • Computer vision • Autonomous robotic perception</p>
-					          </div>
-						<!-- TCS -->
-							<!-- TCS -->
-							<div class="experience-card">
-							  <img src="images/TCS_Logo_(cropped).jpg" alt="">
-							  <div class="card-text">
-							    <div class="card-header-row">
-							      <p class="role">Developer Intern</p>
-							    </div>
-							    <div class="card-sub-row">
-								  <p class="company-name"><i class="fa-solid fa-building" style="color:rgba(255,255,255,0.75);margin-right:0.4rem;"></i> Tata Consultancy Services</p>
-							      <p class="card-date">May 2026 – Present</p>
-							    </div>
-							    <ul class="card-bullets">
-								  <p class="short-desc"> Built scalable cloud-based enterprise applications, integrating backend services, frontend platforms, and Azure infrastructure.</p>
-							      <li>Developed Angular UI for CIBC’s mortgage platform, centralizing client workflows across 100+ application modules for mortgage advisors.</li>
-							      <li>Integrated Angular components with Spring Boot REST APIs, improving reliability across enterprise banking workflows and debugging UI issues.</li>
-							      <li>Migrated Streamlit release tools to Angular with Azure DevOps/Git integrations, supporting 1000+ TCS employees across 200+ projects.</li>
-							    </ul>
-							    <div class="card-tags" style="margin-top:0.75rem;">
-							      <span class="card-tag">Spring Boot</span>
-							      <span class="card-tag">Angular</span>
-								  <span class="card-tag">Streamlit</span>
-                                  <span class="card-tag">React</span>
-							      <span class="card-tag">Azure</span>
-							      <span class="card-tag">REST APIs</span>
-							      <span class="card-tag">SQL</span>
-							      <span class="card-tag">Git</span>
-							    </div>
-							  </div>
-							</div>
-							
-							<!-- RadioSyn -->
-							<div class="experience-card">
-							  <img src="images/RadioSyn.jpg" alt="">
-							  <div class="card-text">
-							    <div class="card-header-row">
-							      <p class="role">Biomechanics Research Fellow</p>
-							    </div>
-							    <div class="card-sub-row">
-							      <p class="company-name"><i class="fa-solid fa-building" style="color:rgba(255,255,255,0.75);margin-right:0.4rem;"></i> RadioSyn</p>
-							      <p class="card-date">Sep 2025 – Present</p>
-							    </div>
-							    <ul class="card-bullets">
-								  <p class="short-desc"> Developed robotic automation systems combining mechanical design, embedded control, and software-driven experimentation for biomedical applications.</p>
-							      <li>Designed and integrated a robotic arm system with actuators, sensors, and custom hardware to automate radiopharmaceutical processing workflows.</li>
-							      <li>Built 4 Python-based control pipelines for robotic operation, experimental data collection, and real-time analysis.</li>
-							      <li>Conducted 10+ system tests with multidisciplinary teams, debugging hardware/software issues and creating technical documentation.</li>
-							    </ul>
-							    <div class="card-tags" style="margin-top:0.75rem;">
-							      <span class="card-tag">Embedded Systems</span>
-								  <span class="card-tag">Python</span>
-                                  <span class="card-tag">Control Systems</span>
-							      <span class="card-tag">Sensor Integration</span>
-							      <span class="card-tag">Robotics & Automation</span>
-							      <span class="card-tag">Data Analysis</span>
-							    </div>
-							  </div>
-							</div>
-							
-							<!-- University of Toronto -->
-							<div class="experience-card">
-							  <img src="images/3DVision.jpg" alt="">
-							  <div class="card-text">
-							    <div class="card-header-row">
-							      <p class="role">Autonomous Surgery Research Fellow</p>
-							    </div>
-							    <div class="card-sub-row">
-							      <p class="company-name"><i class="fa-solid fa-building" style="color:rgba(255,255,255,0.75);margin-right:0.4rem;"></i> University of Toronto</p>
-							      <p class="card-date">Apr 2025 – Jun 2025</p>
-							    </div>
-							    <ul class="card-bullets">
-								  <p class="short-desc"> Applied computer vision and robotics techniques to support autonomous surgical systems through image processing and experimental research.</p>
-							      <li>Collaborated with graduate researchers to evaluate and test robot-assisted surgical workflows for autonomous applications.</li>
-							      <li>Implemented BoofCV-based computer vision pipelines for image preprocessing and feature detection across 500+ surgical image samples.</li>
-							      <li>Supported robotic perception research through system testing, data analysis, and experimental validation.</li>
-							    </ul>
-							    <div class="card-tags" style="margin-top:0.75rem;">
-							      <span class="card-tag">BoofCV</span>
-							      <span class="card-tag">Computer Vision</span>
-							      <span class="card-tag">Feature Detection</span>
-							      <span class="card-tag">Image Processing</span>
-							      <span class="card-tag">System Testing</span>
-							    </div>
-							  </div>
-							</div>
-
-							<div class="overview-home">
-							    <a href="#" class="home-button">Home</a>
-							</div>
-							</article>
-
-					      <!-- TCS Detail -->
-							<article id="tcs-detail" class="experience-detail">
-					          <h2 class="detail-title">Tata Consultancy Services – Developer Intern</h2>
-					          <img src="images/TCS_Logo_(cropped).jpg" alt="">
-					          <p class="long-desc">As a Developer Intern at Tata Consultancy Services (TCS), I contributed to the development and maintenance of a cloud-based mortgage platform for CIBC hosted on Microsoft Azure, supporting a large-scale enterprise banking application used by over 15+ million customers.</p>
-					     	  <p class="long-desc">Developed and enhanced backend REST APIs using Spring Boot (Java), contributed to frontend development through Angular, and optimized application workflows to improve performance and reliability.</p>     
-							  <p class="long-desc">Configured and managed Azure cloud infrastructure, including virtual networks and application gateways through Azure DevOps to support efficient and reliable deployments.</p>     		
-								<img src="images/TCS Image - Shrey Mehta In Front Of TCS Logo.jpg" alt="">	 
-							  <div class="detail-buttons">
-								<a href="#experience" class="back-button">Back</a>
-					          </div>
-							</article>
-					
-					      <!-- Tesla Detail -->
-							<article id="tesla-detail" class="experience-detail">
-					          <h2 class="detail-title">RadioSyn – Biomechanics Research Fellow</h2>
-					          <img src="images/RadioSyn.jpg" alt="">
-					          <p class="long-desc">As a Biomechanics Research Fellow with RadioSyn, a company founded at McMaster University, under the guidance of Professor Ravi Selvaganapathy, I am designing and building a robotic arm system to automate radiopharmaceutical processing and testing. This involves integrating precision actuators, sensors, and custom hardware to improve the efficiency, accuracy, and repeatability of complex laboratory experiments. By creating a system capable of handling delicate procedures, I am helping reduce human error and streamline workflows in a highly regulated research environment.</p>
-					          <p class="long-desc">I am developing and implementing Python pipelines to control the robotic system, collect experimental data, and perform real-time analysis for quality assurance. This includes creating automated routines for task execution, programming data logging processes, and implementing checks to ensure experimental consistency. Through these efforts, I am enabling the lab to generate reliable, high-quality data while supporting advanced experimental protocols that would be challenging to perform manually.</p>  
-							  <p class="long-desc">I am collaborating closely with a multidisciplinary team of graduate students and engineering faculty to plan experiments, troubleshoot technical issues, and optimize the robotic system’s performance. In addition, I contribute to producing detailed technical reports, data visualizations, and presentations, translating complex experimental results into actionable insights. This collaborative work enhances the lab’s ability to make data-driven decisions, improves the reproducibility of experiments, and supports ongoing innovation in robotic automation for biomedical research.</p>  	
-					          <img src="images/robotic arm.jpg" alt="">	 
-							  <p class="tagline2">Robotic arm system that inspired our design.</p>
-							  <div class="detail-buttons">
-								<a href="#experience" class="back-button">Back</a>
-					          </div>
-							</article>
-				
-					
-					      <!-- Biomech Detail -->
-							<article id="biomech-detail" class="experience-detail">
-					          <h2 class="detail-title">University of Toronto - Autonomous Surgery Research Fellow</h2>
-					          <img src="images/3DVision.jpg" alt="">
-					          <p class="long-desc">Under the guidance of Professor Leuder Kahrs, I collaborated with a team of graduate students to support the development and evaluation of robot-assisted surgical workflows, gaining hands-on exposure to academic research in medical robotics. Through this work, I contributed to designing experiments that improved the efficiency and reliability of surgical procedures assisted by robotic systems.</p>
-					          <p class="long-desc">Using BoofCV, I applied medical image processing techniques to analyze surgical imagery, experimenting with feature detection, preprocessing methods, and data enhancement strategies. This work helped improve robotic perception and informed adjustments to the workflows, enabling more precise and consistent robotic actions during simulations.</p>
-							  <p class="long-desc">In addition to software-focused tasks, I assisted with system testing, experimental setup, and data validation, ensuring that automation processes performed reliably across trials. By supporting both the technical and operational aspects of the research, I helped maintain high standards of experimental accuracy and contributed to actionable insights that advanced the team’s objectives in medical robotics.</p>
-							  <div class="detail-buttons">
-								<a href="#experience" class="back-button">Back</a>
-					          </div>
-							</article>
-
-
-						<!-- Work -->
-							<article id="projects">
- 							 <div class="experience-header">
-					            <h2 class="major">Projects</h2>
-					            <p class="exp-tagline">Systems that perceive, adapt, and operate.</p>
-					            <p class="exp-subtitle">A focused set of projects selected for technical depth, measurable evaluation, and real-world integration.</p>
-					         </div>
-							  	<a href="#project-three-detail" class="project-card">
-									<div class="card-explore-hint">
-									  <div class="cursor-wrapper">
-										<svg class="cursor-icon" xmlns="http://www.w3.org/2000/svg" viewBox="-8 -8 24 24">
-										  <path d="M4 0 L4 17 L8 13 L11 20 L13 19 L10 12 L15 12 Z"/>
-										</svg>
-									    <span class="click-ripple"></span>
-									  </div>
-									  <span class="hint-text">Click to explore</span>
-									</div>						    	
-									<img src="images/Poop Scooper.png" alt="">
-							    	<div class="card-text">
-							      	<p class="company-name">Personal Project</p>
-							      	<p class="role">Embedded Assistive Robotics Device</p>
-								  	<p class="short-desc">
-										Developed an embedded electromechanical system integrating Arduino, servo control, CAD, and 3D printing to automate a custom assistive mechanism through embedded control and rapid prototyping.
-								  	</p>
-								  	<div class="card-tags">
-										<span class="card-tag">Embedded Systems</span>
-										<span class="card-tag">Arduino</span>
-										<span class="card-tag">Microcontroller Programming</span>
-										<span class="card-tag">Electromechanical Design</span>
-										<span class="card-tag">PWM Control</span>
-										<span class="card-tag">CAD Design</span>
-								  	</div>
-									</div>
-							  	</a>
-						<!-- TCS -->
-							  	<a href="#project-one-detail" class="project-card">
-									<div class="card-explore-hint">
-									  <div class="cursor-wrapper">
-										<svg class="cursor-icon" xmlns="http://www.w3.org/2000/svg" viewBox="-8 -8 24 24">
-										  <path d="M4 0 L4 17 L8 13 L11 20 L13 19 L10 12 L15 12 Z"/>
-										</svg>
-									    <span class="click-ripple"></span>
-									  </div>
-									  <span class="hint-text">Click to explore</span>
-									</div>
-									<img src="images/rover.jpeg" alt="">
-							    	<div class="card-text">
-							      	<p class="company-name">McMaster Mars Rover Team</p>
-							      	<p class="role">Mechanical Team Member</p>
-									<p class="short-desc">
-					                	Designed and manufactured a custom electrical enclosure for the McMaster Mars Rover, integrating critical electronics, power systems, and thermal management into a robust, competition-ready assembly.
-					              	</p>
-								  	<div class="card-tags">
-										<span class="card-tag">SolidWorks</span>
-										<span class="card-tag">Electrical Hardware Integration</span>
-										<span class="card-tag">Finite Element Analysis (FEA)</span>
-										<span class="card-tag">Thermal & Airflow Analysis</span>
-										<span class="card-tag">Design for Manufacturing (DFM)</span>
-								  	</div>
-								    </div>
-							  	</a>
-							
-							  <!-- Project 2 -->
-							  	<a href="#project-two-detail" class="project-card">
-									<div class="card-explore-hint">
-									  <div class="cursor-wrapper">
-										<svg class="cursor-icon" xmlns="http://www.w3.org/2000/svg" viewBox="-8 -8 24 24">
-										  <path d="M4 0 L4 17 L8 13 L11 20 L13 19 L10 12 L15 12 Z"/>
-										</svg>
-									    <span class="click-ripple"></span>
-									  </div>
-									  <span class="hint-text">Click to explore</span>
-									</div>						    	
-									<img src="images/claw.png" alt="">
-							    	<div class="card-text">
-							      	<p class="company-name">Course Project</p>
-							      	<p class="role">Robotic End-Effector for Warehouse Automation</p>
-								  	<p class="short-desc">
-										Developed a robotic end-effector for warehouse automation, integrating CAD-designed mechanical components with Python-based control logic for coordinated package handling.
-								  	</p>
-								  	<div class="card-tags">
-										<span class="card-tag">Python</span>
-										<span class="card-tag">Autodesk Inventor</span>
-										<span class="card-tag">Laser Cutting</span>
-										<span class="card-tag">Robotics</span>
-										<span class="card-tag">3D Printing</span>
-								  	</div>
-									</div>
-							  	</a>
-
-												
-							  <!-- Home Button -->
-								  	<div class="overview-home">
-								    	<a href="#" class="home-button">Home</a>
-								  	</div>
-								</article>
-							
-							<!-- Project 1 Detail -->
-								<article id="project-one-detail" class="project-detail">
-							  	<h2 class="detail-title">McMaster Mars Rover</h2>
-							  	<img src="images/rover.jpeg" alt="">
-							  	<p class="long-desc">
-									Designed and manufactured a custom electrical enclosure for the McMaster Mars Rover to securely house and protect the rover's primary electrical systems. The enclosure was engineered to support 15+ electrical subsystems, including PCBs, power distribution hardware, NVIDIA Jetson AGX modules, Ethernet interfaces, cooling fans, battery components, LEDs, and onboard cameras while providing accessibility for maintenance and system integration.							  	</p>
-							  	<p class="long-desc">
-									Designed the complete enclosure in SolidWorks, creating the structural frame, acrylic side panels, mounting brackets, support members, fastener layouts, and internal component mounts. The design prioritized structural rigidity, ease of assembly, cable management, and compatibility with the rover chassis while meeting subsystem packaging constraints.														  	</p>
-								<p class="long-desc">
-									Performed Finite Element Analysis (FEA) to validate structural performance under expected loading conditions and completed airflow simulations to optimize cooling for heat-generating electronics. These analyses informed design revisions that improved thermal performance, reduced structural deflection, and increased overall system reliability.							</p>	
-								<p class="long-desc">
-									Integrated wiring and electrical hardware throughout the enclosure, routing power and communication cables between components while ensuring serviceability and organized cable management. The enclosure is currently being manufactured and assembled for integration into the team's next-generation competition rover.				</p>			
-							  	<div class="detail-buttons">
-							    	<a href="#projects" class="back-button">Back</a>
-							  	</div>
-								</article>
-							
-							<!-- Project 2 Detail -->
-								<article id="project-two-detail" class="project-detail">
-							  	<h2 class="detail-title">Robotic End-Effector</h2>
-							  	<img src="images/claw.png" alt="">
-							  	<p class="long-desc">
-							    	Designed and fabricated a robotic end effector for a warehouse automation system, focusing on mechanical reliability, simplicity, and effective object handling rather than advanced optimization. Using Autodesk Inventor, I contributed to the creation of the end-effector geometry and produced physical components through a combination of laser cutting and 3D printing. The design process emphasized basic mechanical principles such as alignment, secure gripping, and repeatable motion, while allowing for rapid iteration and refinement based on testing results.
-							  	</p>
-							  	<p class="long-desc">
-							    	Developed Python-based control code to coordinate basic package handling tasks, supporting communication between the software and the robotic arm. I worked on sequencing commands and ensuring that mechanical actions occurred in the correct order to demonstrate a functional system. By integrating the mechanical end-effector with the software component, I contributed to a complete digital–physical system that was tested and demonstrated during a final client presentation, showcasing successful end-to-end operation.
-							  	</p>
-								<video class="project-video" controls>
-								  <source src="images/rover.MOV" type="video/mp4">
-								  Your browser does not support the video tag.
-								</video>
-								
-								<p class="video-caption">
-								  Demonstration of the robotic end-effector performing grasping and release
-								  tasks with the python-based control code.
-								</p>
-							
-							  	<div class="detail-buttons">
-							    	<a href="#projects" class="back-button">Back</a>
-							  	</div>
-								</article>
-
-								<article id="project-three-detail" class="project-detail">
-							  	<h2 class="detail-title">Embedded Assistive Robotics Device</h2>
-							  	<img src="images/Poop Scooper.png" alt="">
-							  	<p class="long-desc">
-									Designed and developed an embedded electromechanical assistive device that automated a custom claw mechanism using an Arduino Uno, PWM-controlled servo motor, and single-button interface. The project focused on applying embedded systems, mechanical design, and electronics integration to create a practical solution that reduced physical effort through one-handed operation.							  	</p>
-								<img src="images/Final CAD Model of Poop_Scooper.png" alt="">
-								<p class="video-caption">
-								  Final CAD Model of Embedded Assistive Device.
-								</p>
-								<p class="long-desc">
-									Designed the complete mechanical system in SolidWorks, including the telescoping structure, linkage mechanism, motor mounts, electronic enclosure, and structural supports. Manufactured the prototype using FDM 3D printing and integrated the embedded electronics, wiring, and mechanical components into a lightweight 0.379 kg system with a total material cost of $60.46.							  	</p>
-								<img src="images/Final Prototype in Collapsed Position.png" alt="">
-								<p class="video-caption">
-								  Final Prototype in Collapsed Position due to Telescoping Mechanism.
-								</p>
-								<p class="long-desc">
-									Developed the embedded control software in Arduino C/C++, implementing PWM-based servo control, button state management, and timing algorithms to automate the claw mechanism. During testing, I refined the control strategy by transitioning from position-based to time-based servo control, improving motion consistency and overall system reliability.							  	</p>
-								<img src="images/Arduino Code For Poop Scooper - Final Iteration.png" alt="">
-								<p class="video-caption">
-								  Arduino C/C++ Code Used for Servo Motor PWM Control and Claw Movement.
-								</p>
-								<p class="long-desc">
-									Completed 12+ design iterations through rapid prototyping and system testing, optimizing mechanical tolerances, joint alignment, wire routing, and component integration. Reduced critical joint clearances from 0.5 mm to 0.2 mm, improving structural stability while maintaining smooth mechanical operation.</p>
-								<div class="iteration-slider">
-								  <div class="slider-track">
-								    <img src="images/Sketch of Prototype.png" alt="Design iteration 1" class="slider-img active" data-caption="Initial hand sketch of Assistive Device.">
-								    <img src="images/Sketch 2 of Prototype.png" alt="Design iteration 2" class="slider-img" data-caption="Refined sketch developing the linkage and motor mount placement.">
-								    <img src="images/First Physical Prototype Iteration.png" alt="Design iteration 3" class="slider-img" data-caption="First physical prototype used to validate basic claw motion.">
-								    <img src="images/Second Physical Prototype Iteration.png" alt="Design iteration 4" class="slider-img" data-caption="Second iteration improving structural rigidity and joint fit.">
-								    <img src="images/Third Physical Prototype Iteration (PLA).png" alt="Design iteration 5" class="slider-img" data-caption="Third iteration printed in PLA, testing tolerance adjustments.">
-								    <img src="images/First CAD Model Iteration.png" alt="Design iteration 6" class="slider-img" data-caption="Early CAD model formalizing the telescoping structure.">
-								    <img src="images/Final CAD Model of Poop_Scooper.png" alt="Design iteration 7" class="slider-img" data-caption="Final CAD model with all subsystems integrated.">
-								    <img src="images/Poop Scooper.png" alt="Design iteration 8" class="slider-img" data-caption="Final physical prototype.">
-								  </div>
-								  <div class="slider-controls">
-								    <button type="button" class="slider-btn" id="iter-prev">‹ Back</button>
-								    <span class="slider-counter" id="iter-counter">1 / 8</span>
-								    <button type="button" class="slider-btn" id="iter-next">Next ›</button>
-								  </div>
-								  <p class="video-caption" id="iter-caption">Initial hand sketch outlining the claw mechanism and telescoping concept.</p>
-								  <p class="video-caption">Selected prototype iterations showing mechanical refinement over 12+ design cycles.</p>
-								</div>
-								<p class="long-desc">
-									This project strengthened my experience in embedded systems, electromechanical design, rapid prototyping, and hardware-software integration, while providing hands-on experience across the full engineering design cycle, from concept development and CAD design to embedded programming, manufacturing, assembly, testing, and iterative validation.</p>
-								<video class="project-video" controls>
-								  <source src="images/Demonstration Of Final Poop Scooper Prototype.mp4" type="video/mp4">
-								  Your browser does not support the video tag.
-								</video>
-								
-								<p class="video-caption">
-								  Demonstration of the embedded assistive device performing grasping and release tasks with the push of a button.
-								</p>
-							
-								<div class="detail-buttons">
-								  <a href="https://drive.google.com/drive/folders/1fla4lNwISvW1Wae-pvLrzi9nkWH_myzN" target="_blank" class="button">
-								    <i class="fa-solid fa-images"></i> View Project Gallery & CAD Files
-								  </a>
-								  <a href="#projects" class="back-button">Back</a>
-								</div>
-								</article>
-
-						
-						<!-- Elements -->
-							<article id="elements">
-								<h2 class="major">Elements</h2>
-
-								<section>
-									<h3 class="major">Text</h3>
-									<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-									This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-									This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-									<hr />
-									<h2>Heading Level 2</h2>
-									<h3>Heading Level 3</h3>
-									<h4>Heading Level 4</h4>
-									<h5>Heading Level 5</h5>
-									<h6>Heading Level 6</h6>
-									<hr />
-									<h4>Blockquote</h4>
-									<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-									<h4>Preformatted</h4>
-									<pre><code>i = 0;
-
-while (!deck.isInOrder()) {
-    print 'Iteration ' + i;
-    deck.shuffle();
-    i++;
-}
-
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
-								</section>
-
-								<section>
-									<h3 class="major">Lists</h3>
-
-									<h4>Unordered</h4>
-									<ul>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Sagittis adipiscing.</li>
-										<li>Felis enim feugiat.</li>
-									</ul>
-
-									<h4>Alternate</h4>
-									<ul class="alt">
-										<li>Dolor pulvinar etiam.</li>
-										<li>Sagittis adipiscing.</li>
-										<li>Felis enim feugiat.</li>
-									</ul>
-
-									<h4>Ordered</h4>
-									<ol>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Etiam vel felis viverra.</li>
-										<li>Felis enim feugiat.</li>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Etiam vel felis lorem.</li>
-										<li>Felis enim et feugiat.</li>
-									</ol>
-									<h4>Icons</h4>
-									<ul class="icons">
-										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-									</ul>
-
-									<h4>Actions</h4>
-									<ul class="actions">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-								</section>
-
-								<section>
-									<h3 class="major">Table</h3>
-									<h4>Default</h4>
-									<div class="table-wrapper">
-										<table>
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-
-									<h4>Alternate</h4>
-									<div class="table-wrapper">
-										<table class="alt">
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-								</section>
-
-								<section>
-									<h3 class="major">Buttons</h3>
-									<ul class="actions">
-										<li><a href="#" class="button primary">Primary</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button">Default</a></li>
-										<li><a href="#" class="button small">Small</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
-										<li><a href="#" class="button icon solid fa-download">Icon</a></li>
-									</ul>
-									<ul class="actions">
-										<li><span class="button primary disabled">Disabled</span></li>
-										<li><span class="button disabled">Disabled</span></li>
-									</ul>
-								</section>
-
-								<section>
-									<h3 class="major">Form</h3>
-									<form method="post" action="#">
-										<div class="fields">
-											<div class="field half">
-												<label for="demo-name">Name</label>
-												<input type="text" name="demo-name" id="demo-name" value="" placeholder="Jane Doe" />
-											</div>
-											<div class="field half">
-												<label for="demo-email">Email</label>
-												<input type="email" name="demo-email" id="demo-email" value="" placeholder="jane@untitled.tld" />
-											</div>
-											<div class="field">
-												<label for="demo-category">Category</label>
-												<select name="demo-category" id="demo-category">
-													<option value="">-</option>
-													<option value="1">Manufacturing</option>
-													<option value="1">Shipping</option>
-													<option value="1">Administration</option>
-													<option value="1">Human Resources</option>
-												</select>
-											</div>
-											<div class="field half">
-												<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-												<label for="demo-priority-low">Low</label>
-											</div>
-											<div class="field half">
-												<input type="radio" id="demo-priority-high" name="demo-priority">
-												<label for="demo-priority-high">High</label>
-											</div>
-											<div class="field half">
-												<input type="checkbox" id="demo-copy" name="demo-copy">
-												<label for="demo-copy">Email me a copy</label>
-											</div>
-											<div class="field half">
-												<input type="checkbox" id="demo-human" name="demo-human" checked>
-												<label for="demo-human">Not a robot</label>
-											</div>
-											<div class="field">
-												<label for="demo-message">Message</label>
-												<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-											</div>
-										</div>
-										<ul class="actions">
-											<li><input type="submit" value="Send Message" class="primary" /></li>
-											<li><input type="reset" value="Reset" /></li>
-										</ul>
-									</form>
-								</section>
-
-							</article>
-
-					</div>
-
-				<!-- Footer -->
-					<footer id="footer">
-						<ul class="icons">
-							<li>
-								<a href="https://www.linkedin.com/in/shrey-mehta-0b3685260/"
-								   class="icon brands fa-linkedin"
-								   target="_blank">
-									<span class="label">LinkedIn</span>
-								</a>
-							</li>
-					
-							<li>
-								<a href="mailto:mehtas63@mcmaster.ca"
-								   class="icon solid fa-envelope">
-									<span class="label">Email</span>
-								</a>
-							</li>
-						</ul>
-
-						
-						<p class="copyright">&copy; 2026 Shrey Mehta</p>
-					</footer>
-
+	<!-- Header / Nav -->
+	<header id="site-header">
+		<div class="wrap">
+			<div class="brand">
+				<div class="brand-badge">SM</div>
+				<div class="brand-text">
+					<div class="brand-name">Shrey Mehta</div>
+					<div class="brand-sub">Electrical Engineering</div>
+				</div>
 			</div>
 
-		<!-- BG -->
-		    <div id="bg"></div>
-		    <canvas id="particle-canvas"></canvas>
+			<nav>
+				<ul>
+					<li><a href="#projects"><span class="idx">01</span> Projects</a></li>
+					<li><a href="#experience"><span class="idx">02</span> Experience</a></li>
+					<li><a href="#skills"><span class="idx">03</span> Skills</a></li>
+					<li><a href="#contact"><span class="idx">04</span> Contact</a></li>
+				</ul>
+				<div class="status-pill"><span class="status-dot"></span> System Online</div>
+			</nav>
+		</div>
+	</header>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+	<!-- Hero -->
+	<section id="hero">
+		<div class="wrap hero-grid">
 
-			<script>
-				let vantaEffect = VANTA.WAVES({
-				    el: "#bg",
-				    mouseControls: false,
-				    touchControls: true,
-				    gyroControls: false,
-				    color: 0x000000,
-				    backgroundColor: 0x0f0f1a,
-				    shininess: 40,
-				    waveHeight: 20,
-				    waveSpeed: 0.7,
-				    zoom: 0.85
-				});
-			</script>
-		
-		<script>
-		const sparkColor = "#fff";
-		const sparkSize = 10;
-		const sparkRadius = 15;
-		const sparkCount = 8;
-		const duration = 400;
-		
-		const canvas = document.createElement("canvas");
-		canvas.style.position = "fixed";
-		canvas.style.top = 0;
-		canvas.style.left = 0;
-		canvas.style.width = "100%";
-		canvas.style.height = "100%";
-		canvas.style.pointerEvents = "none";
-		canvas.style.zIndex = 9999;
-		document.body.appendChild(canvas);
-		
-		const ctx = canvas.getContext("2d");
-		
-		let sparks = [];
-		
-		function resizeCanvas() {
-		  canvas.width = window.innerWidth;
-		  canvas.height = window.innerHeight;
-		}
-		
-		window.addEventListener("resize", resizeCanvas);
-		resizeCanvas();
-		
-		function animate(time) {
-		  ctx.clearRect(0, 0, canvas.width, canvas.height);
-		  const now = performance.now();
-		
-		  sparks = sparks.filter(spark => {
-		    const elapsed = now - spark.startTime;
-		    if (elapsed > duration) return false;
-		
-		    const progress = elapsed / duration;
-		    const distance = progress * sparkRadius;
-		    const lineLength = sparkSize * (1 - progress);
-		    const x1 = spark.x + distance * Math.cos(spark.angle);
-		    const y1 = spark.y + distance * Math.sin(spark.angle);
-		    const x2 = spark.x + (distance + lineLength) * Math.cos(spark.angle);
-		    const y2 = spark.y + (distance + lineLength) * Math.sin(spark.angle);
-		
-		    ctx.strokeStyle = sparkColor;
-		    ctx.lineWidth = 2;
-		    ctx.beginPath();
-		    ctx.moveTo(x1, y1);
-		    ctx.lineTo(x2, y2);
-		    ctx.stroke();
-		
-		    return true;
-		  });
-		
-		  requestAnimationFrame(animate);
-		}
-		
-		requestAnimationFrame(animate);
-		
-		document.addEventListener("click", e => {
-		  const x = e.clientX;
-		  const y = e.clientY;
-		  const now = performance.now();
-		
-		  for (let i = 0; i < sparkCount; i++) {
-		    sparks.push({
-		      x,
-		      y,
-		      angle: (2 * Math.PI * i) / sparkCount,
-		      startTime: now
-		    });
-		  }
-		});
-		</script>
+			<div class="hero-left">
+				<div class="eyebrow">SYS // 00 <span class="dim">PORTFOLIO INTERFACE</span></div>
+				<h1 class="hero-name">Shrey Mehta</h1>
+				<p class="hero-sub">
+					ELECTRICAL ENGINEERING @ MCMASTER UNIVERSITY <span class="sep">/</span> EMBEDDED SYSTEMS <span class="sep">•</span> ROBOTICS <span class="sep">•</span> COMPUTER VISION
+				</p>
 
-		<script>
-		const words = [
-		  "Everything Earned. Nothing Given.",
-		  "AI + Robotics Enthusiast",
-		  "Electrical Engineering @ McMaster University",
-		  "Developer Intern @ Tata Consultancy Services",
-		  "Biomechanics Research Fellow @ RadioSyn",
-		  "McMaster Mars Rover Team"
-		];
-		
-		const typingSpeed = 80;
-		const erasingSpeed = 50;
-		const delayBetween = 1600;
-		
-		let wordIndex = 0;
-		let charIndex = 0;
-		let isDeleting = false;
-		
-		const animatedText = document.getElementById("animated-text");
-		
-		function type() {
-		  if (!animatedText) return;
-		
-		  const currentWord = words[wordIndex];
-		
-		  if (!isDeleting) {
-		    animatedText.textContent = currentWord.slice(0, charIndex + 1);
-		    charIndex++;
-		    if (charIndex === currentWord.length) {
-		      setTimeout(() => (isDeleting = true), delayBetween);
-		    }
-		  } else {
-		    animatedText.textContent = currentWord.slice(0, charIndex - 1);
-		    charIndex--;
-		    if (charIndex === 0) {
-		      isDeleting = false;
-		      wordIndex = (wordIndex + 1) % words.length;
-		    }
-		  }
-		
-		  setTimeout(type, isDeleting ? erasingSpeed : typingSpeed);
-		}
-		
-		document.addEventListener("DOMContentLoaded", type);
-		</script>
+				<div class="sysmap">
+					<div class="sysmap-head">
+						<div class="left"><span class="dot"></span> LIVE SYSTEM MAP</div>
+						<div class="right">03 CHANNELS // SYNCHRONIZED</div>
+					</div>
 
-		<script>
-		const pc = document.getElementById('particle-canvas');
-		const cx = pc.getContext('2d');
-		
-		pc.style.position = 'fixed';
-		pc.style.top = '0';
-		pc.style.left = '0';
-		pc.style.width = '100%';
-		pc.style.height = '100%';
-		pc.style.pointerEvents = 'none';
-		pc.style.zIndex = '2';
-		
-		let W = pc.width = window.innerWidth;
-		let H = pc.height = window.innerHeight;
-		
-		const mouse = { x: -9999, y: -9999 };
-		const REACH = 140;
-		const DOT_COUNT = 180;
-		const LINE_DIST = 160;
-		
-		window.addEventListener('resize', () => {
-		  W = pc.width = window.innerWidth;
-		  H = pc.height = window.innerHeight;
-		});
-		
-		window.addEventListener('mousemove', e => {
-		  mouse.x = e.clientX;
-		  mouse.y = e.clientY;
-		});
-		
-		window.addEventListener('mouseleave', () => {
-		  mouse.x = -9999;
-		  mouse.y = -9999;
-		});
-		
-		const dots = Array.from({ length: DOT_COUNT }, () => {
-		  const x = Math.random() * window.innerWidth;
-		  const y = Math.random() * window.innerHeight;
-		  return {
-		    x, y,
-		    ox: x,
-		    oy: y,
-		    vx: (Math.random() - 0.5) * 0.4,
-		    vy: (Math.random() - 0.5) * 0.4,
-		    r: Math.random() * 1.8 + 0.8,
-		    alpha: Math.random() * 0.5 + 0.4
-		  };
-		});
-		
-		function draw() {
-		  cx.clearRect(0, 0, W, H);
-		
-		  dots.forEach(d => {
-		    const dx = mouse.x - d.x;
-		    const dy = mouse.y - d.y;
-		    const dist = Math.sqrt(dx * dx + dy * dy);
-		
-		    if (dist < REACH) {
-		      const force = (1 - dist / REACH) * 3.5;
-		      d.vx -= (dx / dist) * force * 0.08;
-		      d.vy -= (dy / dist) * force * 0.08;
-		    }
-		
-		    d.vx += (d.ox - d.x) * 0.012;
-		    d.vy += (d.oy - d.y) * 0.012;
-		    d.vx *= 0.88;
-		    d.vy *= 0.88;
-		    d.x += d.vx;
-		    d.y += d.vy;
-		
-		    if (d.x < 0) { d.x = 0; d.vx *= -0.5; }
-		    if (d.x > W) { d.x = W; d.vx *= -0.5; }
-		    if (d.y < 0) { d.y = 0; d.vy *= -0.5; }
-		    if (d.y > H) { d.y = H; d.vy *= -0.5; }
-		  });
-		
-		  for (let i = 0; i < dots.length; i++) {
-		    for (let j = i + 1; j < dots.length; j++) {
-		      const a = dots[i], b = dots[j];
-		      const dx = a.x - b.x;
-		      const dy = a.y - b.y;
-		      const dist = Math.sqrt(dx * dx + dy * dy);
-		      if (dist < LINE_DIST) {
-		        const opacity = (1 - dist / LINE_DIST) * 0.6;
-		        cx.beginPath();
-		        cx.moveTo(a.x, a.y);
-		        cx.lineTo(b.x, b.y);
-		        cx.strokeStyle = 'rgba(0, 184, 209, ' + opacity + ')';
-		        cx.lineWidth = 0.6;
-		        cx.stroke();
-		      }
-		    }
-		  }
-		
-		  dots.forEach(d => {
-		    const dx = mouse.x - d.x;
-		    const dy = mouse.y - d.y;
-		    const dist = Math.sqrt(dx * dx + dy * dy);
-		    const proximity = dist < REACH ? 1 - dist / REACH : 0;
-		    const glow = d.alpha + proximity * 0.6;
-		    const radius = d.r + proximity * 1.5;
-		
-		    cx.beginPath();
-		    cx.arc(d.x, d.y, radius, 0, Math.PI * 2);
-		    cx.fillStyle = 'rgba(0, 220, 255, ' + glow + ')';
-		    cx.fill();
-		
-		    if (proximity > 0.3) {
-		      cx.beginPath();
-		      cx.arc(d.x, d.y, radius * 2.5, 0, Math.PI * 2);
-		      cx.fillStyle = 'rgba(0, 184, 209, ' + (proximity * 0.08) + ')';
-		      cx.fill();
-		    }
-		  });
-		
-		  requestAnimationFrame(draw);
-		}
-		
-		draw();
-		</script>
+					<div class="bars" id="bars"></div>
 
-		<script>
-		(function () {
-		
-		  const AudioCtx = window.AudioContext || window.webkitAudioContext;
-		  let actx = null;
-		
-		  function getCtx() {
-		    if (!actx) actx = new AudioCtx();
-		    return actx;
-		  }
-		
-		  let audioEnabled = false;
-		
-		  // --- HOVER SOUND ---
-		  function playHover() {
-		    if (!audioEnabled) return;
-		    const ctx = getCtx();
-		    const osc = ctx.createOscillator();
-		    const gain = ctx.createGain();
-		    osc.connect(gain);
-		    gain.connect(ctx.destination);
-		    osc.type = 'sine';
-		    osc.frequency.setValueAtTime(880, ctx.currentTime);
-		    osc.frequency.exponentialRampToValueAtTime(1100, ctx.currentTime + 0.08);
-		    gain.gain.setValueAtTime(0.08, ctx.currentTime);
-		    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.12);
-		    osc.start(ctx.currentTime);
-		    osc.stop(ctx.currentTime + 0.12);
-		  }
-		
-		  // --- CLICK SOUND ---
-		  function playClick() {
-		    if (!audioEnabled) return;
-		    const ctx = getCtx();
-		
-		    const osc = ctx.createOscillator();
-		    const gain = ctx.createGain();
-		    osc.connect(gain);
-		    gain.connect(ctx.destination);
-		    osc.type = 'sine';
-		    osc.frequency.setValueAtTime(1200, ctx.currentTime);
-		    osc.frequency.exponentialRampToValueAtTime(600, ctx.currentTime + 0.15);
-		    gain.gain.setValueAtTime(0.12, ctx.currentTime);
-		    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.18);
-		    osc.start(ctx.currentTime);
-		    osc.stop(ctx.currentTime + 0.18);
-		
-		    const osc2 = ctx.createOscillator();
-		    const gain2 = ctx.createGain();
-		    osc2.connect(gain2);
-		    gain2.connect(ctx.destination);
-		    osc2.type = 'sine';
-		    osc2.frequency.setValueAtTime(400, ctx.currentTime);
-		    osc2.frequency.exponentialRampToValueAtTime(200, ctx.currentTime + 0.2);
-		    gain2.gain.setValueAtTime(0.06, ctx.currentTime);
-		    gain2.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.2);
-		    osc2.start(ctx.currentTime);
-		    osc2.stop(ctx.currentTime + 0.2);
-		  }
-		
-		  // --- BACKGROUND DRONE MUSIC ---
-			let bgAudio = null;
-			
-			function startDrone() {
-			  if (bgAudio) {
-			    bgAudio.currentTime = 0;
-			    bgAudio.play();
-			    return;
-			  }
-			  bgAudio = new Audio('images/viramiller-peaceful-harmonies-259277.mp3');
-			  bgAudio.loop = true;
-			  bgAudio.volume = 0.4;
-			  bgAudio.play();
-			}
-			
-			function stopDrone() {
-			  if (bgAudio) {
-			    bgAudio.pause();
-			    bgAudio.currentTime = 0;
-			  }
-			}
-		
-		  // --- MUTE BUTTON ---
-		  const muteBtn = document.createElement('button');
-		  muteBtn.id = 'audio-toggle';
-		  muteBtn.innerHTML = '♪ AUDIO OFF';
-	      Object.assign(muteBtn.style, {
-			  position: 'fixed',
-			  top: '1.2rem',
-			  right: '1.4rem',
-			  left: 'auto',
-			  transform: 'none',
-			  zIndex: '99999',
-			  padding: '0.5rem 1.4rem',
-			  fontSize: '0.7rem',
-			  letterSpacing: '0.16em',
-			  textTransform: 'uppercase',
-			  fontFamily: 'monospace',
-			  fontWeight: '600',
-			  color: 'rgba(255,255,255,0.5)',
-			  background: 'rgba(0,0,0,0.55)',
-			  border: '1px solid rgba(255,255,255,0.25)',
-			  borderRadius: '999px',
-			  backdropFilter: 'blur(12px)',
-			  webkitBackdropFilter: 'blur(12px)',
-			  boxShadow: '0 0 0px transparent',
-			  cursor: 'pointer',
-			  outline: 'none',
-			  transition: 'all 0.3s ease',
-			  display: 'inline-flex',
-			  alignItems: 'center',
-			  justifyContent: 'center',
-			  textAlign: 'center',
-			  whiteSpace: 'nowrap'
-			});
-		  
-		  document.documentElement.appendChild(muteBtn);
+					<div class="sysmap-stats">
+						<div>
+							<div class="stat-label">Compute Bus</div>
+							<div class="stat-value">Embedded</div>
+							<div class="stat-sub">C/C++ // Active</div>
+						</div>
+						<div>
+							<div class="stat-label">Drive System</div>
+							<div class="stat-value">Robotics</div>
+							<div class="stat-sub">Actuation // Active</div>
+						</div>
+						<div>
+							<div class="stat-label">Research Core</div>
+							<div class="stat-value">CV → Test</div>
+							<div class="stat-sub">Loop // Iterating</div>
+						</div>
+					</div>
+				</div>
 
-		  muteBtn.addEventListener('mouseenter', () => {
-			muteBtn.style.borderColor = 'rgba(0, 220, 255, 0.6)';
-			muteBtn.style.color = '#00dcff';
-		    muteBtn.style.boxShadow = '0 0 14px rgba(0, 184, 209, 0.2)';
-	  	    muteBtn.style.background = 'rgba(0, 184, 209, 0.12)';
-		  });
-			
-		  muteBtn.addEventListener('mouseleave', () => {
-			  if (audioEnabled) {
-				  muteBtn.style.borderColor = 'rgba(0,220,255,0.6)';
-				  muteBtn.style.color = '#00dcff';
-				  muteBtn.style.boxShadow = '0 0 16px rgba(0,220,255,0.2)';
-				  muteBtn.style.background = 'rgba(0,0,0,0.55)';
-			  } else {
-				  muteBtn.style.borderColor = 'rgba(255,255,255,0.25)';
-				  muteBtn.style.color = 'rgba(255,255,255,0.5)';
-				  muteBtn.style.boxShadow = '0 0 0px transparent';
-				  muteBtn.style.background = 'rgba(0,0,0,0.55)';
-			  }
-			});
-		
-		  let droneStarted = false;
-		
-	  	  muteBtn.addEventListener('click', () => {
-		    audioEnabled = !audioEnabled;
-		
-		    if (audioEnabled) {
-		      muteBtn.innerHTML = '♪ AUDIO ON';
-		      muteBtn.style.color = '#00dcff';
-		      muteBtn.style.borderColor = 'rgba(0,220,255,0.6)';
-		      muteBtn.style.boxShadow = '0 0 16px rgba(0,220,255,0.2)';
-		      startDrone();
-		      droneStarted = true;
-		    } else {
-		      muteBtn.innerHTML = '✕ AUDIO OFF';
-		      muteBtn.style.color = 'rgba(255,255,255,0.5)';
-		      muteBtn.style.borderColor = 'rgba(255,255,255,0.25)';
-		      muteBtn.style.boxShadow = '0 0 0px transparent';
-		      stopDrone();
-		      droneStarted = false;
-		    }
-		  });
-				
-		  // --- ATTACH SOUNDS TO BUTTONS ---
-		  function attachSounds() {
-		    const targets = document.querySelectorAll(
-		      '#header nav ul li a, ul.icons li a, .home-button, .back-button'
-		    );
-		
-		    targets.forEach(el => {
-		      el.addEventListener('mouseenter', () => {
-		        if (!droneStarted && audioEnabled) {
-		          droneStarted = true;
-		          startDrone();
-		        }
-		        playHover();
-		      });
-		      el.addEventListener('click', playClick);
-		    });
-		  }
-		
-		  // Wait for DOM then attach
-		  if (document.readyState === 'loading') {
-		    document.addEventListener('DOMContentLoaded', attachSounds);
-		  } else {
-		    attachSounds();
-		  }
-		
-		})();
-		</script>
+				<div class="hero-actions">
+					<a class="btn primary" href="https://drive.google.com/file/d/1AC4AdQrNcre_vnZCdAA_orlSluvrzXew/view?usp=sharing" target="_blank" rel="noopener">
+						<i class="fa-solid fa-arrow-up-right-from-square"></i> Access Résumé
+					</a>
+					<a class="btn" href="https://github.com/" target="_blank" rel="noopener">
+						<i class="fa-brands fa-github"></i> GitHub
+					</a>
+					<a class="btn" href="https://www.linkedin.com/in/shrey-mehta-0b3685260/" target="_blank" rel="noopener">
+						<i class="fa-brands fa-linkedin"></i> LinkedIn
+					</a>
+				</div>
 
-		<script>
-		(function () {
-		  const slider = document.querySelector('.iteration-slider');
-		  if (!slider) return;
-		
-		  const imgs = slider.querySelectorAll('.slider-img');
-		  const counter = document.getElementById('iter-counter');
-		  const caption = document.getElementById('iter-caption');
-		  let idx = 0;
-		
-		  function show(i) {
-		    imgs.forEach((img, n) => img.classList.toggle('active', n === i));
-		    counter.textContent = (i + 1) + ' / ' + imgs.length;
-		    caption.textContent = imgs[i].dataset.caption || '';
-		  }
-		
-		  document.getElementById('iter-next').addEventListener('click', () => {
-		    idx = (idx + 1) % imgs.length;
-		    show(idx);
-		  });
-		
-		  document.getElementById('iter-prev').addEventListener('click', () => {
-		    idx = (idx - 1 + imgs.length) % imgs.length;
-		    show(idx);
-		  });
-		
-		  show(0);
-		})();
-		</script>
+				<div class="hero-meta">
+					<div>
+						<div class="meta-label">Current Assignment</div>
+						<div class="meta-value">Developer Intern @ Tata Consultancy Services</div>
+					</div>
+					<div>
+						<div class="meta-label">Location</div>
+						<div class="meta-value">Hamilton, Ontario</div>
+					</div>
+				</div>
+			</div>
 
+			<div class="hero-right">
+				<div class="hero-portrait">
+					<div class="portrait-ring"></div>
+					<div class="portrait-photo">
+						<img src="images/shrey LinkedIn Profile Pic.jpg" alt="Shrey Mehta" />
+					</div>
 
-	</body>
+					<div class="tag-chip chip-1">
+						<span class="chip-label">Ident // Confirmed</span>
+						<span class="chip-value">SM-01</span>
+					</div>
+					<div class="tag-chip chip-2 accent">
+						<span class="chip-label">Prev.</span>
+						<span class="chip-value">TCS</span>
+					</div>
+					<div class="tag-chip chip-3 accent">
+						<span class="chip-label">Inc.</span>
+						<span class="chip-value">RadioSyn</span>
+					</div>
+					<div class="tag-chip chip-4 teal">
+						<span class="chip-label">Discipline</span>
+						<span class="chip-value">Embedded Systems</span>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</section>
+
+	<!-- Project Archive -->
+	<section id="projects" class="panel">
+		<div class="wrap">
+			<div class="eyebrow">SELECTED BUILDS</div>
+			<div class="section-heading">
+				<span class="num">01</span>
+				<div class="heading-block"><h2>Project Archive</h2></div>
+				<a class="section-link" href="#contact">Initiate Contact →</a>
+			</div>
+
+			<div class="project-grid">
+
+				<!-- Project 1 -->
+				<div class="project-card">
+					<div class="thumb">
+						<img src="images/Poop Scooper.png" alt="Embedded Assistive Robotics Device" />
+						<span class="thumb-tag">PRJ_01</span>
+						<span class="thumb-status"><span class="dot"></span> Validated Build</span>
+					</div>
+					<div class="project-body">
+						<div class="project-cats">MECH • ELEC • EMBEDDED</div>
+						<h3>Embedded Assistive Robotics Device</h3>
+						<p class="project-desc">An embedded electromechanical system integrating Arduino, servo control, CAD, and 3D printing to automate a custom assistive claw mechanism.</p>
+						<ul class="project-list">
+							<li><span class="n">01</span> Designed the telescoping structure and linkage mechanism in SolidWorks, manufactured via FDM 3D printing.</li>
+							<li><span class="n">02</span> Programmed PWM-based servo control and button-state logic in Arduino C/C++.</li>
+							<li><span class="n">03</span> Completed 12+ design iterations, tightening joint clearances from 0.5&nbsp;mm to 0.2&nbsp;mm.</li>
+							<li><span class="n">04</span> Delivered a 0.379&nbsp;kg prototype at a total material cost of $60.46.</li>
+						</ul>
+						<div class="chip-row">
+							<span class="chip">Arduino</span>
+							<span class="chip">Embedded Systems</span>
+							<span class="chip">PWM Control</span>
+							<span class="chip">SolidWorks</span>
+							<span class="chip">3D Printing</span>
+						</div>
+						<div class="card-footer">
+							<a class="open-file" href="https://drive.google.com/drive/folders/1fla4lNwISvW1Wae-pvLrzi9nkWH_myzN" target="_blank" rel="noopener">Open File ↗</a>
+						</div>
+					</div>
+				</div>
+
+				<!-- Project 2 -->
+				<div class="project-card">
+					<div class="thumb">
+						<img src="images/rover.jpeg" alt="McMaster Mars Rover Electrical Enclosure" />
+						<span class="thumb-tag">PRJ_02</span>
+						<span class="thumb-status"><span class="dot"></span> Validated Build</span>
+					</div>
+					<div class="project-body">
+						<div class="project-cats">MECH • ELEC • FEA</div>
+						<h3>Rover Electrical Enclosure</h3>
+						<p class="project-desc">Custom electrical enclosure for the McMaster Mars Rover, housing 15+ subsystems in a competition-ready assembly.</p>
+						<ul class="project-list">
+							<li><span class="n">01</span> Engineered the structural frame, acrylic panels, and mounts in SolidWorks around chassis packaging constraints.</li>
+							<li><span class="n">02</span> Ran FEA and airflow simulations to validate rigidity and cooling for heat-generating electronics.</li>
+							<li><span class="n">03</span> Integrated wiring and cable management across power, compute, and camera hardware.</li>
+						</ul>
+						<div class="chip-row">
+							<span class="chip">SolidWorks</span>
+							<span class="chip">FEA</span>
+							<span class="chip">Thermal Analysis</span>
+							<span class="chip">DFM</span>
+						</div>
+						<div class="card-footer">
+							<a class="open-file" href="#">Open File ↗</a>
+						</div>
+					</div>
+				</div>
+
+				<!-- Project 3 -->
+				<div class="project-card">
+					<div class="thumb">
+						<img src="images/claw.png" alt="Robotic End-Effector" />
+						<span class="thumb-tag">PRJ_03</span>
+						<span class="thumb-status"><span class="dot"></span> Validated Build</span>
+					</div>
+					<div class="project-body">
+						<div class="project-cats">ROBOTICS • SOFTWARE • CAD</div>
+						<h3>Robotic End-Effector for Warehouse Automation</h3>
+						<p class="project-desc">A robotic end-effector for warehouse automation, pairing CAD-designed mechanical components with Python-based control logic.</p>
+						<ul class="project-list">
+							<li><span class="n">01</span> Designed end-effector geometry in Autodesk Inventor and fabricated parts via laser cutting and 3D printing.</li>
+							<li><span class="n">02</span> Wrote Python control code to sequence commands for coordinated package handling.</li>
+							<li><span class="n">03</span> Demonstrated a complete digital–physical system in a final client presentation.</li>
+						</ul>
+						<div class="chip-row">
+							<span class="chip">Python</span>
+							<span class="chip">Autodesk Inventor</span>
+							<span class="chip">Laser Cutting</span>
+							<span class="chip">Robotics</span>
+						</div>
+						<div class="card-footer">
+							<a class="open-file" href="#">Open File ↗</a>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+	<!-- Experience Log -->
+	<section id="experience" class="panel">
+		<div class="wrap">
+			<div class="eyebrow">FIELD RECORD</div>
+			<div class="section-heading">
+				<span class="num">02</span>
+				<div class="heading-block"><h2>Experience Log</h2></div>
+			</div>
+
+			<div class="timeline">
+
+				<div class="timeline-item">
+					<div class="idx-col"><span class="idx-num">01</span><span class="idx-line"></span></div>
+					<div class="time-col">
+						<div class="time-label">Time Index</div>
+						<div class="time-value">May 2026 – Present</div>
+					</div>
+					<div class="content-col">
+						<div class="co-line">Tata Consultancy Services — Banking Platforms</div>
+						<h3>Developer Intern</h3>
+						<ul>
+							<li><span class="arrow">›</span> Developed Angular UI for CIBC's mortgage platform, centralizing workflows across 100+ application modules.</li>
+							<li><span class="arrow">›</span> Integrated Angular components with Spring Boot REST APIs across enterprise banking workflows.</li>
+							<li><span class="arrow">›</span> Migrated Streamlit release tools to Angular with Azure DevOps/Git integration, supporting 1000+ employees.</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="timeline-item">
+					<div class="idx-col"><span class="idx-num">02</span><span class="idx-line"></span></div>
+					<div class="time-col">
+						<div class="time-label">Time Index</div>
+						<div class="time-value">Sep 2025 – Present</div>
+					</div>
+					<div class="content-col">
+						<div class="co-line">RadioSyn — Biomedical Robotics</div>
+						<h3>Biomechanics Research Fellow</h3>
+						<ul>
+							<li><span class="arrow">›</span> Designed and integrated a robotic arm system to automate radiopharmaceutical processing workflows.</li>
+							<li><span class="arrow">›</span> Built 4 Python-based control pipelines for robotic operation and real-time analysis.</li>
+							<li><span class="arrow">›</span> Ran 10+ system tests with multidisciplinary teams, debugging hardware/software issues.</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="timeline-item">
+					<div class="idx-col"><span class="idx-num">03</span><span class="idx-line"></span></div>
+					<div class="time-col">
+						<div class="time-label">Time Index</div>
+						<div class="time-value">Apr 2025 – Jun 2025</div>
+					</div>
+					<div class="content-col">
+						<div class="co-line">University of Toronto — Medical Robotics</div>
+						<h3>Autonomous Surgery Research Fellow</h3>
+						<ul>
+							<li><span class="arrow">›</span> Collaborated with graduate researchers to evaluate robot-assisted surgical workflows.</li>
+							<li><span class="arrow">›</span> Implemented BoofCV computer vision pipelines across 500+ surgical image samples.</li>
+							<li><span class="arrow">›</span> Supported robotic perception research through system testing and validation.</li>
+						</ul>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+	<!-- Systems & Tools -->
+	<section id="skills" class="panel">
+		<div class="wrap">
+			<div class="eyebrow">CAPABILITY MATRIX</div>
+			<div class="section-heading">
+				<span class="num">03</span>
+				<div class="heading-block"><h2>Systems &amp; Tools</h2></div>
+			</div>
+
+			<div class="tools-grid">
+
+				<div class="tool-module">
+					<div class="mod-head"><span class="mod-id">MOD_01</span><span class="mod-diamond"></span></div>
+					<h3>Mechanical</h3>
+					<div class="mod-bar"></div>
+					<div class="mod-tags">
+						<span class="chip">SolidWorks</span>
+						<span class="chip">Autodesk Inventor</span>
+						<span class="chip">CAD Design</span>
+						<span class="chip">FEA</span>
+						<span class="chip">3D Printing</span>
+						<span class="chip">Laser Cutting</span>
+						<span class="chip">DFM</span>
+					</div>
+				</div>
+
+				<div class="tool-module">
+					<div class="mod-head"><span class="mod-id">MOD_02</span><span class="mod-diamond"></span></div>
+					<h3>Software</h3>
+					<div class="mod-bar"></div>
+					<div class="mod-tags">
+						<span class="chip">Python</span>
+						<span class="chip">Java</span>
+						<span class="chip">C / C++</span>
+						<span class="chip">Arduino</span>
+						<span class="chip">React</span>
+						<span class="chip">Angular</span>
+						<span class="chip">Streamlit</span>
+						<span class="chip">Azure</span>
+						<span class="chip">Git</span>
+					</div>
+				</div>
+
+				<div class="tool-module">
+					<div class="mod-head"><span class="mod-id">MOD_03</span><span class="mod-diamond"></span></div>
+					<h3>Testing &amp; Research</h3>
+					<div class="mod-bar"></div>
+					<div class="mod-tags">
+						<span class="chip">BoofCV</span>
+						<span class="chip">Computer Vision</span>
+						<span class="chip">Feature Detection</span>
+						<span class="chip">Sensor Integration</span>
+						<span class="chip">System Testing</span>
+						<span class="chip">Data Analysis</span>
+						<span class="chip">Embedded Systems</span>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+	<!-- Contact -->
+	<section id="contact" class="panel">
+		<div class="wrap">
+			<div class="contact-panel">
+				<div class="contact-heading">
+					<div class="eyebrow">SYS // 04 <span class="dim">COMMUNICATION CHANNEL</span></div>
+					<div class="line1">Open a Channel.</div>
+					<div class="line2">Let's Talk Engineering.</div>
+				</div>
+
+				<div class="contact-side">
+					<p>Open to conversations about embedded systems, robotics, computer vision, and engineering teams solving hard physical problems.</p>
+					<div class="hero-actions">
+						<a class="btn primary" href="mailto:mehtas63@mcmaster.ca"><i class="fa-solid fa-envelope"></i> Send Signal</a>
+						<a class="btn" href="https://github.com/" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
+						<a class="btn" href="https://www.linkedin.com/in/shrey-mehta-0b3685260/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<footer id="site-footer">
+		<div class="wrap">
+			<div class="foot-icons">
+				<a href="https://www.linkedin.com/in/shrey-mehta-0b3685260/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i></a>
+				<a href="mailto:mehtas63@mcmaster.ca"><i class="fa-solid fa-envelope"></i></a>
+				<a href="https://github.com/" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i></a>
+			</div>
+			<p class="copyright">&copy; 2026 Shrey Mehta</p>
+		</div>
+	</footer>
+
+	<script src="assets/js/main.js"></script>
+</body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
