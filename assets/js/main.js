@@ -1,4 +1,20 @@
 // ============================================================
+// 0. Size the grid background to the full page so it can fade
+//    out near the actual bottom of the content
+// ============================================================
+(function () {
+	const grid = document.getElementById('grid-bg');
+	if (!grid) return;
+	function resize() {
+		grid.style.height = document.documentElement.scrollHeight + 'px';
+	}
+	window.addEventListener('load', resize);
+	window.addEventListener('resize', resize);
+	setTimeout(resize, 500); // catch late layout shifts (fonts/images)
+})();
+
+
+// ============================================================
 // 1. Live system map bar chart (waveform + moving playhead)
 // ============================================================
 (function () {
