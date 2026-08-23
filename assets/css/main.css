@@ -63,7 +63,7 @@ body.detail-open { overflow: hidden; }
 
 /* ---- page-wide background: dark + visible grid + a few glow patches + radar arcs ---- */
 #grid-bg {
-	position: fixed; inset: 0; z-index: 0; pointer-events: none;
+	position: fixed; inset: 0; z-index: 1; pointer-events: none;
 	background-image:
 		linear-gradient(rgba(95, 216, 232, 0.09) 1px, transparent 1px),
 		linear-gradient(90deg, rgba(95, 216, 232, 0.09) 1px, transparent 1px),
@@ -107,13 +107,12 @@ body.detail-open { overflow: hidden; }
 
 /* num and heading-block stretch to the same height, so the number is
    leveled with the eyebrow+title block from top to bottom */
-.section-heading { display: flex; align-items: stretch; gap: 1.4rem; margin-bottom: 3rem; flex-wrap: wrap; }
+.section-heading { display: flex; align-items: flex-end; gap: 1.4rem; margin-bottom: 3rem; flex-wrap: wrap; }
 .section-heading .num {
 	font-family: var(--display); font-size: 3.2rem; font-weight: 700; line-height: 1;
 	color: rgba(95, 216, 232, 0.18);
-	display: flex; align-items: center;
 }
-.heading-block { display: flex; flex-direction: column; justify-content: center; gap: 0.55rem; }
+.heading-block { display: flex; flex-direction: column; gap: 0.55rem; }
 .heading-block .eyebrow { margin-bottom: 0; }
 .section-heading h2 {
 	font-family: var(--display); font-size: 2.6rem; font-weight: 700; letter-spacing: 0.01em;
@@ -419,10 +418,9 @@ section.panel:not(:last-of-type) { border-bottom: 1px solid var(--border-soft); 
 .idx-col .idx-line { width: 1px; flex: 1; background: linear-gradient(to bottom, var(--teal-soft), transparent); min-height: 1.5rem; }
 
 /* time-col nudged down slightly so its date lines up with the role title, not the company line */
-.time-col { padding-top: 0.26rem; }
-.time-col .time-label { font-family: var(--display); font-weight: 500; font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); margin-bottom: 0.35rem; }
+.time-col .time-label { font-family: var(--display); font-weight: 500; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); margin-bottom: 0.4rem; line-height: 1.2; }
 .time-col .time-value { font-family: var(--display); font-weight: 500; font-size: 0.84rem; color: var(--text-dim); }
-.content-col .co-line { font-family: var(--display); font-weight: 600; font-size: 0.74rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--orange); margin-bottom: 0.4rem; }
+.content-col .co-line { font-family: var(--display); font-weight: 600; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--orange); margin-bottom: 0.4rem; line-height: 1.2; }
 .content-col h3 { font-family: var(--display); font-weight: 700; font-size: 1.18rem; text-transform: uppercase; letter-spacing: 0.01em; color: var(--text); margin-bottom: 0.8rem; }
 .content-col ul { display: flex; flex-direction: column; gap: 0.45rem; }
 .content-col ul li { display: flex; gap: 0.6rem; font-size: 0.88rem; color: var(--text-dim); line-height: 1.5; }
