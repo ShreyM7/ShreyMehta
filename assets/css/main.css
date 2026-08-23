@@ -378,8 +378,15 @@ section.panel:not(:last-of-type) { border-bottom: 1px solid var(--border-soft); 
 .detail-panel { border: 1px solid var(--border); border-radius: 14px; background: var(--bg-panel); padding: 2.5rem; }
 @media screen and (max-width: 736px) { .detail-panel { padding: 1.5rem; } }
 
-.detail-back { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--display); font-weight: 600; font-size: 0.76rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--teal); margin-bottom: 2rem; }
-.detail-back:hover { color: #ffffff; }
+.detail-back {
+	display: inline-flex; align-items: center; gap: 0.6rem;
+	font-family: var(--display); font-weight: 600; font-size: 0.76rem; letter-spacing: 0.08em; text-transform: uppercase;
+	color: var(--text); background: var(--bg-panel); border: 1px solid var(--border);
+	padding: 0.85rem 1.4rem; margin-bottom: 2rem;
+	clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
+	transition: border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+.detail-back:hover { transform: translateY(-2px); border-color: var(--teal-soft); color: var(--teal); box-shadow: 0 0 18px rgba(95,216,232,0.2); }
 
 .detail-title { font-family: var(--display); font-weight: 700; font-size: 1.6rem; text-transform: uppercase; letter-spacing: 0.02em; color: var(--text); margin-bottom: 1.8rem; }
 
@@ -394,7 +401,8 @@ section.panel:not(:last-of-type) { border-bottom: 1px solid var(--border-soft); 
 .iteration-slider .detail-caption { margin-top: 1.1rem; margin-bottom: 0; }
 
 .detail-desc { font-size: 0.95rem; color: var(--text-dim); margin-bottom: 1.4rem; line-height: 1.7; }
-.detail-actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem; }
+.detail-actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem; justify-content: center; }
+.detail-copyright { text-align: center; margin-top: 2.5rem; font-family: var(--display); font-weight: 500; font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-faint); }
 
 .iteration-slider { position: relative; max-width: 560px; margin: 1.8rem auto; }
 .slider-track { position: relative; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; border-radius: 10px; background: rgba(0,0,0,0.35); border: 1px solid var(--border-soft); }
@@ -422,10 +430,10 @@ section.panel:not(:last-of-type) { border-bottom: 1px solid var(--border-soft); 
 .idx-col .idx-line { width: 1px; flex: 1; background: linear-gradient(to bottom, var(--teal-soft), transparent); min-height: 1.5rem; }
 
 /* time-col nudged down slightly so its date lines up with the role title, not the company line */
-.time-col .time-label { font-family: var(--display); font-weight: 500; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); margin-bottom: 0.4rem; line-height: 1.2; }
-.time-col .time-value { font-family: var(--display); font-weight: 500; font-size: 0.84rem; color: var(--text-dim); line-height: 1.15; }
-.content-col .co-line { font-family: var(--display); font-weight: 600; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--orange); margin-bottom: 0.4rem; line-height: 1.2; }
-.content-col h3 { font-family: var(--display); font-weight: 700; font-size: 1.18rem; text-transform: uppercase; letter-spacing: 0.01em; color: var(--text); margin-bottom: 0.8rem; line-height: 1.15; }
+.time-col .time-label { display: flex; align-items: flex-end; min-height: 1rem; font-family: var(--display); font-weight: 500; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); margin-bottom: 0.4rem; }
+.time-col .time-value { font-family: var(--display); font-weight: 500; font-size: 0.84rem; color: var(--text-dim); line-height: 1; }
+.content-col .co-line { display: flex; align-items: flex-end; min-height: 1rem; font-family: var(--display); font-weight: 600; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--orange); margin-bottom: 0.4rem; }
+.content-col h3 { font-family: var(--display); font-weight: 700; font-size: 1.18rem; text-transform: uppercase; letter-spacing: 0.01em; color: var(--text); margin-bottom: 0.8rem; line-height: 1; }
 .content-col ul { display: flex; flex-direction: column; gap: 0.45rem; }
 .content-col ul li { display: flex; gap: 0.6rem; font-size: 0.88rem; color: var(--text-dim); line-height: 1.5; }
 .content-col ul li .arrow { color: var(--teal); flex-shrink: 0; }
