@@ -63,13 +63,15 @@ body.detail-open { overflow: hidden; }
 
 /* ---- page-wide background: dark + visible grid + a few glow patches + radar arcs ---- */
 #grid-bg {
-	position: fixed; inset: 0; z-index: 1; pointer-events: none;
+	position: absolute; top: 0; left: 0; right: 0; z-index: 1; pointer-events: none;
 	background-image:
-		linear-gradient(rgba(95, 216, 232, 0.09) 1px, transparent 1px),
-		linear-gradient(90deg, rgba(95, 216, 232, 0.09) 1px, transparent 1px),
-		linear-gradient(rgba(95, 216, 232, 0.15) 1px, transparent 1px),
-		linear-gradient(90deg, rgba(95, 216, 232, 0.15) 1px, transparent 1px);
+		linear-gradient(rgba(95, 216, 232, 0.06) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(95, 216, 232, 0.06) 1px, transparent 1px),
+		linear-gradient(rgba(95, 216, 232, 0.10) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(95, 216, 232, 0.10) 1px, transparent 1px);
 	background-size: 42px 42px, 42px 42px, 168px 168px, 168px 168px;
+	-webkit-mask-image: linear-gradient(to bottom, black 0%, black 75%, transparent 100%);
+	mask-image: linear-gradient(to bottom, black 0%, black 75%, transparent 100%);
 }
 #glow-orb {
 	position: fixed; inset: 0; z-index: 0; pointer-events: none;
@@ -113,9 +115,9 @@ body.detail-open { overflow: hidden; }
 	color: rgba(95, 216, 232, 0.18);
 }
 .heading-block { display: flex; flex-direction: column; gap: 0.55rem; }
-.heading-block .eyebrow { margin-bottom: 0; }
+.heading-block .eyebrow { margin-bottom: 0; line-height: 1.1; }
 .section-heading h2 {
-	font-family: var(--display); font-size: 2.6rem; font-weight: 700; letter-spacing: 0.01em;
+	font-family: var(--display); font-size: 2.85rem; font-weight: 700; letter-spacing: 0.01em;
 	text-transform: uppercase; color: var(--text); line-height: 1;
 }
 
@@ -191,7 +193,7 @@ section.panel:not(:last-of-type) { border-bottom: 1px solid var(--border-soft); 
 	text-shadow: 0 0 30px rgba(95, 216, 232, 0.45), 0 0 80px rgba(95, 216, 232, 0.15);
 	margin-bottom: 1.1rem;
 }
-.hero-sub { font-family: var(--display); font-weight: 500; font-size: 0.92rem; letter-spacing: 0.03em; color: var(--text-dim); margin-bottom: 2.6rem; max-width: 40rem; }
+.hero-sub { font-family: var(--display); font-weight: 500; font-size: 0.84rem; letter-spacing: 0.03em; color: var(--text-dim); margin-bottom: 2.6rem; max-width: 40rem; }
 .hero-sub .sep { color: var(--teal); margin: 0 0.4rem; }
 @media screen and (max-width: 736px) { .hero-name { font-size: 2.2rem; } }
 
