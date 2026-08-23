@@ -151,9 +151,11 @@ section.panel:not(:last-of-type) { border-bottom: 1px solid var(--border-soft); 
 
 .brand { display: flex; align-items: center; gap: 0.9rem; }
 .brand-badge {
-	width: 2.6rem; height: 2.6rem; border-radius: 6px; border: 1px solid var(--teal-soft);
-	background: var(--teal-dim); color: var(--teal); font-family: var(--display); font-weight: 700; font-size: 0.85rem;
+	width: 2.6rem; height: 2.6rem; background: var(--teal); color: #04231f;
+	font-family: var(--display); font-weight: 700; font-size: 0.85rem;
 	display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 22% 100%, 0 76%);
+	box-shadow: 0 0 14px rgba(95,216,232,0.35);
 }
 .brand-text .brand-name { font-family: var(--display); font-weight: 700; font-size: 0.95rem; letter-spacing: 0.02em; text-transform: uppercase; color: var(--text); line-height: 1.2; }
 .brand-text .brand-sub { font-family: var(--display); font-weight: 500; font-size: 0.64rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-faint); }
@@ -421,9 +423,9 @@ section.panel:not(:last-of-type) { border-bottom: 1px solid var(--border-soft); 
 
 /* time-col nudged down slightly so its date lines up with the role title, not the company line */
 .time-col .time-label { font-family: var(--display); font-weight: 500; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); margin-bottom: 0.4rem; line-height: 1.2; }
-.time-col .time-value { font-family: var(--display); font-weight: 500; font-size: 0.84rem; color: var(--text-dim); }
+.time-col .time-value { font-family: var(--display); font-weight: 500; font-size: 0.84rem; color: var(--text-dim); line-height: 1.15; }
 .content-col .co-line { font-family: var(--display); font-weight: 600; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--orange); margin-bottom: 0.4rem; line-height: 1.2; }
-.content-col h3 { font-family: var(--display); font-weight: 700; font-size: 1.18rem; text-transform: uppercase; letter-spacing: 0.01em; color: var(--text); margin-bottom: 0.8rem; }
+.content-col h3 { font-family: var(--display); font-weight: 700; font-size: 1.18rem; text-transform: uppercase; letter-spacing: 0.01em; color: var(--text); margin-bottom: 0.8rem; line-height: 1.15; }
 .content-col ul { display: flex; flex-direction: column; gap: 0.45rem; }
 .content-col ul li { display: flex; gap: 0.6rem; font-size: 0.88rem; color: var(--text-dim); line-height: 1.5; }
 .content-col ul li .arrow { color: var(--teal); flex-shrink: 0; }
