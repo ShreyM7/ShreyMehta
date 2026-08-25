@@ -224,8 +224,8 @@ section.panel:not(:last-of-type) { border-bottom: 1px solid var(--border-soft); 
 @keyframes sweep { 0% { left: 0%; opacity: 0; } 8% { opacity: 1; } 92% { opacity: 1; } 100% { left: 100%; opacity: 0; } }
 
 .sysmap-divider { border-bottom: 1px solid var(--border-soft); margin: -0.3rem 0 1.1rem; }
-.sysmap-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
-@media screen and (max-width: 560px) { .sysmap-stats { grid-template-columns: 1fr; gap: 1rem; } }
+.sysmap-stats { display: flex; gap: 2.75rem; flex-wrap: wrap; }
+@media screen and (max-width: 560px) { .sysmap-stats { flex-direction: column; gap: 1rem; } }
 .stat-label { font-family: var(--display); font-weight: 500; font-size: 0.64rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); margin-bottom: 0.35rem; }
 .stat-value { font-family: var(--display); font-weight: 700; font-size: 0.98rem; letter-spacing: 0.01em; text-transform: uppercase; color: var(--text); margin-bottom: 0.2rem; }
 .stat-sub { font-family: var(--display); font-weight: 500; font-size: 0.64rem; letter-spacing: 0.06em; color: var(--teal); text-transform: uppercase; }
@@ -373,11 +373,12 @@ section.panel:not(:last-of-type) { border-bottom: 1px solid var(--border-soft); 
 .card-footer { display: flex; align-items: center; justify-content: flex-end; margin-top: auto; padding-top: 0.6rem; }
 .open-file {
 	font-family: var(--display); font-weight: 600; font-size: 0.76rem; letter-spacing: 0.08em; text-transform: uppercase;
-	color: var(--text); border: 1px solid var(--border); padding: 0.6rem 1.1rem;
+	color: var(--teal); border: 1px solid var(--teal-soft); background: rgba(95,216,232,0.08); padding: 0.6rem 1.1rem;
+	box-shadow: 0 0 14px rgba(95,216,232,0.25);
 	clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
 	transition: all 0.2s ease;
 }
-.open-file:hover { border-color: var(--teal-soft); color: var(--teal); }
+.open-file:hover { color: #04231f; background: var(--teal); box-shadow: 0 0 22px rgba(95,216,232,0.5); transform: translateY(-2px); }
 
 .project-overview.is-hidden { display: none; }
 .project-detail { display: none; }
