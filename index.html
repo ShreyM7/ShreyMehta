@@ -261,22 +261,51 @@
 							     <img src="images/your-pcb-photo.png" alt="ESP32 Environmental Monitoring PCB" /> -->
 							<svg class="pcb-thumb-svg" viewBox="0 0 400 240" preserveAspectRatio="xMidYMid slice">
 								<rect width="400" height="240" fill="#050c10"/>
-								<g fill="none" stroke="rgba(95,216,232,0.35)" stroke-width="1.5">
-									<path d="M40 40 H160 V90 H240"/>
-									<path d="M40 90 H120 V150"/>
-									<path d="M40 150 H90 V200 H260"/>
-									<path d="M260 40 V120 H360"/>
-									<path d="M300 90 V200"/>
-									<path d="M180 200 V150 H300"/>
+								<!-- board outline -->
+								<rect x="30" y="20" width="340" height="200" rx="10" fill="rgba(95,216,232,0.05)" stroke="rgba(95,216,232,0.35)" stroke-width="1.5"/>
+								<!-- mounting holes -->
+								<circle cx="46" cy="36" r="5" fill="none" stroke="rgba(95,216,232,0.4)" stroke-width="1.5"/>
+								<circle cx="354" cy="36" r="5" fill="none" stroke="rgba(95,216,232,0.4)" stroke-width="1.5"/>
+								<circle cx="46" cy="204" r="5" fill="none" stroke="rgba(95,216,232,0.4)" stroke-width="1.5"/>
+								<circle cx="354" cy="204" r="5" fill="none" stroke="rgba(95,216,232,0.4)" stroke-width="1.5"/>
+								<!-- copper traces -->
+								<g fill="none" stroke="rgba(95,216,232,0.4)" stroke-width="1.5">
+									<path d="M70 60 H140 V95"/>
+									<path d="M70 95 H110 V150"/>
+									<path d="M70 150 H110 V180 H200"/>
+									<path d="M280 60 V110 H330"/>
+									<path d="M310 95 V180"/>
+									<path d="M230 180 V150 H310"/>
+									<path d="M200 95 H230"/>
 								</g>
-								<g fill="rgba(95,216,232,0.6)">
-									<circle cx="40" cy="40" r="4"/><circle cx="160" cy="40" r="4"/><circle cx="240" cy="90" r="4"/>
-									<circle cx="40" cy="90" r="4"/><circle cx="120" cy="150" r="4"/><circle cx="40" cy="150" r="4"/>
-									<circle cx="90" cy="200" r="4"/><circle cx="260" cy="200" r="4"/><circle cx="260" cy="40" r="4"/>
-									<circle cx="360" cy="120" r="4"/><circle cx="300" cy="200" r="4"/><circle cx="180" cy="200" r="4"/>
+								<g fill="rgba(95,216,232,0.65)">
+									<circle cx="70" cy="60" r="3.5"/><circle cx="140" cy="60" r="3.5"/><circle cx="70" cy="95" r="3.5"/>
+									<circle cx="110" cy="150" r="3.5"/><circle cx="70" cy="150" r="3.5"/><circle cx="110" cy="180" r="3.5"/>
+									<circle cx="200" cy="180" r="3.5"/><circle cx="280" cy="60" r="3.5"/><circle cx="330" cy="110" r="3.5"/>
+									<circle cx="310" cy="180" r="3.5"/><circle cx="230" cy="180" r="3.5"/><circle cx="200" cy="95" r="3.5"/><circle cx="230" cy="95" r="3.5"/>
 								</g>
-								<rect x="160" y="90" width="60" height="60" rx="4" fill="rgba(240,167,66,0.12)" stroke="rgba(240,167,66,0.5)" stroke-width="1.5"/>
-								<text x="190" y="124" text-anchor="middle" fill="rgba(240,167,66,0.75)" font-family="monospace" font-size="11">ESP32</text>
+								<!-- antenna squiggle trace (top right, wifi module style) -->
+								<path d="M330 30 q8 6 0 12 q-8 6 0 12 q8 6 0 12" fill="none" stroke="rgba(240,167,66,0.55)" stroke-width="1.4"/>
+								<!-- ESP32 module -->
+								<rect x="140" y="60" width="90" height="60" rx="4" fill="rgba(240,167,66,0.14)" stroke="rgba(240,167,66,0.55)" stroke-width="1.5"/>
+								<text x="185" y="94" text-anchor="middle" fill="rgba(240,167,66,0.85)" font-family="monospace" font-size="10.5">ESP32</text>
+								<text x="185" y="106" text-anchor="middle" fill="rgba(240,167,66,0.5)" font-family="monospace" font-size="7">WROOM-32</text>
+								<!-- OLED display footprint -->
+								<rect x="230" y="150" width="80" height="30" rx="3" fill="rgba(95,216,232,0.08)" stroke="rgba(95,216,232,0.45)" stroke-width="1.5"/>
+								<text x="270" y="169" text-anchor="middle" fill="rgba(95,216,232,0.75)" font-family="monospace" font-size="8">OLED</text>
+								<!-- I2C sensor chip -->
+								<rect x="70" y="150" width="40" height="30" rx="3" fill="rgba(95,216,232,0.08)" stroke="rgba(95,216,232,0.45)" stroke-width="1.5"/>
+								<text x="90" y="169" text-anchor="middle" fill="rgba(95,216,232,0.75)" font-family="monospace" font-size="6.5">SHT31</text>
+								<!-- battery connector -->
+								<rect x="46" y="60" width="24" height="14" rx="2" fill="none" stroke="rgba(240,167,66,0.5)" stroke-width="1.3"/>
+								<text x="58" y="70" text-anchor="middle" fill="rgba(240,167,66,0.65)" font-family="monospace" font-size="6.5">BATT</text>
+								<!-- corner watermark -->
+								<text x="42" y="212" fill="rgba(238,248,246,0.28)" font-family="monospace" font-size="8" letter-spacing="1">REV_A // BRING-UP</text>
+								<!-- animated scan line -->
+								<rect x="30" y="20" width="4" height="200" fill="rgba(95,216,232,0.5)">
+									<animate attributeName="x" values="30;366;30" dur="4s" repeatCount="indefinite"/>
+									<animate attributeName="opacity" values="0.6;0.9;0.6" dur="4s" repeatCount="indefinite"/>
+								</rect>
 							</svg>
 							<span class="thumb-tag">PRJ_01</span>
 							<span class="thumb-status pending"><span class="dot"></span> In Development</span>
