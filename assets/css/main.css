@@ -421,9 +421,12 @@ section.panel:not(:last-of-type) { border-bottom: 1px solid var(--border-soft); 
 .detail-caption { font-family: var(--display); font-size: 0.78rem; color: var(--text-faint); text-align: center; margin: -1rem 0 1.8rem; }
 .iteration-slider .detail-caption { margin-top: 1.1rem; margin-bottom: 0; }
 .detail-media-row { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-bottom: 0.6rem; }
-.detail-media-row .detail-media-col { flex: 1 1 280px; max-width: 340px; }
+.detail-media-row .detail-media-col { flex: 1 1 500px; max-width: 500px; }
 .detail-media-row .detail-media { max-width: 100%; margin: 0 0 0.7rem; }
-.detail-media-row .detail-media img { max-height: 400px; }
+.detail-media-row .detail-media img { 
+    max-height: 1000px; 
+    object-fit: contain; /* Prevents stretching */
+}
 .detail-media-row .media-caption { text-align: center; font-family: var(--display); font-size: 0.78rem; color: var(--text-faint); margin: 0; }
 .detail-media-row-caption { text-align: center; font-family: var(--display); font-size: 0.78rem; color: var(--text-faint); margin: 0 0 1.8rem; }
 
