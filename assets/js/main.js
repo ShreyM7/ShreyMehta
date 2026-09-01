@@ -121,33 +121,45 @@
 })();
 
 // ============================================================
-// 3. Design-iteration slider (inside Project 1 detail page)
+// 3. Design-iteration sliders
+//    Supports multiple independent sliders across project pages
 // ============================================================
 (function () {
-	const slider = document.querySelector('.iteration-slider');
-	if (!slider) return;
+	const sliders = document.querySelectorAll('.iteration-slider');
+	if (!sliders.length) return;
 
-	const imgs = slider.querySelectorAll('.slider-img');
-	const counter = document.getElementById('iter-counter');
-	const caption = document.getElementById('iter-caption');
-	let idx = 0;
+	sliders.forEach((slider) => {
+		const imgs = slider.querySelectorAll('.slider-img');
+		const counter = slider.querySelector('.slider-counter');
+		const caption = slider.querySelector('.detail-caption');
+		const nextBtn = slider.querySelector('.slider-btn:last-of-type');
+		const prevBtn = slider.querySelector('.slider-btn:first-of-type');
 
-	function show(i) {
-		imgs.forEach((img, n) => img.classList.toggle('active', n === i));
-		counter.textContent = (i + 1) + ' / ' + imgs.length;
-		caption.textContent = imgs[i].dataset.caption || '';
-	}
+		if (!imgs.length || !counter || !caption || !nextBtn || !prevBtn) return;
 
-	document.getElementById('iter-next').addEventListener('click', () => {
-		idx = (idx + 1) % imgs.length;
-		show(idx);
+		let idx = 0;
+
+		function show(i) {
+			imgs.forEach((img, n) => {
+				img.classList.toggle('active', n === i);
+			});
+
+			counter.textContent = (i + 1) + ' / ' + imgs.length;
+			caption.textContent = imgs[i].dataset.caption || '';
+		}
+
+		nextBtn.addEventListener('click', () => {
+			idx = (idx + 1) % imgs.length;
+			show(idx);
+		});
+
+		prevBtn.addEventListener('click', () => {
+			idx = (idx - 1 + imgs.length) % imgs.length;
+			show(idx);
+		});
+
+		show(0);
 	});
-	document.getElementById('iter-prev').addEventListener('click', () => {
-		idx = (idx - 1 + imgs.length) % imgs.length;
-		show(idx);
-	});
-
-	show(0);
 })();
 
 // ============================================================
