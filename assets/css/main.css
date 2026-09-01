@@ -55,7 +55,14 @@ body {
 	position: relative;
 }
 body.detail-open { overflow: hidden; }
-body.detail-open #site-header { display: none; }
+body.detail-open #site-header,
+body.detail-open #hero,
+body.detail-open #experience,
+body.detail-open #skills,
+body.detail-open #contact,
+body.detail-open #site-footer {
+	display: none;
+}
 
 ::-webkit-scrollbar { width: 10px; height: 10px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
