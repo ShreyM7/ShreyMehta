@@ -127,7 +127,7 @@
 document.querySelectorAll('.iteration-slider').forEach((slider) => {
 	const imgs = slider.querySelectorAll('.slider-img');
 	const counter = slider.querySelector('.slider-counter');
-	const caption = slider.querySelector('.detail-caption');
+	const caption = slider.querySelector('.slider-caption');
 	const buttons = slider.querySelectorAll('.slider-btn');
 	const prevBtn = buttons[0];
 	const nextBtn = buttons[1];
