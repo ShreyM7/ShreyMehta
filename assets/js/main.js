@@ -21,10 +21,10 @@
 	const container = document.getElementById('bars');
 	if (!container) return;
 
-	const BAR_COUNT = 40;
+	const BAR_COUNT = 30;
 	for (let i = 0; i < BAR_COUNT; i++) {
 		const bar = document.createElement('span');
-		bar.style.height = (15 + Math.random() * 85) + '%';
+		bar.style.height = (5 + Math.random() * 85) + '%';
 		container.appendChild(bar); // playhead div (already in HTML) stays on top
 	}
 
