@@ -121,46 +121,41 @@
 })();
 
 // ============================================================
-// 3. Design-iteration sliders
-//    Supports multiple independent sliders across project pages
+// 3. Design-iteration sliders (works for every .iteration-slider
+//    on the page — Project 1, Project 2, Project 3, etc.)
 // ============================================================
-(function () {
-	const sliders = document.querySelectorAll('.iteration-slider');
-	if (!sliders.length) return;
+document.querySelectorAll('.iteration-slider').forEach((slider) => {
+	const imgs = slider.querySelectorAll('.slider-img');
+	const counter = slider.querySelector('.slider-counter');
+	const caption = slider.querySelector('.detail-caption');
+	const buttons = slider.querySelectorAll('.slider-btn');
+	const prevBtn = buttons[0];
+	const nextBtn = buttons[1];
 
-	sliders.forEach((slider) => {
-		const imgs = slider.querySelectorAll('.slider-img');
-		const counter = slider.querySelector('.slider-counter');
-		const caption = slider.querySelector('.detail-caption');
-		const nextBtn = slider.querySelector('.slider-btn:last-of-type');
-		const prevBtn = slider.querySelector('.slider-btn:first-of-type');
+	if (!imgs.length) return;
+	let idx = 0;
 
-		if (!imgs.length || !counter || !caption || !nextBtn || !prevBtn) return;
+	function show(i) {
+		imgs.forEach((img, n) => img.classList.toggle('active', n === i));
+		if (counter) counter.textContent = (i + 1) + ' / ' + imgs.length;
+		if (caption) caption.textContent = imgs[i].dataset.caption || '';
+	}
 
-		let idx = 0;
-
-		function show(i) {
-			imgs.forEach((img, n) => {
-				img.classList.toggle('active', n === i);
-			});
-
-			counter.textContent = (i + 1) + ' / ' + imgs.length;
-			caption.textContent = imgs[i].dataset.caption || '';
-		}
-
-		nextBtn.addEventListener('click', () => {
-			idx = (idx + 1) % imgs.length;
-			show(idx);
-		});
-
+	if (prevBtn) {
 		prevBtn.addEventListener('click', () => {
 			idx = (idx - 1 + imgs.length) % imgs.length;
 			show(idx);
 		});
+	}
+	if (nextBtn) {
+		nextBtn.addEventListener('click', () => {
+			idx = (idx + 1) % imgs.length;
+			show(idx);
+		});
+	}
 
-		show(0);
-	});
-})();
+	show(0);
+});
 
 // ============================================================
 // 4. Footer "Return to Origin" button
