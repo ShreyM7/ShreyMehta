@@ -416,7 +416,7 @@ section.panel:not(:last-of-type) { border-bottom: 1px solid var(--border-soft); 
 }
 .detail-back:hover { transform: translateY(-2px); border-color: var(--teal-soft); color: var(--teal); box-shadow: 0 0 18px rgba(95,216,232,0.2); }
 
-.detail-title { font-family: var(--display); font-weight: 700; font-size: 2.3rem; text-transform: uppercase; letter-spacing: 0.01em; color: var(--text); margin-bottom: 1.8rem; }
+.detail-title { font-family: var(--display); font-weight: 700; font-size: 3rem; text-transform: uppercase; letter-spacing: 0.01em; color: var(--text); margin-bottom: 1.8rem; }
 
 .detail-panel .project-cats { display: block; margin-top: -0.9rem; margin-bottom: 0.9rem; }
 .detail-panel .chip-row { margin-bottom: 1.8rem; }
