@@ -256,6 +256,41 @@
 
 				<div class="project-grid">
 
+					<!-- Featured — VendiGo (Hack the North) -->
+					<div class="project-card featured">
+						<div class="thumb">
+							<img src="images/vendigo-robot.png" alt="VendiGo autonomous mobile storefront" />
+							<span class="thumb-tag">PRJ_00</span>
+							<span class="thumb-status award">
+								<svg class="icon-svg fill" viewBox="0 0 24 24"><path d="M12 2l2.9 6.26L21 9.27l-4.5 4.38L17.8 21 12 17.77 6.2 21l1.3-7.35L3 9.27l6.1-1.01L12 2z"/></svg>
+								Top 32 of 350 — Hack the North
+							</span>
+						</div>
+						<div class="project-body">
+							<div class="project-cats">ROBOTICS • VOICE AI • FULL-STACK</div>
+							<h3>VendiGo — Autonomous Mobile Storefront</h3>
+							<p class="project-desc">An autonomous mobile storefront that drives to customers at crowded events — stadiums, festivals, hackathons — using a live voice agent to advertise products and a QR-based checkout to complete purchases, all backed by a real-time inventory and operator dashboard.</p>
+							<ul class="project-list">
+								<li><span class="n">01</span> Integrated an ESP32 for motor control and a Raspberry Pi for autonomous navigation, voice interaction, and system coordination on an ACEBOTT robotic platform.</li>
+								<li><span class="n">02</span> Built a GPT-powered voice agent with ElevenLabs speech synthesis, letting customers ask about live inventory and purchase products conversationally.</li>
+								<li><span class="n">03</span> Developed a Next.js QR storefront and operator dashboard, achieving a 100% inventory update success rate across 20 test transactions.</li>
+							</ul>
+							<div class="chip-row">
+								<span class="chip">ESP32</span>
+								<span class="chip">Raspberry Pi</span>
+								<span class="chip">Voice AI</span>
+								<span class="chip">Next.js</span>
+								<span class="chip">Python</span>
+								<span class="chip">Autonomous Navigation</span>
+							</div>
+							<div class="card-footer">
+								<a class="open-file" href="#project-vendigo-detail" data-detail="project-vendigo-detail">Open File ↗</a>
+							</div>
+						</div>
+					</div>
+
+					<!-- Project 4 — in progress -->
+
 					<!-- Project 4 — in progress -->
 					<div class="project-card">
 						<div class="thumb">
@@ -674,8 +709,89 @@
 				</div>
 			</article>
 
+			<!-- DETAIL: VendiGo -->
+			<article id="project-vendigo-detail" class="project-detail">
+				<div class="detail-shell">
+						<a href="#projects" class="detail-back back-to-overview">
+							<svg class="icon-svg stroke" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+							Return to Archive
+						</a>
+						<div class="detail-panel">
+						<div class="eyebrow">PROJECT 00 FILE <span class="dim">HACK THE NORTH 2026 — TOP 32 OF 350 TEAMS</span></div>
+						<h2 class="detail-title">VendiGo — Autonomous Mobile Storefront</h2>
+						<div class="project-cats">ROBOTICS • VOICE AI • FULL-STACK</div>
+						<div class="chip-row">
+							<span class="chip">ESP32</span>
+							<span class="chip">Raspberry Pi</span>
+							<span class="chip">Voice AI</span>
+							<span class="chip">Next.js</span>
+							<span class="chip">Python</span>
+							<span class="chip">Autonomous Navigation</span>
+							<span class="chip">Motor Control</span>
+						</div>
+
+						<div class="detail-media"><img src="images/vendigo-robot.png" alt="VendiGo robot"></div>
+
+						<p class="detail-subhead">Inspiration</p>
+						<p class="detail-desc">At crowded events like stadiums, festivals, and hackathons, buying food often means leaving your seat, finding a booth, and waiting in line. Human vendors can bring products directly to customers, but they're expensive to operate and difficult to scale. We wanted to build a storefront that could move directly to where demand is.</p>
+
+						<p class="detail-subhead">What It Does</p>
+						<p class="detail-desc">VendiGo is an autonomous mobile storefront for crowded events. It drives toward customers, uses a voice agent to advertise products and answer questions using live inventory data, and lets customers purchase items through a QR-based storefront. When a purchase is made, inventory updates automatically, and operators can monitor purchases, inventory levels, and customer activity through a live dashboard.</p>
+
+						<div class="detail-media"><img src="images/vendigo-dashboard.png" alt="VendiGo operator dashboard and QR storefront"></div>
+						<p class="detail-caption">The operator dashboard and QR-based customer storefront.</p>
+
+						<p class="detail-subhead">How We Built It</p>
+						<p class="detail-desc">We built VendiGo on an ACEBOTT robotic car platform, using an ESP32 for low-level motor control and a Raspberry Pi for navigation, voice interaction, and system coordination. We added a custom microphone and speaker setup so VendiGo can continuously listen and talk with nearby customers, using ElevenLabs for speech and an LLM for conversation grounded in live inventory context. The robot also includes an automatically opening product compartment that unlocks during checkout and closes after pickup. On the software side, a Next.js web app powers the QR storefront, live inventory, purchase flow, analytics, and operator dashboard — tying the hardware and customer experience into one autonomous retail system.</p>
+
+						<div class="iteration-slider">
+							<div class="slider-track">
+								<img src="images/vendigo-1.png" alt="VendiGo build photo 1" class="slider-img active" data-caption="VendiGo fully assembled on the ACEBOTT platform.">
+								<img src="images/vendigo-2.png" alt="VendiGo build photo 2" class="slider-img" data-caption="Product compartment and onboard electronics.">
+								<img src="images/vendigo-3.png" alt="VendiGo build photo 3" class="slider-img" data-caption="Live testing at Hack the North.">
+								<img src="images/vendigo-4.png" alt="VendiGo build photo 4" class="slider-img" data-caption="The team with VendiGo at the venue.">
+							</div>
+							<div class="slider-controls">
+								<button type="button" class="slider-btn">‹ Back</button>
+								<span class="slider-counter">1 / 4</span>
+								<button type="button" class="slider-btn">Next ›</button>
+							</div>
+							<p class="slider-caption"></p>
+							<p class="detail-caption">Selected build and event photos from Hack the North.</p>
+						</div>
+
+						<p class="detail-subhead">Challenges We Ran Into</p>
+						<p class="detail-desc">Our biggest challenge was coordinating autonomous navigation, voice interaction, and the checkout flow into one seamless experience. We also had to manage microphone and speaker timing, keep inventory synchronized after purchases, and connect live inventory data to the voice agent so it wouldn't recommend sold-out products.</p>
+
+						<p class="detail-subhead">Accomplishments We're Proud Of</p>
+						<p class="detail-desc">We brought robotics, conversational AI, and commerce together into one working prototype. Customers can speak directly with VendiGo, ask what products are available, and purchase from the robot, while operators can monitor inventory and purchases through a live dashboard — achieving a 100% inventory update success rate across 20 test transactions.</p>
+
+						<p class="detail-subhead">What We Learned</p>
+						<p class="detail-desc">We learned how to connect hardware, web software, and conversational AI into a single real-world system, and how important latency, timing, and clear state management become when software has to interact with people through a physical robot.</p>
+
+						<p class="detail-subhead">What's Next</p>
+						<p class="detail-desc">We want to deploy VendiGo at real events and eventually bring the system to food and beverage companies, event venues, festivals, and sports stadiums. Next, we plan to improve autonomous navigation and speech recognition in noisy crowds, integrate live payments, support more products and languages, and use historical sales and location data to predict where demand will be highest — so VendiGo can move autonomously to where it's most likely to make a sale.</p>
+
+						<div class="detail-actions">
+							<a class="btn primary" href="PASTE_YOUR_GITHUB_LINK_HERE" target="_blank" rel="noopener">
+								<svg class="icon-svg fill" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+								View on GitHub
+							</a>
+							<a class="btn" href="PASTE_YOUR_DEVPOST_LINK_HERE" target="_blank" rel="noopener">
+								<svg class="icon-svg stroke" viewBox="0 0 24 24"><path d="M4 4h9l7 8-7 8H4z" stroke-width="1.6" stroke-linejoin="round"/></svg>
+								View on Devpost
+							</a>
+							<a class="btn back-to-overview" href="#projects">← Back to Archive</a>
+						</div>
+						<p class="detail-copyright">© 2026 Shrey Mehta</p>
+					</div>
+				</div>
+			</article>
+
 		</div>
 	</section>
+
+	<!-- Systems & Tools -->
 
 	<!-- Systems & Tools -->
 	<section id="skills" class="panel">
