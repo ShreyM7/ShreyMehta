@@ -121,7 +121,7 @@
 				<div class="hero-portrait" id="portrait">
 					<div class="portrait-ring"></div>
 					<div class="portrait-photo">
-						<img src="images/Shrey Mehta (1).jpg" alt="Shrey Mehta" />
+						<img src="images/headshot.jpg" alt="Shrey Mehta" />
 					</div>
 
 					<!-- steady (not moving) -->
@@ -472,17 +472,26 @@
 							<span class="chip">Ethernet</span>
 						</div>
 
-						<p class="detail-subhead">Overview</p>
-						<p class="detail-desc">As an Electrical Team Member on the McMaster Mars Rover Team (Oct. 2025 – Present), I design and build the rover's electrical systems, covering power distribution, custom PCBs, and the wiring and integration of onboard compute and motor control.</p>
+						<p class="detail-subhead">About the Project</p>
+						<p class="detail-desc">The McMaster Mars Rover Team builds a Mars rover for competition. I joined as an Electrical Team Member in October 2025. My job is to design, build, and wire the rover's electrical system: everything that gets power to the rover's parts and lets them work together.</p>
 
-						<p class="detail-subhead">Battery Distribution System</p>
-						<p class="detail-desc">Designed and assembled a 48 V, 40 A battery distribution system with high-side MOSFET protection supplying 8 rover subsystems.</p>
+						<p class="detail-subhead">Why It Matters</p>
+						<p class="detail-desc">A rover can only do its job if its electronics work every time. Every motor, camera, and computer on board needs the right amount of power, delivered safely, and a reliable way to send information. If the electrical system fails, the rover stops, no matter how good the rest of it is.</p>
 
-						<p class="detail-subhead">Custom PCBs</p>
-						<p class="detail-desc">Designed 2 custom PCBs in Altium Designer, including an STM32-controlled power distribution board, performing schematic capture, PCB routing and circuit simulation in PSpice.</p>
+						<p class="detail-subhead">The Battery System</p>
+						<p class="detail-desc">The rover runs on a battery, so I designed and assembled a battery distribution system: the part that takes power from the battery and sends it to the rest of the rover. It is built for 48 volts and 40 amps (about 1.9 kilowatts of power) and supplies 8 different rover subsystems.</p>
+						<p class="detail-desc">It also includes a protection switch, called a high-side MOSFET, between the battery and the rest of the rover. This lets power be controlled and keeps the electronics protected.</p>
 
-						<p class="detail-subhead">Compute, Motor Control &amp; Wiring</p>
-						<p class="detail-desc">Integrated NVIDIA Jetson AGX, SPARK MAX motor controllers and Ethernet-connected devices, completing 300+ soldered connections across the rover's electrical architecture.</p>
+						<p class="detail-subhead">The Custom Circuit Boards</p>
+						<p class="detail-desc">I designed 2 custom circuit boards (PCBs) in Altium Designer. That meant drawing the circuit diagram, laying out the connections on the board, and testing the circuit in a simulator called PSpice before building anything, so mistakes are caught on the computer instead of on the real hardware.</p>
+						<p class="detail-desc">One of the boards is the rover's power distribution board. It is controlled by a small programmable chip (an STM32 microcontroller).</p>
+
+						<p class="detail-subhead">Computer, Motors, and Wiring</p>
+						<p class="detail-desc">A rover needs a brain and muscles. I integrated the NVIDIA Jetson AGX, the rover's onboard computer, with the SPARK MAX motor controllers, which control how the motors run, and with devices that connect over Ethernet, a wired network connection.</p>
+						<p class="detail-desc">Across all of this I completed more than 300 soldered connections, joining wires and components by hand so the whole system works together.</p>
+
+						<p class="detail-subhead">How It All Connects</p>
+						<p class="detail-desc">Put simply, power flows from the battery, through protection and power distribution hardware, and out to the rover's 8 subsystems. At the same time, the Jetson computer, the motor controllers, and the Ethernet-connected devices are wired in so they can work together.</p>
 
 						<div class="iteration-slider">
 							<div class="slider-track">
@@ -502,6 +511,21 @@
 							<p class="slider-caption"></p>
 							<p class="detail-caption">Selected components from the rover's electrical system.</p>
 						</div>
+
+						<p class="detail-subhead">Making It All Fit</p>
+						<p class="detail-desc">An electrical system has to work inside a real rover, not just on a desk. That means routing cables neatly, keeping parts easy to reach for repairs, and fitting everything into the limited space of the chassis.</p>
+						<p class="detail-desc">I work with the electrical, software, and other teams so every part connects properly and can be built, tested, and used on the rover.</p>
+
+						<p class="detail-subhead">At a Glance</p>
+						<ul class="project-list">
+							<li><span class="n">01</span> 48 V, 40 A battery distribution system with high-side MOSFET protection</li>
+							<li><span class="n">02</span> 8 rover subsystems supplied with power</li>
+							<li><span class="n">03</span> 2 custom PCBs designed in Altium Designer, including an STM32-controlled power distribution board</li>
+							<li><span class="n">04</span> 300+ soldered connections across the rover's electrical system</li>
+						</ul>
+
+						<p class="detail-subhead">Where It Stands</p>
+						<p class="detail-desc">This is ongoing work. I joined in October 2025 and continue to design, build, and wire the rover's electrical system with the team.</p>
 
 						<div class="detail-actions">
 							<a class="btn back-to-overview" href="#projects">← Back to Archive</a>
