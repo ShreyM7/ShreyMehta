@@ -284,7 +284,7 @@
 					<!-- Project 1 -->
 					<div class="project-card">
 						<div class="thumb">
-							<img src="images/elec box image.png" alt="McMaster Mars Rover Electrical Systems" />
+							<img src="images/rover.png" alt="McMaster Mars Rover Electrical Systems" />
 							<span class="thumb-tag">PRJ_01</span>
 							<span class="thumb-status pending"><span class="dot"></span> In Development</span>
 						</div>
@@ -482,39 +482,55 @@
 						<p class="detail-desc">The rover runs on a battery, so I designed and assembled a battery distribution system: the part that takes power from the battery and sends it to the rest of the rover. It is built for 48 volts and 40 amps (about 1.9 kilowatts of power) and supplies 8 different rover subsystems.</p>
 						<p class="detail-desc">It also includes a protection switch, called a high-side MOSFET, between the battery and the rest of the rover. This lets power be controlled and keeps the electronics protected.</p>
 
+						<div class="detail-media"><img src="images/battery.jpg" alt="battery" data-caption="Image of Battery Box"></div>
+							
 						<p class="detail-subhead">The Custom Circuit Boards</p>
 						<p class="detail-desc">I designed 2 custom circuit boards (PCBs) in Altium Designer. That meant drawing the circuit diagram, laying out the connections on the board, and testing the circuit in a simulator called PSpice before building anything, so mistakes are caught on the computer instead of on the real hardware.</p>
-						<p class="detail-desc">One of the boards is the rover's power distribution board. It is controlled by a small programmable chip (an STM32 microcontroller).</p>
+						<p class="detail-desc">One of the boards is the rover's Batman board (for the battery). It is controlled by a small programmable chip (an STM32 microcontroller).</p>
+
+						<div class="iteration-slider">
+							<div class="slider-track">
+								<img src="images/batman_1.png" alt="PCB" class="slider-img active" data-caption="Printed circuit board (PCB) called Batman that connects to the battery to monitor it, regulate power, and provide safety.">
+								<img src="images/batman_2.png" alt="pcb_2" class="slider-img" data-caption="Printed circuit board (PCB) called Batman that connects to the battery to monitor it, regulate power, and provide safety.">
+								<img src="images/pcb_1.png" alt="pcb_3" class="slider-img" data-caption="Printed circuit board (PCB) called PCB_B that is used to interface rover electronics with the power distribution system.">
+								<img src="images/pcb_2.png" alt="pcb_4" class="slider-img" data-caption="Printed circuit board (PCB) called PCB_B that is used to interface rover electronics with the power distribution system.">
+							</div>
+							<div class="slider-controls">
+								<button type="button" class="slider-btn">‹ Back</button>
+								<span class="slider-counter">1 / 4</span>
+								<button type="button" class="slider-btn">Next ›</button>
+							</div>
+							<p class="slider-caption"></p>
+							<p class="detail-caption">Customs PCB's Developed for the Rover.</p>
+						</div>
 
 						<p class="detail-subhead">Computer, Motors, and Wiring</p>
-						<p class="detail-desc">A rover needs a brain and muscles. I integrated the NVIDIA Jetson AGX, the rover's onboard computer, with the SPARK MAX motor controllers, which control how the motors run, and with devices that connect over Ethernet, a wired network connection.</p>
+						<p class="detail-desc">A rover needs a brain and muscles. I integrated the NVIDIA Jetson AGX, the rover's onboard computer, with the SPARK MAX motor controllers, which control how the DC motors run, and with devices that connect over Ethernet, a wired network connection.</p>
 						<p class="detail-desc">Across all of this I completed more than 300 soldered connections, joining wires and components by hand so the whole system works together.</p>
+
+						<div class="iteration-slider">
+							<div class="slider-track">
+								<img src="images/jetson agx.png" alt="NVIDIA Jetson AGX" class="slider-img" data-caption="NVIDIA Jetson AGX computing module used for onboard rover processing.">
+								<img src="images/sparkmax.png" alt="sparkmax" class="slider-img" data-caption="SPARK MAX motor controllers used to operate DC motors.">
+								<img src="images/ethernet.png" alt="Ethernet interface" class="slider-img" data-caption="Ethernet interface used for communication between rover subsystems.">
+							</div>
+							<div class="slider-controls">
+								<button type="button" class="slider-btn">‹ Back</button>
+								<span class="slider-counter">1 / 3</span>
+								<button type="button" class="slider-btn">Next ›</button>
+							</div>
+							<p class="slider-caption"></p>
+							<p class="detail-caption">Components integrated together to make sure the rover operates efficiently.</p>
+						</div>
 
 						<p class="detail-subhead">How It All Connects</p>
 						<p class="detail-desc">Put simply, power flows from the battery, through protection and power distribution hardware, and out to the rover's 8 subsystems. At the same time, the Jetson computer, the motor controllers, and the Ethernet-connected devices are wired in so they can work together.</p>
 
-						<div class="iteration-slider">
-							<div class="slider-track">
-								<img src="images/pcb.png" alt="PCB" class="slider-img active" data-caption="Printed circuit board (PCB) used within the rover's electrical system.">
-								<img src="images/viper.png" alt="Viper module" class="slider-img" data-caption="Viper module used as part of the rover's onboard electrical and computing systems.">
-								<img src="images/jetson agx.png" alt="NVIDIA Jetson AGX" class="slider-img" data-caption="NVIDIA Jetson AGX computing module used for onboard rover processing.">
-								<img src="images/ethernet.png" alt="Ethernet interface" class="slider-img" data-caption="Ethernet interface used for communication between rover subsystems.">
-								<img src="images/cooling fans.png" alt="Cooling fans" class="slider-img" data-caption="Cooling fans used for thermal management of the rover's electronics.">
-								<img src="images/LED.png" alt="LED hardware" class="slider-img" data-caption="LED hardware used as part of the rover's electrical system.">
-								<img src="images/camera.png" alt="Rover camera" class="slider-img" data-caption="Onboard camera used for rover perception and visual sensing.">
-							</div>
-							<div class="slider-controls">
-								<button type="button" class="slider-btn">‹ Back</button>
-								<span class="slider-counter">1 / 7</span>
-								<button type="button" class="slider-btn">Next ›</button>
-							</div>
-							<p class="slider-caption"></p>
-							<p class="detail-caption">Selected components from the rover's electrical system.</p>
-						</div>
-
 						<p class="detail-subhead">Making It All Fit</p>
 						<p class="detail-desc">An electrical system has to work inside a real rover, not just on a desk. That means routing cables neatly, keeping parts easy to reach for repairs, and fitting everything into the limited space of the chassis.</p>
 						<p class="detail-desc">I work with the electrical, software, and other teams so every part connects properly and can be built, tested, and used on the rover.</p>
+
+						<div class="detail-media"><img src="images/integration.jpg" alt="battery" data-caption="Rover Electronics Integrated Onto Bottom Chassis Frame"></div>
 
 						<p class="detail-subhead">At a Glance</p>
 						<ul class="project-list">
